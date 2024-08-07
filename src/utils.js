@@ -42,6 +42,12 @@ export async function getTopo(url, layer) {
   return geojson;
 }
 
+export async function getGeo(url) {
+  let response = await fetch(url);
+  let json = await response.json();
+  return json;
+}
+
 export function getColor(value, breaks, colors) {
   let color;
   let found = false;

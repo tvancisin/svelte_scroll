@@ -19,6 +19,7 @@
 	import Area from "./vis/Area.svelte";
 	import Donut from "./vis/Donut.svelte";
 	import Bars from "./vis/Bars.svelte";
+	import Globe from "./vis/Globe.svelte"
 
 	// DEMO-SPECIFIC IMPORTS
 	import bbox from "@turf/bbox";
@@ -26,6 +27,7 @@
 		getData,
 		setColors,
 		getTopo,
+		getGeo,
 		getBreaks,
 		getColor,
 	} from "./utils.js";
@@ -63,6 +65,7 @@
 	// Constants
 	const datasets = ["region", "district"];
 	const topojson = "./data/geo_lad2021.json";
+
 	const mapstyle =
 		"https://bothness.github.io/ons-basemaps/data/style-omt.json";
 	const mapbounds = {
@@ -281,6 +284,15 @@
 		);
 		geojson = geo;
 	});
+	// $: console.log(geojson);
+
+	let mygeojson;
+	const myjson_path = "./data/all_countries.json";
+	getGeo(myjson_path).then((geo) => {
+		mygeojson = geo;
+	});
+	
+	
 
 	//change date format to GMT
 	let parser = d3.timeParse("%Y-%m-%d");
@@ -847,6 +859,66 @@
 
 <Divider />-->
 
+<Filler theme="dark" short={true} wide={true} center={true}>
+	<p class="text-big">Geography</p>
+</Filler>
+
+{#if mygeojson}
+<Scroller {threshold} bind:id={id['map']}>
+	<div slot="background">
+		<figure>
+			<div class="col-full height-full">
+				<Globe {mygeojson} />
+			</div>
+		</figure>
+	</div>
+
+	<div slot="foreground">
+		<section data-id="map01">
+			<div class="col-medium">
+				<p>
+					This map shows <strong>population density</strong> by district. Districts are coloured from <Em color={colors.seq[0]}>least dense</Em> to <Em color={colors.seq[4]}>most dense</Em>. You can hover to see the district name and density.
+				</p>
+			</div>
+		</section>
+		<section data-id="map02">
+			<div class="col-medium">
+				<p>
+					The map now shows <strong>median age</strong>, from <Em color={colors.seq[0]}>youngest</Em> to <Em color={colors.seq[4]}>oldest</Em>.
+				</p>
+			</div>
+		</section>
+		<section data-id="map03">
+			<div class="col-medium">
+				{#each [[...data.district.indicators].sort((a, b) => b.age_med - a.age_med)[0]] as district}
+				<p>
+					The map is now zoomed on <Em color={district.age_med_color}>{district.name}</Em>, the district with the oldest median age, {district.age_med} years.
+				</p>
+				{/each}
+			</div>
+		</section>
+		<section data-id="map04">
+			<div class="col-medium">
+				<h3>Select a district</h3>
+				<p>Use the selection box below or click on the map to select and zoom to a district.</p>
+				{#if geojson}
+					<p>
+						<select bind:value={selected} on:change={() => fitById(selected)}>
+							<option value={null}>Select one</option>
+							{#each geojson.features as place}
+								<option value={place.properties.AREACD}>
+									{place.properties.AREANM}
+								</option>
+							{/each}
+						</select>
+					</p>
+				{/if}
+			</div>
+		</section>
+	</div>
+</Scroller>
+{/if}
+
 <Section>
 	<h2>This is a dynamic map section</h2>
 	<p class="mb">
@@ -854,7 +926,7 @@
 	</p>
 </Section>
 
-{#if geojson && data.district.indicators}
+<!-- {#if geojson && data.district.indicators}
 <Scroller {threshold} bind:id={id['map']}>
 	<div slot="background">
 		<figure>
@@ -949,7 +1021,7 @@
 		</section>
 	</div>
 </Scroller>
-{/if}
+{/if} -->
 
 <Divider />
 
