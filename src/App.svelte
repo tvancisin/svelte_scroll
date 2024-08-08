@@ -920,9 +920,9 @@
 {/if}
 
 <Section>
-	<h2>This is a dynamic map section</h2>
+	<h2>Research</h2>
 	<p class="mb">
-		The map below will respond to the captions as you scroll down. The scroller is not set to splitscreen, so captions are placed over the map on any screen size.
+		
 	</p>
 </Section>
 
@@ -1025,7 +1025,7 @@
 
 <Divider />
 
-<Section>
+<!-- <Section>
 	<h2>How to use this template</h2>
 	<p>
 		You can find the source code and documentation on how to use this
@@ -1036,7 +1036,7 @@
 	</p>
 </Section>
 
-<ONSFooter />
+<ONSFooter /> -->
 
 <style>
 	/* Styles specific to elements within the demo */
