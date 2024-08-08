@@ -9,14 +9,16 @@
         radius = 8;
 
     const margin = {
-        top: 0,
-        right: 0,
-        bottom: 20,
-        left: 0,
+        top: 10,
+        right: 10,
+        bottom: 10,
+        left: 10,
     };
 
+    const yTicks = [10, 20, 30, 40];
+
     $: innerWidth = width - margin.left - margin.right;
-    let innerHeight = height - margin.top - margin.bottom;
+    $: innerHeight = height - margin.top - margin.bottom;
 
     // List of groups
     let groups = [
@@ -45,7 +47,7 @@
         .range([0, xScale.bandwidth()])
         .padding([0.05]);
 
-    let yScale = d3.scaleLinear().domain([0, 45]).range([innerHeight, 0]);
+    $: yScale = d3.scaleLinear().domain([0, 45]).range([innerHeight, 0]);
 
     $: formatted_barchart_data = barchart_data
         .map((d) => {
@@ -61,11 +63,40 @@
         })
         .flat();
 
+    function formatMobile(tick) {
+        return "'" + tick.toString().slice(-2);
+    }
 </script>
 
-<div class="wrapper" bind:clientWidth={width}>
+<div class="wrapper" bind:clientWidth={width} bind:clientHeight={height}>
     <svg {width} {height}>
         <g>
+            <g class="axis x-axis">
+                {#each groups as tick}
+                    <g
+                        class="tick tick-{tick}"
+                        transform="translate({xScale(tick)},{height})"
+                    >
+                        <text y="-2"
+                            >{width > 380 ? tick : formatMobile(tick)}</text
+                        >
+                    </g>
+                {/each}
+            </g>
+            <g class="axis y-axis" transform="translate(0, {margin.top})">
+                {#each yTicks as tick}
+                    <g
+                        class="tick tick-{tick}"
+                        transform="translate(0, {yScale(tick) - margin.bottom})"
+                    >
+                        <line x2="100%" />
+                        <text y="-4"
+                            >{tick} {tick === 8 ? " million sq km" : ""}</text
+                        >
+                    </g>
+                {/each}
+            </g>
+
             {#each formatted_barchart_data as bar}
                 <rect
                     x={bar.x}
@@ -80,6 +111,28 @@
 
 <style>
     .wrapper {
-        width: 100%;
+        height: 90vh;
+    }
+    .tick {
+        font-size: 0.725em;
+        font-weight: 200;
+    }
+
+    .tick line {
+        stroke: #888;
+        stroke-dasharray: 2;
+    }
+
+    .tick text {
+        fill: #888;
+        text-anchor: start;
+    }
+
+    .tick.tick-0 line {
+        stroke-dasharray: 0;
+    }
+
+    .x-axis .tick text {
+        text-anchor: start;
     }
 </style>

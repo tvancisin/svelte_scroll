@@ -513,7 +513,7 @@
 			<div class="col-wide height-full">
 				{#if beeswarm_data}
 					<div class="chart">
-						<Beeswarm {beeswarm_data} />
+						<Beeswarm {beeswarm_data} {just_year_parser}/>
 					</div>
 				{/if}
 			</div>
@@ -594,7 +594,7 @@
 			<div class="col-wide height-full">
 				{#if areachart_data}
 					<div class="chart">
-						<Area {areachart_data} />
+						<Area {areachart_data} {just_year_parser} />
 					</div>
 				{/if}
 			</div>

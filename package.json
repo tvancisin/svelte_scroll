@@ -25,7 +25,7 @@
     "d3-dsv": "latest",
     "debounce": "^1.2.0",
     "gh-pages": "^6.1.1",
-    "mapbox-gl": "1.13.1",
+    "mapbox-gl": "^3.5.2",
     "parse-color": "^1.0.0",
     "rollup": "^2.3.4",
     "rollup-plugin-babel": "^4.3.3",

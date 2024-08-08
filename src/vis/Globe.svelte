@@ -1,6 +1,7 @@
 <script>
     import { onMount, onDestroy, createEventDispatcher } from "svelte";
     import mapboxgl from "mapbox-gl";
+
     // import * as turf from "turf";
 
     // const dispatch = createEventDispatcher();
@@ -11,28 +12,22 @@
 
     onMount(() => {
         console.log("here");
-        
+
         mapboxgl.accessToken =
             "pk.eyJ1Ijoic2FzaGFnYXJpYmFsZHkiLCJhIjoiY2xyajRlczBlMDhqMTJpcXF3dHJhdTVsNyJ9.P_6mX_qbcbxLDS1o_SxpFg";
 
-            // mapdeck(style = mapdeck_style('dark'))
-
         map = new mapboxgl.Map({
             container: map,
-            // style: "mapbox://styles/sashagaribaldy/clxstrxes00qv01pf8dgl4o20",
-            style: `mapbox://styles/mapbox/outdoors-v11`,
+            style: "mapbox://styles/sashagaribaldy/clxstrxes00qv01pf8dgl4o20",
             center: [50.224518, 22.213995],
             zoom: 2.5,
             maxZoom: 5,
         });
         // console.log(map);
 
-        
-        
-
         map.on("load", () => {
             console.log("moooooo");
-            
+
             map.addSource("countries", {
                 type: "geojson",
                 data: mygeojson,
@@ -91,10 +86,8 @@
 
 <style>
     div {
-        position: absolute;
         top: 0;
         bottom: 0;
-        width: 100%;
     }
     #map {
         pointer-events: none;
