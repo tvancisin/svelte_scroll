@@ -19,7 +19,7 @@
 	import Area from "./vis/Area.svelte";
 	import Donut from "./vis/Donut.svelte";
 	import Bars from "./vis/Bars.svelte";
-	import Globe from "./vis/Globe.svelte"
+	import Globe from "./vis/Globe.svelte";
 
 	// DEMO-SPECIFIC IMPORTS
 	import bbox from "@turf/bbox";
@@ -291,8 +291,6 @@
 	getGeo(myjson_path).then((geo) => {
 		mygeojson = geo;
 	});
-	
-	
 
 	//change date format to GMT
 	let parser = d3.timeParse("%Y-%m-%d");
@@ -423,7 +421,7 @@
 
 <!-- <ONSHeader filled={true} center={false} /> -->
 
-<Header bgcolor="black" bgfixed={true} theme="dark" center={true} short={true}>
+<Header bgcolor="black" bgfixed={true} theme="dark" center={true} short={false}>
 	<h1>PeaceRep</h1>
 	<p class="text-big" style="margin-top: 5px">
 		Third-Party Actors in Peace Agreements
@@ -440,7 +438,7 @@
 	</div>
 </Header>
 
-<Filler theme="dark" short={true} wide={true} center={true}>
+<Filler theme="light" short={true} wide={true} center={true}>
 	<p class="text-big">Timeline of Agreements</p>
 </Filler>
 
@@ -513,7 +511,7 @@
 			<div class="col-wide height-full">
 				{#if beeswarm_data}
 					<div class="chart">
-						<Beeswarm {beeswarm_data} {just_year_parser}/>
+						<Beeswarm {beeswarm_data} {just_year_parser} />
 					</div>
 				{/if}
 			</div>
@@ -524,36 +522,36 @@
 		<section data-id="chart01">
 			<div class="col-medium">
 				<p>
-					This chart shows the <strong
-						>area in square kilometres</strong
-					> of each local authority district in the UK. Each circle represents
-					one district. The scale is logarithmic.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart02">
 			<div class="col-medium">
 				<p>
-					The radius of each circle shows the <strong
-						>total population</strong
-					> of the district.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart03">
 			<div class="col-medium">
 				<p>
-					The vertical axis shows the <strong>density</strong> of the district
-					in people per hectare.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart04">
 			<div class="col-medium">
 				<p>
-					The colour of each circle shows the <strong
-						>part of the country</strong
-					> that the district is within.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
@@ -561,11 +559,11 @@
 			<div class="col-medium">
 				<h3>Select a district</h3>
 				<p>
-					Use the selection box below or click on the chart to select
-					a district. The chart will also highlight the other
-					districts in the same part of the country.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
-				{#if geojson}
+				<!-- {#if geojson}
 					<p>
 						<select bind:value={selected}>
 							<option value={null}>Select one</option>
@@ -576,17 +574,24 @@
 							{/each}
 						</select>
 					</p>
-				{/if}
+				{/if} -->
 			</div>
 		</section>
 	</div>
 </Scroller>
 
-<Filler theme="dark" short={true} wide={true} center={true}>
+<Filler theme="light" short={true} wide={true} center={true}>
 	<p class="text-big">
 		Russia and other UN Security Council Permanent Members
 	</p>
 </Filler>
+
+<!-- <Section>
+	<h2>Gridded charts or media</h2>
+	<p>
+		Below is a grid that can contain charts or any other kind of visual media. The grid can fit in a medium, wide or full-width column, and the media width itself can be narrow (min 200px), medium (min 300px), wide (min 500px) or full-width. The grid is responsive, and will re-flow on smaller screens.
+	</p>
+</Section> -->
 
 <Scroller {threshold} bind:id={id["chart"]} splitscreen={true}>
 	<div slot="background">
@@ -605,36 +610,36 @@
 		<section data-id="chart01">
 			<div class="col-medium">
 				<p>
-					This chart shows the <strong
-						>area in square kilometres</strong
-					> of each local authority district in the UK. Each circle represents
-					one district. The scale is logarithmic.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart02">
 			<div class="col-medium">
 				<p>
-					The radius of each circle shows the <strong
-						>total population</strong
-					> of the district.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart03">
 			<div class="col-medium">
 				<p>
-					The vertical axis shows the <strong>density</strong> of the district
-					in people per hectare.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart04">
 			<div class="col-medium">
 				<p>
-					The colour of each circle shows the <strong
-						>part of the country</strong
-					> that the district is within.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
@@ -642,11 +647,11 @@
 			<div class="col-medium">
 				<h3>Select a district</h3>
 				<p>
-					Use the selection box below or click on the chart to select
-					a district. The chart will also highlight the other
-					districts in the same part of the country.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
-				{#if geojson}
+				<!-- {#if geojson}
 					<p>
 						<select bind:value={selected}>
 							<option value={null}>Select one</option>
@@ -657,13 +662,13 @@
 							{/each}
 						</select>
 					</p>
-				{/if}
+				{/if} -->
 			</div>
 		</section>
 	</div>
 </Scroller>
 
-<Filler theme="dark" short={true} wide={true} center={true}>
+<Filler theme="light" short={true} wide={true} center={true}>
 	<p class="text-big">Agreement Stages</p>
 </Filler>
 
@@ -684,36 +689,36 @@
 		<section data-id="chart01">
 			<div class="col-medium">
 				<p>
-					This chart shows the <strong
-						>area in square kilometres</strong
-					> of each local authority district in the UK. Each circle represents
-					one district. The scale is logarithmic.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart02">
 			<div class="col-medium">
 				<p>
-					The radius of each circle shows the <strong
-						>total population</strong
-					> of the district.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart03">
 			<div class="col-medium">
 				<p>
-					The vertical axis shows the <strong>density</strong> of the district
-					in people per hectare.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart04">
 			<div class="col-medium">
 				<p>
-					The colour of each circle shows the <strong
-						>part of the country</strong
-					> that the district is within.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
@@ -721,11 +726,11 @@
 			<div class="col-medium">
 				<h3>Select a district</h3>
 				<p>
-					Use the selection box below or click on the chart to select
-					a district. The chart will also highlight the other
-					districts in the same part of the country.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
-				{#if geojson}
+				<!-- {#if geojson}
 					<p>
 						<select bind:value={selected}>
 							<option value={null}>Select one</option>
@@ -736,13 +741,13 @@
 							{/each}
 						</select>
 					</p>
-				{/if}
+				{/if} -->
 			</div>
 		</section>
 	</div>
 </Scroller>
 
-<Filler theme="dark" short={true} wide={true} center={true}>
+<Filler theme="light" short={true} wide={true} center={true}>
 	<p class="text-big">Comparison of Agreement Stages</p>
 </Filler>
 
@@ -763,36 +768,36 @@
 		<section data-id="chart01">
 			<div class="col-medium">
 				<p>
-					This chart shows the <strong
-						>area in square kilometres</strong
-					> of each local authority district in the UK. Each circle represents
-					one district. The scale is logarithmic.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart02">
 			<div class="col-medium">
 				<p>
-					The radius of each circle shows the <strong
-						>total population</strong
-					> of the district.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart03">
 			<div class="col-medium">
 				<p>
-					The vertical axis shows the <strong>density</strong> of the district
-					in people per hectare.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
 		<section data-id="chart04">
 			<div class="col-medium">
 				<p>
-					The colour of each circle shows the <strong
-						>part of the country</strong
-					> that the district is within.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
 			</div>
 		</section>
@@ -800,11 +805,11 @@
 			<div class="col-medium">
 				<h3>Select a district</h3>
 				<p>
-					Use the selection box below or click on the chart to select
-					a district. The chart will also highlight the other
-					districts in the same part of the country.
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
 				</p>
-				{#if geojson}
+				<!-- {#if geojson}
 					<p>
 						<select bind:value={selected}>
 							<option value={null}>Select one</option>
@@ -815,7 +820,7 @@
 							{/each}
 						</select>
 					</p>
-				{/if}
+				{/if} -->
 			</div>
 		</section>
 	</div>
@@ -859,49 +864,62 @@
 
 <Divider />-->
 
-<Filler theme="dark" short={true} wide={true} center={true}>
+<Filler theme="light" short={true} wide={true} center={true}>
 	<p class="text-big">Geography</p>
 </Filler>
 
 {#if mygeojson}
-<Scroller {threshold} bind:id={id['map']}>
-	<div slot="background">
-		<figure>
-			<div class="col-full height-full">
-				<Globe {mygeojson} />
-			</div>
-		</figure>
-	</div>
+	<Scroller {threshold} bind:id={id["map"]}>
+		<div slot="background">
+			<figure>
+				<div class="col-full height-full">
+					<Globe {mygeojson} />
+				</div>
+			</figure>
+		</div>
 
-	<div slot="foreground">
-		<section data-id="map01">
-			<div class="col-medium">
-				<p>
-					This map shows <strong>population density</strong> by district. Districts are coloured from <Em color={colors.seq[0]}>least dense</Em> to <Em color={colors.seq[4]}>most dense</Em>. You can hover to see the district name and density.
-				</p>
-			</div>
-		</section>
-		<section data-id="map02">
-			<div class="col-medium">
-				<p>
-					The map now shows <strong>median age</strong>, from <Em color={colors.seq[0]}>youngest</Em> to <Em color={colors.seq[4]}>oldest</Em>.
-				</p>
-			</div>
-		</section>
-		<section data-id="map03">
-			<div class="col-medium">
-				{#each [[...data.district.indicators].sort((a, b) => b.age_med - a.age_med)[0]] as district}
+		<div slot="foreground">
+			<section data-id="map01">
+				<div class="col-medium">
+					<p>
+						Russia has most often acted as a third-party signatory
+						in the 1990s. Majority of these agreements relate to the
+						dissolution of the Soviet Union.
+					</p>
+				</div>
+			</section>
+			<section data-id="map02">
+				<div class="col-medium">
+					<p>
+						Russia has most often acted as a third-party signatory
+						in the 1990s. Majority of these agreements relate to the
+						dissolution of the Soviet Union.
+					</p>
+				</div>
+			</section>
+			<section data-id="map03">
+				<div class="col-medium">
+					<p>
+						Russia has most often acted as a third-party signatory
+						in the 1990s. Majority of these agreements relate to the
+						dissolution of the Soviet Union.
+					</p>
+					<!-- {#each [[...data.district.indicators].sort((a, b) => b.age_med - a.age_med)[0]] as district}
 				<p>
 					The map is now zoomed on <Em color={district.age_med_color}>{district.name}</Em>, the district with the oldest median age, {district.age_med} years.
 				</p>
-				{/each}
-			</div>
-		</section>
-		<section data-id="map04">
-			<div class="col-medium">
-				<h3>Select a district</h3>
-				<p>Use the selection box below or click on the map to select and zoom to a district.</p>
-				{#if geojson}
+				{/each} -->
+				</div>
+			</section>
+			<section data-id="map04">
+				<div class="col-medium">
+					<h3>Select a district</h3>
+					<p>
+						Russia has most often acted as a third-party signatory
+						in the 1990s. Majority of these agreements relate to the
+						dissolution of the Soviet Union.
+					</p>
+					<!-- {#if geojson}
 					<p>
 						<select bind:value={selected} on:change={() => fitById(selected)}>
 							<option value={null}>Select one</option>
@@ -912,18 +930,16 @@
 							{/each}
 						</select>
 					</p>
-				{/if}
-			</div>
-		</section>
-	</div>
-</Scroller>
+				{/if} -->
+				</div>
+			</section>
+		</div>
+	</Scroller>
 {/if}
 
 <Section>
 	<h2>Research</h2>
-	<p class="mb">
-		
-	</p>
+	<p class="mb">Read our research on Russia and its approaches to conflict, peace processes and mediation.</p>
 </Section>
 
 <!-- {#if geojson && data.district.indicators}
@@ -1046,21 +1062,21 @@
 	:global(svelte-scroller-foreground section div) {
 		pointer-events: all !important;
 	}
-	select {
+	/* select {
 		max-width: 350px;
-	}
+	} */
 	.chart {
 		margin-top: 45px;
 		width: calc(100% - 5px);
 	}
-	.chart-full {
+	/* .chart-full {
 		margin: 0 20px;
 	}
 	.chart-sml {
 		font-size: 0.85em;
-	}
+	} */
 	/* The properties below make the media DIVs grey, for visual purposes in demo */
-	.media {
+	/* .media {
 		background-color: #f0f0f0;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -1074,5 +1090,5 @@
 		justify-content: center;
 		text-align: center;
 		color: #aaa;
-	}
+	} */
 </style>
