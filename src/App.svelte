@@ -419,22 +419,15 @@
 	// $: console.log(donut_data);
 </script>
 
-<!-- <ONSHeader filled={true} center={false} /> -->
+<ONSHeader filled={true} center={false} />
 
-<Header bgcolor="black" bgfixed={true} theme="dark" center={true} short={false}>
+<Header bgcolor="white" bgfixed={true} theme="light" center={true} short={false}>
 	<h1>PeaceRep</h1>
 	<p class="text-big" style="margin-top: 5px">
 		Third-Party Actors in Peace Agreements
 	</p>
-	<p>
-		<!-- <Toggle
-			label="Animation {animation ? 'on' : 'off'}"
-			mono={true}
-			bind:checked={animation}
-		/> -->
-	</p>
 	<div style="margin-top: 90px;">
-		<Arrow color="white" {animation}>Scroll to begin</Arrow>
+		<Arrow color="black" {animation}>Scroll to begin</Arrow>
 	</div>
 </Header>
 
@@ -1062,21 +1055,21 @@
 	:global(svelte-scroller-foreground section div) {
 		pointer-events: all !important;
 	}
-	/* select {
+	select {
 		max-width: 350px;
-	} */
+	}
 	.chart {
 		margin-top: 45px;
 		width: calc(100% - 5px);
 	}
-	/* .chart-full {
+	.chart-full {
 		margin: 0 20px;
 	}
 	.chart-sml {
 		font-size: 0.85em;
-	} */
+	}
 	/* The properties below make the media DIVs grey, for visual purposes in demo */
-	/* .media {
+	.media {
 		background-color: #f0f0f0;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -1090,5 +1083,5 @@
 		justify-content: center;
 		text-align: center;
 		color: #aaa;
-	} */
+	}
 </style>

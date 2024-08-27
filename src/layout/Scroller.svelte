@@ -117,7 +117,7 @@
 	// IE patch. BG container style (fixed/unfixed) set via function
   function setFixed() {
     if (bgContainer) {
-      let style = `position: ${fixed ? 'fixed' : 'absolute'}; top: 0; transform: translate(0, ${offset_top}px); width: ${width}px; z-index: ${inverted ? 3 : 1};`;
+      let style = `position: ${fixed ? 'fixed' : 'absolute'}; top: 0; transform: translate(0, ${offset_top}px); width: 100%; z-index: ${inverted ? 3 : 1};`;
       bgContainer.style.cssText = style;
     }
   }
@@ -182,7 +182,7 @@
 
 <svelte:window bind:innerHeight={wh}/>
 
-<svelte-scroller-outer bind:this={outer} class:splitscreen>
+<svelte-scroller-outer bind:this={outer} class:splitscreen bind:clientWidth={width}>
 	<svelte-scroller-background-container class='background-container' bind:this={bgContainer}>
 		<svelte-scroller-background bind:this={background}>
 			<slot name="background"></slot>
