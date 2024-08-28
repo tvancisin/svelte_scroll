@@ -865,6 +865,7 @@
 	:global(svelte-scroller-foreground section div) {
 		pointer-events: all !important;
 	}
+	
 	.dot {
 		height: 15px;
 		width: 15px;
