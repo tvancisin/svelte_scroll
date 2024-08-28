@@ -866,6 +866,11 @@
 		pointer-events: all !important;
 	}
 
+	.chart {
+		margin-top: 45px;
+		width: calc(100% - 5px);
+	}
+
 	.dot {
 		height: 15px;
 		width: 15px;
