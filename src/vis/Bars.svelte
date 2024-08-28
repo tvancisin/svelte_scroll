@@ -63,6 +63,14 @@
         })
         .flat();
 
+    function showText (d) {
+        console.log(d);
+        
+    }
+
+    $: console.log(barchart_data);
+    
+
     function formatMobile(tick) {
         return "'" + tick.toString().slice(-2);
     }
@@ -104,6 +112,12 @@
                     width={bar.width}
                     height={bar.height}
                 />
+                <text
+                    x={bar.x + (bar.width/2)} 
+                    y={bar.y - 3}
+                    text-anchor="middle"
+                    font-size="14px"
+                >{Math.round(bar.value)}</text>
             {/each}
         </g>
     </svg>

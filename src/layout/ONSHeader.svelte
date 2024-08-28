@@ -8,7 +8,7 @@
   <div style="width:{width}px" class:center>
 		<a href="https://peacerep.org/">
 			<picture>
-				<img src="./img/PeaceRep_nobg.png" alt="Office for National Statistics">
+				<img src="./img/PeaceRep_nobg.png" alt="PeaceRep Logo">
 			</picture>
 		</a>
   </div>

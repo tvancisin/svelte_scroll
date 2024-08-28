@@ -3,8 +3,9 @@
 
 	export let areachart_data;
 	export let just_year_parser;
-	console.log(areachart_data);
-	
+	export let linechart_data;
+
+	console.log(linechart_data);
 
 	let width = 400,
 		height = 800;
@@ -34,6 +35,24 @@
 	$: path = `M${areachart_data.map((p) => `${xScale(p.date)},${yScale(p.value)}`).join("L")}`;
 	$: area = `${path}L${xScale(maxX)},${yScale(0)}L${xScale(minX)},${yScale(0)}Z`;
 
+	$: points = linechart_data.map((d) => [
+		xScale(d.date),
+		yScale(d.unemployment),
+		d.division,
+	]);
+	$: multiline_groups = d3.rollup(
+		points,
+		(v) => Object.assign(v, { z: v[0][2] }),
+		(d) => d[2],
+	);
+
+	// Define a line generator
+	let line = d3
+		.line()
+		.x((d) => d[0]) // Use the raw x value
+		.y((d) => d[1]) // Use the raw y value
+		.curve(d3.curveCardinal.tension(0.5)); // Smooth curve
+
 	function formatMobile(tick) {
 		return "'" + tick.toString().slice(-2);
 	}
@@ -59,7 +78,9 @@
 			{#each xTicks as tick}
 				<g
 					class="tick tick-{tick}"
-					transform="translate({xScale(just_year_parser(tick))},{height})"
+					transform="translate({xScale(
+						just_year_parser(tick),
+					)},{height})"
 				>
 					<line y1="-{height}" y2="-{margin.bottom}" x1="0" x2="0" />
 					<text y="-2">{width > 380 ? tick : formatMobile(tick)}</text
@@ -71,6 +92,15 @@
 		<!-- data -->
 		<path class="path-area" d={area} />
 		<path class="path-line" d={path} />
+
+		{#each Array.from(multiline_groups) as [key, points]}
+			<path
+				d={line(points)}
+				fill="none"
+				stroke={key === "Russia" ? "steelblue" : "orange"}
+				stroke-width="2"
+			/>
+		{/each}
 	</svg>
 </div>
 

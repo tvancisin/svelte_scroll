@@ -6,19 +6,16 @@
 
     // const dispatch = createEventDispatcher();
     export let mygeojson;
-    console.log(mygeojson);
 
-    let map;
+    export let map;
 
     onMount(() => {
-        console.log("here");
-
         mapboxgl.accessToken =
             "pk.eyJ1Ijoic2FzaGFnYXJpYmFsZHkiLCJhIjoiY2xyajRlczBlMDhqMTJpcXF3dHJhdTVsNyJ9.P_6mX_qbcbxLDS1o_SxpFg";
 
         map = new mapboxgl.Map({
             container: map,
-            style: "mapbox://styles/sashagaribaldy/clxstrxes00qv01pf8dgl4o20",
+            style: "mapbox://styles/sashagaribaldy/cm0az6qe200pf01phd16v6qm0",
             center: [50.224518, 22.213995],
             zoom: 2.5,
             maxZoom: 5,
@@ -26,7 +23,6 @@
         // console.log(map);
 
         map.on("load", () => {
-            console.log("moooooo");
 
             map.addSource("countries", {
                 type: "geojson",

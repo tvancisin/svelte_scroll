@@ -14,6 +14,7 @@
 	import Toggle from "./ui/Toggle.svelte";
 	import Arrow from "./ui/Arrow.svelte";
 	import Em from "./ui/Em.svelte";
+	import Dropdown from "./ui/Dropdown.svelte";
 	import * as d3 from "d3";
 	import Beeswarm from "./vis/Beeswarm.svelte";
 	import Area from "./vis/Area.svelte";
@@ -23,26 +24,9 @@
 
 	// DEMO-SPECIFIC IMPORTS
 	import bbox from "@turf/bbox";
-	import {
-		getData,
-		setColors,
-		getTopo,
-		getGeo,
-		getBreaks,
-		getColor,
-	} from "./utils.js";
-	import { colors, units } from "./config.js";
-	import {
-		ScatterChart,
-		LineChart,
-		BarChart,
-	} from "@onsvisual/svelte-charts";
-	import {
-		Map,
-		MapSource,
-		MapLayer,
-		MapTooltip,
-	} from "@onsvisual/svelte-maps";
+	import { setColors, getGeo } from "./utils.js";
+
+	let selectedCountry = "Russia";
 
 	// CORE CONFIG (COLOUR THEMES)
 	// Set theme globally (options are 'light', 'dark' or 'lightblue')
@@ -132,74 +116,69 @@
 		}
 	}
 
+	$: console.log(selectedCountry);
+
+	let step = null;
+
 	// Actions for Scroller components
 	const actions = {
 		map: {
 			// Actions for <Scroller/> with id="map"
 			map01: () => {
-				// Action for <section/> with data-id="map01"
-				fitBounds(mapbounds.uk);
-				mapKey = "density";
-				mapHighlighted = [];
-				explore = false;
+				// fitBounds(mapbounds.uk);
+				// mapKey = "density";
+				// mapHighlighted = [];
+				// explore = false;
 			},
 			map02: () => {
-				fitBounds(mapbounds.uk);
-				mapKey = "age_med";
-				mapHighlighted = [];
-				explore = false;
-			},
-			map03: () => {
-				let hl = [...data.district.indicators].sort(
-					(a, b) => b.age_med - a.age_med,
-				)[0];
-				fitById(hl.code);
-				mapKey = "age_med";
-				mapHighlighted = [hl.code];
-				explore = false;
-			},
-			map04: () => {
-				fitBounds(mapbounds.uk);
-				mapKey = "age_med";
-				mapHighlighted = [];
-				explore = true;
+				if (selectedCountry == "Russia") {
+					map.flyTo({
+						center: [70, 40],
+						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+					});
+				}
+				if (selectedCountry == "China") {
+					map.flyTo({
+						center: [100, 20],
+						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+					});
+				}
+				// fitBounds(mapbounds.uk);
+				// mapKey = "age_med";
+				// mapHighlighted = [];
+				// explore = false;
 			},
 		},
 		chart: {
 			chart01: () => {
-				xKey = "area";
-				yKey = null;
-				zKey = null;
-				rKey = null;
-				explore = false;
+				step = "one";
 			},
 			chart02: () => {
-				xKey = "area";
-				yKey = null;
-				zKey = null;
-				rKey = "pop";
-				explore = false;
+				step = "two";
 			},
 			chart03: () => {
-				xKey = "area";
-				yKey = "density";
-				zKey = null;
-				rKey = "pop";
-				explore = false;
+				step = "three";
 			},
-			chart04: () => {
-				xKey = "area";
-				yKey = "density";
-				zKey = "parent_name";
-				rKey = "pop";
-				explore = false;
+		},
+		area: {
+			area01: () => {
+				console.log("area");
 			},
-			chart05: () => {
-				xKey = "area";
-				yKey = "density";
-				zKey = null;
-				rKey = "pop";
-				explore = true;
+		},
+		donut: {
+			donut01: () => {
+				console.log("donut");
+			},
+		},
+		bar: {
+			bar01: () => {
+				console.log("bar1");
+			},
+			bar02: () => {
+				console.log("bar2");
+			},
+			bar03: () => {
+				console.log("bar3");
 			},
 		},
 	};
@@ -215,77 +194,10 @@
 			}
 		});
 	}
+
 	$: id && runActions(Object.keys(actions)); // Run above code when 'id' object changes
 
-	// INITIALISATION CODE
-	datasets.forEach((geo) => {
-		getData(`./data/data_${geo}.csv`).then((arr) => {
-			let meta = arr.map((d) => ({
-				code: d.code,
-				name: d.name,
-				parent: d.parent ? d.parent : null,
-			}));
-			let lookup = {};
-			meta.forEach((d) => {
-				lookup[d.code] = d;
-			});
-			metadata[geo].array = meta;
-			metadata[geo].lookup = lookup;
-
-			let indicators = arr.map((d, i) => ({
-				...meta[i],
-				area: d.area,
-				pop: d["2020"],
-				density: d.density,
-				age_med: d.age_med,
-			}));
-
-			if (geo == "district") {
-				["density", "age_med"].forEach((key) => {
-					let values = indicators
-						.map((d) => d[key])
-						.sort((a, b) => a - b);
-					let breaks = getBreaks(values);
-					indicators.forEach(
-						(d, i) =>
-							(indicators[i][key + "_color"] = getColor(
-								d[key],
-								breaks,
-								colors.seq,
-							)),
-					);
-				});
-			}
-			data[geo].indicators = indicators;
-
-			let years = [
-				2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
-				2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,
-			];
-
-			let timeseries = [];
-			arr.forEach((d) => {
-				years.forEach((year) => {
-					timeseries.push({
-						code: d.code,
-						name: d.name,
-						value: d[year],
-						year,
-					});
-				});
-			});
-			data[geo].timeseries = timeseries;
-		});
-	});
-
-	getTopo(topojson, "geog").then((geo) => {
-		geo.features.sort((a, b) =>
-			a.properties.AREANM.localeCompare(b.properties.AREANM),
-		);
-		geojson = geo;
-	});
-	// $: console.log(geojson);
-
+	//LOAD GEOJSON
 	let mygeojson;
 	const myjson_path = "./data/all_countries.json";
 	getGeo(myjson_path).then((geo) => {
@@ -297,7 +209,10 @@
 	let just_year_parser = d3.timeParse("%Y");
 	let russia, china;
 	let beeswarm_data;
+	let russia_beeswarm_data;
+	let china_beeswarm_data;
 	let areachart_data;
+	let linechart_data = [];
 	let donut_data;
 	let barchart_data;
 	let path = [
@@ -319,16 +234,28 @@
 		russia = four_group[0][1];
 		china = four_group[1][1];
 
-		let year_division = d3.groups(
-			bees,
+		let year_division_russia = d3.groups(
+			russia,
 			(d) => d.AgtId,
 			(d) => d.date,
 		);
-		year_division.sort(function (x, y) {
+		year_division_russia.sort(function (x, y) {
 			return d3.ascending(x[1][0][0], y[1][0][0]);
 		});
 
-		beeswarm_data = year_division;
+		let year_division_china = d3.groups(
+			china,
+			(d) => d.AgtId,
+			(d) => d.date,
+		);
+		year_division_china.sort(function (x, y) {
+			return d3.ascending(x[1][0][0], y[1][0][0]);
+		});
+
+		russia_beeswarm_data = year_division_russia;
+		china_beeswarm_data = year_division_china;
+
+		beeswarm_data = russia_beeswarm_data; // final beeswarm data
 
 		//prepare data for area chart
 		let area = data[1];
@@ -352,7 +279,32 @@
 			});
 		});
 
-		areachart_data = all_sorted;
+		areachart_data = all_sorted; // final areachart_data
+
+		//prepare data for linechart
+		const act_group = d3.groups(
+			bees,
+			(d) => d.global_actor,
+			(d) => +d.year,
+			(d) => d.AgtId,
+		);
+		act_group.forEach(function (d) {
+			d[1].sort(function (x, y) {
+				return d3.ascending(x[0], y[0]);
+			});
+		});
+		console.log(act_group);
+
+		act_group.forEach(function (d) {
+			d[1].forEach(function (m) {
+				linechart_data.push({
+					// final linechart data
+					division: d[0],
+					date: just_year_parser(m[0]),
+					unemployment: m[1].length,
+				});
+			});
+		});
 
 		//prepare data for donut chart
 		let donut = d3.groups(
@@ -416,12 +368,27 @@
 
 		barchart_data = fin_comb_chart;
 	});
-	// $: console.log(donut_data);
+
+	function handleCountry(country) {
+		if (country.detail == "Russia") {
+			beeswarm_data = russia_beeswarm_data;
+		} else {
+			beeswarm_data = china_beeswarm_data;
+		}
+	}
 </script>
 
-<ONSHeader filled={true} center={false} />
+<ONSHeader center={false} />
 
-<Header bgcolor="white" bgfixed={true} theme="light" center={true} short={false}>
+<Dropdown on:close={handleCountry} bind:selectedCountry />
+
+<Header
+	bgcolor="white"
+	bgfixed={true}
+	theme="light"
+	center={true}
+	short={false}
+>
 	<h1>PeaceRep</h1>
 	<p class="text-big" style="margin-top: 5px">
 		Third-Party Actors in Peace Agreements
@@ -434,6 +401,196 @@
 <Filler theme="light" short={true} wide={true} center={true}>
 	<p class="text-big">Timeline of Agreements</p>
 </Filler>
+
+<Scroller {threshold} bind:id={id["chart"]} splitscreen={true}>
+	<div slot="background">
+		<figure>
+			<div class="col-wide height-full">
+				{#if beeswarm_data}
+					<div class="chart">
+						<Beeswarm {beeswarm_data} {just_year_parser} {step} />
+					</div>
+				{/if}
+			</div>
+		</figure>
+	</div>
+
+	<div slot="foreground">
+		<section data-id="chart01">
+			<div class="col-medium">
+				{#if selectedCountry === "Russia"}
+					<p>
+						Russia is the second most prolific international
+						third-party signatory of peace agreements between
+						1990-2022. It follows the United Nations, and comes
+						ahead of the United States, the African Union, and the
+						European Union.
+					</p>
+					<div id="legend">
+						<span class="dot"></span>
+						<span id="leg_p"
+							>Individual peace agreements signed by Russia (hover
+							over for more detail)</span
+						>
+					</div>
+				{:else if selectedCountry === "China"}
+					<p>
+						China is not the most prolific third-party signatory of
+						peace agreements since 1990, ranking 15th of all actors,
+						who have acted as third-party signatories. In terms of
+						frequency, this puts it alongside actors such as Egypt,
+						Kenya, and Nigeria.<br /><br /><span class="dot"></span>
+					</p>
+					<p id="leg_p">
+						Individual peace agreements signed by China (hover over
+						for more detail)
+					</p>
+				{:else}
+					<p>
+						Default text for other countries or when no specific
+						country is selected.<br /><br />
+						<span class="dot"></span>
+						<span id="leg_p"
+							>General information (hover over for more detail)</span
+						>
+					</p>
+				{/if}
+			</div>
+		</section>
+		<section data-id="chart02">
+			<div class="col-medium">
+				<p>
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
+				</p>
+			</div>
+		</section>
+		<section data-id="chart03">
+			<div class="col-medium">
+				<p>
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
+				</p>
+			</div>
+		</section>
+	</div>
+</Scroller>
+
+<Filler theme="light" short={true} wide={true} center={true}>
+	<p class="text-big">
+		Russia and other UN Security Council Permanent Members
+	</p>
+</Filler>
+
+<Scroller {threshold} bind:id={id["area"]} splitscreen={true}>
+	<div slot="background">
+		<figure>
+			<div class="col-wide height-full">
+				{#if areachart_data && linechart_data}
+					<div class="chart">
+						<Area
+							{areachart_data}
+							{just_year_parser}
+							{linechart_data}
+						/>
+					</div>
+				{/if}
+			</div>
+		</figure>
+	</div>
+
+	<div slot="foreground">
+		<section data-id="area01">
+			<div class="col-medium">
+				<p>
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
+				</p>
+			</div>
+		</section>
+	</div>
+</Scroller>
+
+<Filler theme="light" short={true} wide={true} center={true}>
+	<p class="text-big">Agreement Stages</p>
+</Filler>
+
+<Scroller {threshold} bind:id={id["donut"]} splitscreen={true}>
+	<div slot="background">
+		<figure>
+			<div class="col-wide height-full">
+				{#if donut_data}
+					<div class="chart">
+						<Donut {donut_data} />
+					</div>
+				{/if}
+			</div>
+		</figure>
+	</div>
+
+	<div slot="foreground">
+		<section data-id="donut01">
+			<div class="col-medium">
+				<p>
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
+				</p>
+			</div>
+		</section>
+	</div>
+</Scroller>
+
+<Filler theme="light" short={true} wide={true} center={true}>
+	<p class="text-big">Comparison of Agreement Stages</p>
+</Filler>
+
+<Scroller {threshold} bind:id={id["bar"]} splitscreen={true}>
+	<div slot="background">
+		<figure>
+			<div class="col-wide height-full">
+				{#if barchart_data}
+					<div class="chart">
+						<Bars {barchart_data} />
+					</div>
+				{/if}
+			</div>
+		</figure>
+	</div>
+
+	<div slot="foreground">
+		<section data-id="bar01">
+			<div class="col-medium">
+				<p>
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
+				</p>
+			</div>
+		</section>
+		<section data-id="bar02">
+			<div class="col-medium">
+				<p>
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
+				</p>
+			</div>
+		</section>
+		<section data-id="bar03">
+			<div class="col-medium">
+				<p>
+					Russia has most often acted as a third-party signatory in
+					the 1990s. Majority of these agreements relate to the
+					dissolution of the Soviet Union.
+				</p>
+			</div>
+		</section>
+	</div>
+</Scroller>
 
 <!-- <Section>
 	<h2>This is a section title</h2>
@@ -498,326 +655,12 @@
 </Media>
 {/if} -->
 
-<Scroller {threshold} bind:id={id["chart"]} splitscreen={true}>
-	<div slot="background">
-		<figure>
-			<div class="col-wide height-full">
-				{#if beeswarm_data}
-					<div class="chart">
-						<Beeswarm {beeswarm_data} {just_year_parser} />
-					</div>
-				{/if}
-			</div>
-		</figure>
-	</div>
-
-	<div slot="foreground">
-		<section data-id="chart01">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart02">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart03">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart04">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart05">
-			<div class="col-medium">
-				<h3>Select a district</h3>
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-				<!-- {#if geojson}
-					<p>
-						<select bind:value={selected}>
-							<option value={null}>Select one</option>
-							{#each geojson.features as place}
-								<option value={place.properties.AREACD}>
-									{place.properties.AREANM}
-								</option>
-							{/each}
-						</select>
-					</p>
-				{/if} -->
-			</div>
-		</section>
-	</div>
-</Scroller>
-
-<Filler theme="light" short={true} wide={true} center={true}>
-	<p class="text-big">
-		Russia and other UN Security Council Permanent Members
-	</p>
-</Filler>
-
 <!-- <Section>
 	<h2>Gridded charts or media</h2>
 	<p>
 		Below is a grid that can contain charts or any other kind of visual media. The grid can fit in a medium, wide or full-width column, and the media width itself can be narrow (min 200px), medium (min 300px), wide (min 500px) or full-width. The grid is responsive, and will re-flow on smaller screens.
 	</p>
 </Section> -->
-
-<Scroller {threshold} bind:id={id["chart"]} splitscreen={true}>
-	<div slot="background">
-		<figure>
-			<div class="col-wide height-full">
-				{#if areachart_data}
-					<div class="chart">
-						<Area {areachart_data} {just_year_parser} />
-					</div>
-				{/if}
-			</div>
-		</figure>
-	</div>
-
-	<div slot="foreground">
-		<section data-id="chart01">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart02">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart03">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart04">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart05">
-			<div class="col-medium">
-				<h3>Select a district</h3>
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-				<!-- {#if geojson}
-					<p>
-						<select bind:value={selected}>
-							<option value={null}>Select one</option>
-							{#each geojson.features as place}
-								<option value={place.properties.AREACD}>
-									{place.properties.AREANM}
-								</option>
-							{/each}
-						</select>
-					</p>
-				{/if} -->
-			</div>
-		</section>
-	</div>
-</Scroller>
-
-<Filler theme="light" short={true} wide={true} center={true}>
-	<p class="text-big">Agreement Stages</p>
-</Filler>
-
-<Scroller {threshold} bind:id={id["chart"]} splitscreen={true}>
-	<div slot="background">
-		<figure>
-			<div class="col-wide height-full">
-				{#if donut_data}
-					<div class="chart">
-						<Donut {donut_data} />
-					</div>
-				{/if}
-			</div>
-		</figure>
-	</div>
-
-	<div slot="foreground">
-		<section data-id="chart01">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart02">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart03">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart04">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart05">
-			<div class="col-medium">
-				<h3>Select a district</h3>
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-				<!-- {#if geojson}
-					<p>
-						<select bind:value={selected}>
-							<option value={null}>Select one</option>
-							{#each geojson.features as place}
-								<option value={place.properties.AREACD}>
-									{place.properties.AREANM}
-								</option>
-							{/each}
-						</select>
-					</p>
-				{/if} -->
-			</div>
-		</section>
-	</div>
-</Scroller>
-
-<Filler theme="light" short={true} wide={true} center={true}>
-	<p class="text-big">Comparison of Agreement Stages</p>
-</Filler>
-
-<Scroller {threshold} bind:id={id["chart"]} splitscreen={true}>
-	<div slot="background">
-		<figure>
-			<div class="col-wide height-full">
-				{#if barchart_data}
-					<div class="chart">
-						<Bars {barchart_data} />
-					</div>
-				{/if}
-			</div>
-		</figure>
-	</div>
-
-	<div slot="foreground">
-		<section data-id="chart01">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart02">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart03">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart04">
-			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-			</div>
-		</section>
-		<section data-id="chart05">
-			<div class="col-medium">
-				<h3>Select a district</h3>
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
-				<!-- {#if geojson}
-					<p>
-						<select bind:value={selected}>
-							<option value={null}>Select one</option>
-							{#each geojson.features as place}
-								<option value={place.properties.AREACD}>
-									{place.properties.AREANM}
-								</option>
-							{/each}
-						</select>
-					</p>
-				{/if} -->
-			</div>
-		</section>
-	</div>
-</Scroller>
 
 <!-- <Divider />
 
@@ -866,7 +709,7 @@
 		<div slot="background">
 			<figure>
 				<div class="col-full height-full">
-					<Globe {mygeojson} />
+					<Globe {mygeojson} bind:map />
 				</div>
 			</figure>
 		</div>
@@ -890,49 +733,16 @@
 					</p>
 				</div>
 			</section>
-			<section data-id="map03">
-				<div class="col-medium">
-					<p>
-						Russia has most often acted as a third-party signatory
-						in the 1990s. Majority of these agreements relate to the
-						dissolution of the Soviet Union.
-					</p>
-					<!-- {#each [[...data.district.indicators].sort((a, b) => b.age_med - a.age_med)[0]] as district}
-				<p>
-					The map is now zoomed on <Em color={district.age_med_color}>{district.name}</Em>, the district with the oldest median age, {district.age_med} years.
-				</p>
-				{/each} -->
-				</div>
-			</section>
-			<section data-id="map04">
-				<div class="col-medium">
-					<h3>Select a district</h3>
-					<p>
-						Russia has most often acted as a third-party signatory
-						in the 1990s. Majority of these agreements relate to the
-						dissolution of the Soviet Union.
-					</p>
-					<!-- {#if geojson}
-					<p>
-						<select bind:value={selected} on:change={() => fitById(selected)}>
-							<option value={null}>Select one</option>
-							{#each geojson.features as place}
-								<option value={place.properties.AREACD}>
-									{place.properties.AREANM}
-								</option>
-							{/each}
-						</select>
-					</p>
-				{/if} -->
-				</div>
-			</section>
 		</div>
 	</Scroller>
 {/if}
 
 <Section>
 	<h2>Research</h2>
-	<p class="mb">Read our research on Russia and its approaches to conflict, peace processes and mediation.</p>
+	<p class="mb">
+		Read our research on Russia and its approaches to conflict, peace
+		processes and mediation.
+	</p>
 </Section>
 
 <!-- {#if geojson && data.district.indicators}
@@ -1055,21 +865,47 @@
 	:global(svelte-scroller-foreground section div) {
 		pointer-events: all !important;
 	}
-	select {
+	.dot {
+		height: 15px;
+		width: 15px;
+		background-color: black;
+		border-radius: 50%;
+		display: inline-block; /* Ensures the dot stays inline with the text */
+		margin-right: 8px; /* Adjust the space between the dot and the text */
+		vertical-align: middle; /* Vertically aligns the dot with the middle of the text */
+	}
+
+	#legend {
+		display: flex; /* Align items horizontally */
+		align-items: center; /* Vertically center the dot and text */
+	}
+
+	.dot {
+		height: 15px;
+		width: 15px;
+		background-color: black;
+		border-radius: 50%; /* Ensures the element is a perfect circle */
+		display: inline-block;
+		margin-right: 8px; /* Space between the dot and the text */
+		flex-shrink: 0; /* Prevents the dot from shrinking in a flex container */
+	}
+
+	#leg_p {
+		font-size: 14px;
+		line-height: 1.5;
+		margin: 0;
+	}
+	/* select {
 		max-width: 350px;
-	}
-	.chart {
-		margin-top: 45px;
-		width: calc(100% - 5px);
-	}
-	.chart-full {
+	} */
+	/* .chart-full {
 		margin: 0 20px;
 	}
 	.chart-sml {
 		font-size: 0.85em;
-	}
+	} */
 	/* The properties below make the media DIVs grey, for visual purposes in demo */
-	.media {
+	/* .media {
 		background-color: #f0f0f0;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -1083,5 +919,5 @@
 		justify-content: center;
 		text-align: center;
 		color: #aaa;
-	}
+	} */
 </style>
