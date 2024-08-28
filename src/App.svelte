@@ -865,7 +865,7 @@
 	:global(svelte-scroller-foreground section div) {
 		pointer-events: all !important;
 	}
-
+	
 	.dot {
 		height: 15px;
 		width: 15px;
@@ -879,7 +879,6 @@
 	#legend {
 		display: flex; /* Align items horizontally */
 		align-items: center; /* Vertically center the dot and text */
-		padding-left: 0px;
 	}
 
 	.dot {
