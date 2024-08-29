@@ -26,6 +26,9 @@
 	import bbox from "@turf/bbox";
 	import { setColors, getGeo } from "./utils.js";
 
+	let width, height;
+	let mapLoaded = false;
+
 	let selectedCountry = "Russia";
 
 	// CORE CONFIG (COLOUR THEMES)
@@ -422,11 +425,43 @@
 			barchart_data = china_barchart_data;
 		}
 	}
+
+	//clicking on screen or button after map is loaded
+	function handleMapLoaded() {
+		mapLoaded = true;
+		document.getElementById("loading_text").style.visibility = "hidden";
+		document.getElementById("loading_button").style.visibility = "visible";
+	}
+
+	function handleScreenClick(event) {
+		// Recalculate width and height
+		width = window.innerWidth;
+		height = window.innerHeight;
+
+		if (mapLoaded) {
+			document.getElementById("loading_screen").remove();
+			document.body.style.overflow = "visible";
+		}
+	}
 </script>
 
 <ONSHeader center={false} />
 
 <Dropdown on:close={handleCountry} bind:selectedCountry />
+
+<div
+	bind:clientWidth={width}
+	bind:clientHeight={height}
+	role="presentation"
+	id="loading_screen"
+	style="height: calc(var(--vh, 1vh) * 100);"
+	on:click={handleScreenClick}
+>
+	<button id="loading_button" on:click={handleScreenClick}
+		>Visualization</button
+	>
+	<p id="loading_text">loading...</p>
+</div>
 
 <Header
 	bgcolor="white"
@@ -990,7 +1025,11 @@
 		<div slot="background">
 			<figure>
 				<div class="col-full height-full">
-					<Globe {mygeojson} bind:map />
+					<Globe
+						{mygeojson}
+						bind:map
+						on:mapLoaded={handleMapLoaded}
+					/>
 				</div>
 			</figure>
 		</div>
@@ -1139,6 +1178,44 @@
 <ONSFooter /> -->
 
 <style>
+	#loading_screen {
+		position: absolute;
+		background-color: #ffffff;
+		z-index: 13;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		/* align-items: center; */
+	}
+
+	#loading_text {
+		position: absolute;
+		top: 40%;
+		color: black;
+	}
+
+	#loading_button {
+		position: absolute;
+		top: 40%;
+		font-family: "Montserrat";
+		background-color: #ffffff;
+		color: black;
+		border: 1px solid gray;
+		border-radius: 2px;
+		padding: 10px 15px;
+		font-size: 16px;
+		cursor: pointer;
+		transition:
+			background-color 0.3s ease,
+			color 0.3s ease;
+		visibility: hidden;
+	}
+
+	#loading_button:hover {
+		background-color: steelblue;
+		color: black;
+	}
 	/* Styles specific to elements within the demo */
 	:global(svelte-scroller-foreground) {
 		pointer-events: none !important;

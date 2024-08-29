@@ -2,9 +2,7 @@
     import { onMount, onDestroy, createEventDispatcher } from "svelte";
     import mapboxgl from "mapbox-gl";
 
-    // import * as turf from "turf";
-
-    // const dispatch = createEventDispatcher();
+    const dispatch = createEventDispatcher();
     export let mygeojson;
 
     export let map;
@@ -23,7 +21,6 @@
         // console.log(map);
 
         map.on("load", () => {
-
             map.addSource("countries", {
                 type: "geojson",
                 data: mygeojson,
@@ -75,6 +72,8 @@
                 },
             });
         });
+
+        dispatch("mapLoaded");
     });
 </script>
 
