@@ -2,9 +2,58 @@
     import * as d3 from "d3";
 
     export let donut_data;
+    export let selectedCountry;
+
+    // Define the desired order
+    let desiredOrder = [
+        "Pre-negotiation",
+        "Ceasefire",
+        "Framework-substantive, partial",
+        "Framework-substantive, comprehensive",
+        "Implementation",
+    ];
+
+    $: if (selectedCountry == "China") {
+        // Sort the array based on the desired order
+        donut_data.sort((a, b) => {
+            return desiredOrder.indexOf(a[0]) - desiredOrder.indexOf(b[0]);
+        });
+    }
 
     let width = 400,
         height = 800;
+
+    const russia_color = d3
+        .scaleOrdinal()
+        .domain([
+            "Pre-negotiation",
+            "Ceasefire",
+            "Framework-substantive, partial",
+            "Framework-substantive, comprehensive",
+            "Renewal",
+            "Implementation",
+            "Other",
+        ])
+        .range([
+            "#016099",
+            "#df1f36",
+            "#fd8189",
+            "#fdd900",
+            "#7b8ad6",
+            "#3aae2a",
+            "#c0de88",
+        ]);
+
+    const china_color = d3
+        .scaleOrdinal()
+        .domain([
+            "Pre-negotiation",
+            "Ceasefire",
+            "Framework-substantive, partial",
+            "Framework-substantive, comprehensive",
+            "Implementation",
+        ])
+        .range(["#016099", "#df1f36", "#fd8189", "#fdd900", "#3aae2a"]);
 
     const margin = {
         top: 10,
@@ -24,13 +73,14 @@
         .sort(null) // Do not sort group by size
         .value((d) => d[1][1].length);
 
-    const data_ready = pie(Object.entries(donut_data));
+    $: data_ready = pie(Object.entries(donut_data));
 
     // The arc generator
     $: arc = d3
         .arc()
         .innerRadius(radius * 0.5) // This is the size of the donut hole
-        .outerRadius(radius * 0.8);
+        .outerRadius(radius * 0.8)
+        .cornerRadius(4);
 
     // Another arc that won't be drawn. Just for labels positioning
     $: outerArc = d3
@@ -54,14 +104,21 @@
         pos[1] -= 10;
         return `translate(${pos})`;
     };
-
 </script>
 
 <div class="wrapper" bind:clientWidth={width} bind:clientHeight={height}>
     <svg {width} {height}>
         <g transform="translate({width / 2} {height / 2})">
             {#each data_ready as slice}
-                <path d={arc(slice)} stroke="white" />
+                <path
+                    d={arc(slice)}
+                    stroke="white"
+                    fill={selectedCountry === "Russia"
+                        ? russia_color(slice.data[1])
+                        : selectedCountry === "China"
+                          ? china_color(slice.data[1])
+                          : undefined}
+                />
             {/each}
             {#each data_ready as line}
                 <polyline
@@ -74,14 +131,17 @@
             {#each data_ready as d}
                 <text
                     fill="black"
-                    font-size="12px"
+                    font-size="14px"
                     transform={calcText(d)}
-                    text-anchor="middle">
-                    {d.data[1][0] === "Framework-substantive, partial" ? "Partial"
-                    : d.data[1][0] === "Framework-substantive, comprehensive" ? "Comprehensive"
-                    : d.data[1][0]}
-                    </text
+                    text-anchor="middle"
                 >
+                    {d.data[1][0] === "Framework-substantive, partial"
+                        ? "Partial"
+                        : d.data[1][0] ===
+                            "Framework-substantive, comprehensive"
+                          ? "Comprehensive"
+                          : d.data[1][0]}
+                </text>
             {/each}
         </g>
     </svg>

@@ -25540,17 +25540,17 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[28] = list[i];
+    	child_ctx[30] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[31] = list[i];
+    	child_ctx[33] = list[i];
     	return child_ctx;
     }
 
-    // (152:16) {#each xTicks as tick}
+    // (213:16) {#each xTicks as tick}
     function create_each_block_1(ctx) {
     	let g;
     	let line;
@@ -25559,8 +25559,8 @@ var app = (function () {
     	let text_1;
 
     	let t_value = (/*width*/ ctx[1] > 380
-    	? /*tick*/ ctx[31]
-    	: formatMobile(/*tick*/ ctx[31])) + "";
+    	? /*tick*/ ctx[33]
+    	: formatMobile(/*tick*/ ctx[33])) + "";
 
     	let t;
     	let g_class_value;
@@ -25577,13 +25577,13 @@ var app = (function () {
     			attr_dev(line, "x1", "0");
     			attr_dev(line, "x2", "0");
     			attr_dev(line, "class", "svelte-1b7u33c");
-    			add_location(line, file$c, 158, 24, 4656);
+    			add_location(line, file$c, 219, 24, 7095);
     			attr_dev(text_1, "y", "-2");
     			attr_dev(text_1, "class", "svelte-1b7u33c");
-    			add_location(text_1, file$c, 164, 24, 4882);
-    			attr_dev(g, "class", g_class_value = "tick tick-" + /*tick*/ ctx[31] + " svelte-1b7u33c");
-    			attr_dev(g, "transform", g_transform_value = "translate(" + /*xScale*/ ctx[5](/*just_year_parser*/ ctx[0](/*tick*/ ctx[31])) + "," + /*height*/ ctx[2] + ")");
-    			add_location(g, file$c, 152, 20, 4408);
+    			add_location(text_1, file$c, 225, 24, 7321);
+    			attr_dev(g, "class", g_class_value = "tick tick-" + /*tick*/ ctx[33] + " svelte-1b7u33c");
+    			attr_dev(g, "transform", g_transform_value = "translate(" + /*xScale*/ ctx[5](/*just_year_parser*/ ctx[0](/*tick*/ ctx[33])) + "," + /*height*/ ctx[2] + ")");
+    			add_location(g, file$c, 213, 20, 6847);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, g, anchor);
@@ -25597,10 +25597,10 @@ var app = (function () {
     			}
 
     			if (dirty[0] & /*width*/ 2 && t_value !== (t_value = (/*width*/ ctx[1] > 380
-    			? /*tick*/ ctx[31]
-    			: formatMobile(/*tick*/ ctx[31])) + "")) set_data_dev(t, t_value);
+    			? /*tick*/ ctx[33]
+    			: formatMobile(/*tick*/ ctx[33])) + "")) set_data_dev(t, t_value);
 
-    			if (dirty[0] & /*xScale, just_year_parser, height*/ 37 && g_transform_value !== (g_transform_value = "translate(" + /*xScale*/ ctx[5](/*just_year_parser*/ ctx[0](/*tick*/ ctx[31])) + "," + /*height*/ ctx[2] + ")")) {
+    			if (dirty[0] & /*xScale, just_year_parser, height*/ 37 && g_transform_value !== (g_transform_value = "translate(" + /*xScale*/ ctx[5](/*just_year_parser*/ ctx[0](/*tick*/ ctx[33])) + "," + /*height*/ ctx[2] + ")")) {
     				attr_dev(g, "transform", g_transform_value);
     			}
     		},
@@ -25613,14 +25613,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(152:16) {#each xTicks as tick}",
+    		source: "(213:16) {#each xTicks as tick}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (170:16) {#each simulation.nodes() as node}
+    // (231:16) {#each simulation.nodes() as node}
     function create_each_block(ctx) {
     	let circle;
     	let circle_cx_value;
@@ -25630,30 +25630,30 @@ var app = (function () {
     	let dispose;
 
     	function mouseover_handler(...args) {
-    		return /*mouseover_handler*/ ctx[20](/*node*/ ctx[28], ...args);
+    		return /*mouseover_handler*/ ctx[21](/*node*/ ctx[30], ...args);
     	}
 
     	function mouseout_handler(...args) {
-    		return /*mouseout_handler*/ ctx[21](/*node*/ ctx[28], ...args);
+    		return /*mouseout_handler*/ ctx[22](/*node*/ ctx[30], ...args);
     	}
 
     	function focus_handler(...args) {
-    		return /*focus_handler*/ ctx[22](/*node*/ ctx[28], ...args);
+    		return /*focus_handler*/ ctx[23](/*node*/ ctx[30], ...args);
     	}
 
     	function blur_handler(...args) {
-    		return /*blur_handler*/ ctx[23](/*node*/ ctx[28], ...args);
+    		return /*blur_handler*/ ctx[24](/*node*/ ctx[30], ...args);
     	}
 
     	const block = {
     		c: function create() {
     			circle = svg_element("circle");
-    			attr_dev(circle, "cx", circle_cx_value = /*node*/ ctx[28].x);
-    			attr_dev(circle, "cy", circle_cy_value = /*node*/ ctx[28].y);
+    			attr_dev(circle, "cx", circle_cx_value = /*node*/ ctx[30].x);
+    			attr_dev(circle, "cy", circle_cy_value = /*node*/ ctx[30].y);
     			attr_dev(circle, "r", /*radius*/ ctx[4]);
     			attr_dev(circle, "fill", "black");
-    			attr_dev(circle, "class", circle_class_value = "" + (null_to_empty(/*assignClass*/ ctx[14](/*node*/ ctx[28][1][0][1][0])) + " svelte-1b7u33c"));
-    			add_location(circle, file$c, 170, 20, 5124);
+    			attr_dev(circle, "class", circle_class_value = "" + (null_to_empty(/*assignClass*/ ctx[14](/*node*/ ctx[30])) + " svelte-1b7u33c"));
+    			add_location(circle, file$c, 231, 20, 7563);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, circle, anchor);
@@ -25672,11 +25672,11 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty[0] & /*simulation*/ 8 && circle_cx_value !== (circle_cx_value = /*node*/ ctx[28].x)) {
+    			if (dirty[0] & /*simulation*/ 8 && circle_cx_value !== (circle_cx_value = /*node*/ ctx[30].x)) {
     				attr_dev(circle, "cx", circle_cx_value);
     			}
 
-    			if (dirty[0] & /*simulation*/ 8 && circle_cy_value !== (circle_cy_value = /*node*/ ctx[28].y)) {
+    			if (dirty[0] & /*simulation*/ 8 && circle_cy_value !== (circle_cy_value = /*node*/ ctx[30].y)) {
     				attr_dev(circle, "cy", circle_cy_value);
     			}
 
@@ -25684,7 +25684,7 @@ var app = (function () {
     				attr_dev(circle, "r", /*radius*/ ctx[4]);
     			}
 
-    			if (dirty[0] & /*simulation*/ 8 && circle_class_value !== (circle_class_value = "" + (null_to_empty(/*assignClass*/ ctx[14](/*node*/ ctx[28][1][0][1][0])) + " svelte-1b7u33c"))) {
+    			if (dirty[0] & /*simulation*/ 8 && circle_class_value !== (circle_class_value = "" + (null_to_empty(/*assignClass*/ ctx[14](/*node*/ ctx[30])) + " svelte-1b7u33c"))) {
     				attr_dev(circle, "class", circle_class_value);
     			}
     		},
@@ -25699,14 +25699,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(170:16) {#each simulation.nodes() as node}",
+    		source: "(231:16) {#each simulation.nodes() as node}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (188:4) {#if tooltipVisible}
+    // (249:4) {#if tooltipVisible}
     function create_if_block$4(ctx) {
     	let div;
     	let t;
@@ -25718,7 +25718,7 @@ var app = (function () {
     			attr_dev(div, "class", "tooltip svelte-1b7u33c");
     			set_style(div, "left", /*tooltipX*/ ctx[8] + "px");
     			set_style(div, "top", /*tooltipY*/ ctx[9] + "px");
-    			add_location(div, file$c, 188, 8, 5807);
+    			add_location(div, file$c, 249, 8, 8234);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -25744,7 +25744,7 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(188:4) {#if tooltipVisible}",
+    		source: "(249:4) {#if tooltipVisible}",
     		ctx
     	});
 
@@ -25798,16 +25798,16 @@ var app = (function () {
     			t = space();
     			if (if_block) if_block.c();
     			attr_dev(g0, "class", "axis x-axis svelte-1b7u33c");
-    			add_location(g0, file$c, 150, 12, 4323);
+    			add_location(g0, file$c, 211, 12, 6762);
     			attr_dev(g1, "class", "inner_chart");
     			attr_dev(g1, "transform", g1_transform_value = "translate(" + /*margin*/ ctx[11].left + ", " + 0 + ")");
-    			add_location(g1, file$c, 149, 8, 4244);
+    			add_location(g1, file$c, 210, 8, 6683);
     			attr_dev(svg, "width", /*width*/ ctx[1]);
     			attr_dev(svg, "height", /*height*/ ctx[2]);
-    			add_location(svg, file$c, 148, 4, 4212);
+    			add_location(svg, file$c, 209, 4, 6651);
     			attr_dev(div, "class", "wrapper svelte-1b7u33c");
-    			add_render_callback(() => /*div_elementresize_handler*/ ctx[24].call(div));
-    			add_location(div, file$c, 147, 0, 4133);
+    			add_render_callback(() => /*div_elementresize_handler*/ ctx[25].call(div));
+    			add_location(div, file$c, 208, 0, 6572);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -25834,7 +25834,7 @@ var app = (function () {
 
     			append_dev(div, t);
     			if (if_block) if_block.m(div, null);
-    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[24].bind(div));
+    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[25].bind(div));
     		},
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*xTicks, xScale, just_year_parser, height, width, margin*/ 3111) {
@@ -25950,6 +25950,7 @@ var app = (function () {
     	let { beeswarm_data } = $$props;
     	let { just_year_parser } = $$props;
     	let { step } = $$props;
+    	let { selectedCountry } = $$props;
 
     	const soviet = [
     		"Armenia",
@@ -25970,6 +25971,15 @@ var app = (function () {
     	];
 
     	const syria = ["Syria", "Libya", "Central African Republic"];
+
+    	let china_highlight = [
+    		"Text of Joint Statement (29/09/2005)",
+    		"Agreement on the Resolution of the Conflict in the Republic of South Sudan (ARCSS) (17/08/2015)",
+    		"Agreement on the Cessation of Hostilities, Protection of Civilians and Humanitarian Access, Republic of South Sudan (21/12/2017)",
+    		"Joint Trilateral Statement by the People’s Republic of China, the Kingdom of Saudi Arabia, and the Islamic Republic of Iran (10/03/2023)",
+    		"The Nationwide Ceasefire Agreement (NCA) between The Government of the Republic of the Union of Myanmar and the Ethnic Armed Organizations (EAO) (15/10/2015)"
+    	];
+
     	const xTicks = [1995, 2000, 2005, 2010, 2015, 2020];
     	let width = 400, height = 400;
     	const margin = { top: 10, right: 10, bottom: 10, left: 10 };
@@ -26002,9 +26012,29 @@ var app = (function () {
     	}
 
     	function assignClass(d) {
-    		let soviet_included = soviet.some(country => d.Con.includes(country));
-    		let syria_included = syria.some(country => d.Con.includes(country));
+    		let individual_info = d[1][0][1][0];
+    		let soviet_included = soviet.some(country => individual_info.Con.includes(country));
+    		let syria_included = syria.some(country => individual_info.Con.includes(country));
+    		let all_actors = [];
+
+    		d[1][0][1].forEach(function (x) {
+    			all_actors.push(x.actor_name);
+    		});
+
+    		let specifiedCountries = ["Russia", "France", "United Kingdom", "United States", "China"];
+    		let containsUnitedNations = all_actors.includes("United Nations");
+    		let containsEurope = all_actors.includes("Conference on Security and Cooperation in Europe");
+    		let containsAllSpecifiedCountries = specifiedCountries.every(country => all_actors.includes(country));
     		let classes = [];
+
+    		//Add china classes
+    		if (!china_highlight.includes(d[1][0][1][0].agt_dat)) {
+    			if (containsUnitedNations || containsAllSpecifiedCountries || containsEurope || d[1][0][1][0].AgtId == 2433) {
+    				classes.push("china_high un_p5");
+    			} else {
+    				classes.push("china_high");
+    			}
+    		}
 
     		// Add "soviet" to the array if the condition is met
     		if (soviet_included) {
@@ -26032,9 +26062,13 @@ var app = (function () {
     		if (step === undefined && !('step' in $$props || $$self.$$.bound[$$self.$$.props['step']])) {
     			console.warn("<Beeswarm> was created without expected prop 'step'");
     		}
+
+    		if (selectedCountry === undefined && !('selectedCountry' in $$props || $$self.$$.bound[$$self.$$.props['selectedCountry']])) {
+    			console.warn("<Beeswarm> was created without expected prop 'selectedCountry'");
+    		}
     	});
 
-    	const writable_props = ['beeswarm_data', 'just_year_parser', 'step'];
+    	const writable_props = ['beeswarm_data', 'just_year_parser', 'step', 'selectedCountry'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Beeswarm> was created with unknown prop '${key}'`);
@@ -26056,6 +26090,7 @@ var app = (function () {
     		if ('beeswarm_data' in $$props) $$invalidate(15, beeswarm_data = $$props.beeswarm_data);
     		if ('just_year_parser' in $$props) $$invalidate(0, just_year_parser = $$props.just_year_parser);
     		if ('step' in $$props) $$invalidate(16, step = $$props.step);
+    		if ('selectedCountry' in $$props) $$invalidate(17, selectedCountry = $$props.selectedCountry);
     	};
 
     	$$self.$capture_state = () => ({
@@ -26063,9 +26098,11 @@ var app = (function () {
     		beeswarm_data,
     		just_year_parser,
     		step,
+    		selectedCountry,
     		fillBlack,
     		soviet,
     		syria,
+    		china_highlight,
     		xTicks,
     		width,
     		height,
@@ -26091,6 +26128,8 @@ var app = (function () {
     		if ('beeswarm_data' in $$props) $$invalidate(15, beeswarm_data = $$props.beeswarm_data);
     		if ('just_year_parser' in $$props) $$invalidate(0, just_year_parser = $$props.just_year_parser);
     		if ('step' in $$props) $$invalidate(16, step = $$props.step);
+    		if ('selectedCountry' in $$props) $$invalidate(17, selectedCountry = $$props.selectedCountry);
+    		if ('china_highlight' in $$props) china_highlight = $$props.china_highlight;
     		if ('width' in $$props) $$invalidate(1, width = $$props.width);
     		if ('height' in $$props) $$invalidate(2, height = $$props.height);
     		if ('tooltipVisible' in $$props) $$invalidate(6, tooltipVisible = $$props.tooltipVisible);
@@ -26100,10 +26139,10 @@ var app = (function () {
     		if ('yScale' in $$props) yScale = $$props.yScale;
     		if ('simulation' in $$props) $$invalidate(3, simulation$1 = $$props.simulation);
     		if ('radius' in $$props) $$invalidate(4, radius = $$props.radius);
-    		if ('innerHeight' in $$props) $$invalidate(17, innerHeight = $$props.innerHeight);
+    		if ('innerHeight' in $$props) $$invalidate(18, innerHeight = $$props.innerHeight);
     		if ('xScale' in $$props) $$invalidate(5, xScale = $$props.xScale);
-    		if ('innerWidth' in $$props) $$invalidate(18, innerWidth = $$props.innerWidth);
-    		if ('radiusScale' in $$props) $$invalidate(19, radiusScale = $$props.radiusScale);
+    		if ('innerWidth' in $$props) $$invalidate(19, innerWidth = $$props.innerWidth);
+    		if ('radiusScale' in $$props) $$invalidate(20, radiusScale = $$props.radiusScale);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -26111,44 +26150,56 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*step*/ 65536) {
-    			 if (step == "two") {
-    				fillBlack();
+    		if ($$self.$$.dirty[0] & /*step, selectedCountry*/ 196608) {
+    			 {
+    				if (step === "two") {
+    					fillBlack();
 
-    				document.querySelectorAll(".soviet").forEach(circle => {
-    					circle.setAttribute("fill", "red");
-    				});
-    			} else if (step == "three") {
-    				fillBlack();
+    					if (selectedCountry === "Russia") {
+    						document.querySelectorAll(".soviet").forEach(circle => {
+    							circle.setAttribute("fill", "red");
+    						});
+    					} else if (selectedCountry === "China") {
+    						document.querySelectorAll(".china_high").forEach(circle => {
+    							circle.setAttribute("fill", "red");
+    						});
+    					}
+    				} else if (step === "three") {
+    					fillBlack();
 
-    				document.querySelectorAll(".syria").forEach(circle => {
-    					circle.setAttribute("fill", "red");
-    				});
-    			} else {
-    				document.querySelectorAll("circle").forEach(circle => {
-    					circle.setAttribute("fill", "black");
-    				});
+    					if (selectedCountry === "Russia") {
+    						document.querySelectorAll(".syria").forEach(circle => {
+    							circle.setAttribute("fill", "red");
+    						});
+    					} else if (selectedCountry === "China") {
+    						document.querySelectorAll(".un_p5").forEach(circle => {
+    							circle.setAttribute("fill", "red");
+    						});
+    					}
+    				} else {
+    					fillBlack();
+    				}
     			}
     		}
 
     		if ($$self.$$.dirty[0] & /*width*/ 2) {
-    			 $$invalidate(18, innerWidth = width - margin.left - margin.right);
+    			 $$invalidate(19, innerWidth = width - margin.left - margin.right);
     		}
 
     		if ($$self.$$.dirty[0] & /*height*/ 4) {
-    			 $$invalidate(17, innerHeight = height - margin.top - margin.bottom);
+    			 $$invalidate(18, innerHeight = height - margin.top - margin.bottom);
     		}
 
-    		if ($$self.$$.dirty[0] & /*radiusScale, innerWidth*/ 786432) {
+    		if ($$self.$$.dirty[0] & /*radiusScale, innerWidth*/ 1572864) {
     			// Compute the radius based on the current width
     			 $$invalidate(4, radius = radiusScale(innerWidth));
     		}
 
-    		if ($$self.$$.dirty[0] & /*innerWidth, beeswarm_data*/ 294912) {
+    		if ($$self.$$.dirty[0] & /*innerWidth, beeswarm_data*/ 557056) {
     			 $$invalidate(5, xScale = time().range([0, innerWidth]).domain(extent(beeswarm_data, d => d[1][0][0])));
     		}
 
-    		if ($$self.$$.dirty[0] & /*beeswarm_data, xScale, innerHeight, radius*/ 163888) {
+    		if ($$self.$$.dirty[0] & /*beeswarm_data, xScale, innerHeight, radius*/ 294960) {
     			 $$invalidate(3, simulation$1 = simulation(beeswarm_data).force("x", x$2(d => xScale(d[1][0][0])).strength(0.95)).force("y", y$2(innerHeight / 2).strength(0.03)).force("collide", collide(radius + 2)).alpha(0.3).alphaDecay(0.001).stop()); // Use dynamic radius here
     		}
 
@@ -26161,7 +26212,7 @@ var app = (function () {
     		}
     	};
 
-    	 $$invalidate(19, radiusScale = linear$2().domain([300, 800]).range([4, 7])); // Example domain: min and max width values
+    	 $$invalidate(20, radiusScale = linear$2().domain([300, 800]).range([4, 7])); // Example domain: min and max width values
     	// Example range: min and max radius values
 
     	return [
@@ -26182,6 +26233,7 @@ var app = (function () {
     		assignClass,
     		beeswarm_data,
     		step,
+    		selectedCountry,
     		innerHeight,
     		innerWidth,
     		radiusScale,
@@ -26206,7 +26258,8 @@ var app = (function () {
     			{
     				beeswarm_data: 15,
     				just_year_parser: 0,
-    				step: 16
+    				step: 16,
+    				selectedCountry: 17
     			},
     			null,
     			[-1, -1]
@@ -26243,40 +26296,48 @@ var app = (function () {
     	set step(value) {
     		throw new Error("<Beeswarm>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get selectedCountry() {
+    		throw new Error("<Beeswarm>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set selectedCountry(value) {
+    		throw new Error("<Beeswarm>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src\vis\Area.svelte generated by Svelte v3.59.2 */
 
-    const { Object: Object_1, console: console_1 } = globals;
+    const { Object: Object_1 } = globals;
     const file$d = "src\\vis\\Area.svelte";
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[20] = list[i][0];
+    	child_ctx[21] = list[i][0];
     	child_ctx[6] = list[i][1];
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[23] = list[i];
+    	child_ctx[24] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[23] = list[i];
+    	child_ctx[24] = list[i];
     	return child_ctx;
     }
 
-    // (64:3) {#each yTicks as tick}
+    // (63:3) {#each yTicks as tick}
     function create_each_block_2(ctx) {
     	let g;
     	let line_1;
     	let text_1;
-    	let t0_value = /*tick*/ ctx[23] + "";
+    	let t0_value = /*tick*/ ctx[24] + "";
     	let t0;
-    	let t1_value = (/*tick*/ ctx[23] === 8 ? " million sq km" : "") + "";
+    	let t1_value = (/*tick*/ ctx[24] === 8 ? " million sq km" : "") + "";
     	let t1;
     	let g_class_value;
     	let g_transform_value;
@@ -26289,14 +26350,14 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = text(t1_value);
     			attr_dev(line_1, "x2", "100%");
-    			attr_dev(line_1, "class", "svelte-1x4yzyc");
-    			add_location(line_1, file$d, 68, 5, 1768);
+    			attr_dev(line_1, "class", "svelte-kdbq03");
+    			add_location(line_1, file$d, 67, 5, 1765);
     			attr_dev(text_1, "y", "-4");
-    			attr_dev(text_1, "class", "svelte-1x4yzyc");
-    			add_location(text_1, file$d, 69, 5, 1793);
-    			attr_dev(g, "class", g_class_value = "tick tick-" + /*tick*/ ctx[23] + " svelte-1x4yzyc");
-    			attr_dev(g, "transform", g_transform_value = "translate(0, " + (/*yScale*/ ctx[3](/*tick*/ ctx[23]) - /*margin*/ ctx[11].bottom) + ")");
-    			add_location(g, file$d, 64, 4, 1658);
+    			attr_dev(text_1, "class", "svelte-kdbq03");
+    			add_location(text_1, file$d, 68, 5, 1790);
+    			attr_dev(g, "class", g_class_value = "tick tick-" + /*tick*/ ctx[24] + " svelte-kdbq03");
+    			attr_dev(g, "transform", g_transform_value = "translate(0, " + (/*yScale*/ ctx[4](/*tick*/ ctx[24]) - /*margin*/ ctx[11].bottom) + ")");
+    			add_location(g, file$d, 63, 4, 1655);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, g, anchor);
@@ -26306,7 +26367,7 @@ var app = (function () {
     			append_dev(text_1, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*yScale*/ 8 && g_transform_value !== (g_transform_value = "translate(0, " + (/*yScale*/ ctx[3](/*tick*/ ctx[23]) - /*margin*/ ctx[11].bottom) + ")")) {
+    			if (dirty & /*yScale*/ 16 && g_transform_value !== (g_transform_value = "translate(0, " + (/*yScale*/ ctx[4](/*tick*/ ctx[24]) - /*margin*/ ctx[11].bottom) + ")")) {
     				attr_dev(g, "transform", g_transform_value);
     			}
     		},
@@ -26319,14 +26380,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(64:3) {#each yTicks as tick}",
+    		source: "(63:3) {#each yTicks as tick}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:3) {#each xTicks as tick}
+    // (77:3) {#each xTicks as tick}
     function create_each_block_1$1(ctx) {
     	let g;
     	let line_1;
@@ -26334,9 +26395,9 @@ var app = (function () {
     	let line_1_y__value_1;
     	let text_1;
 
-    	let t_value = (/*width*/ ctx[1] > 380
-    	? /*tick*/ ctx[23]
-    	: formatMobile$1(/*tick*/ ctx[23])) + "";
+    	let t_value = (/*width*/ ctx[2] > 380
+    	? /*tick*/ ctx[24]
+    	: formatMobile$1(/*tick*/ ctx[24])) + "";
 
     	let t;
     	let g_class_value;
@@ -26348,18 +26409,18 @@ var app = (function () {
     			line_1 = svg_element("line");
     			text_1 = svg_element("text");
     			t = text(t_value);
-    			attr_dev(line_1, "y1", line_1_y__value = "-" + /*height*/ ctx[2]);
+    			attr_dev(line_1, "y1", line_1_y__value = "-" + /*height*/ ctx[3]);
     			attr_dev(line_1, "y2", line_1_y__value_1 = "-" + /*margin*/ ctx[11].bottom);
     			attr_dev(line_1, "x1", "0");
     			attr_dev(line_1, "x2", "0");
-    			attr_dev(line_1, "class", "svelte-1x4yzyc");
-    			add_location(line_1, file$d, 84, 5, 2097);
+    			attr_dev(line_1, "class", "svelte-kdbq03");
+    			add_location(line_1, file$d, 83, 5, 2094);
     			attr_dev(text_1, "y", "-2");
-    			attr_dev(text_1, "class", "svelte-1x4yzyc");
-    			add_location(text_1, file$d, 85, 5, 2163);
-    			attr_dev(g, "class", g_class_value = "tick tick-" + /*tick*/ ctx[23] + " svelte-1x4yzyc");
-    			attr_dev(g, "transform", g_transform_value = "translate(" + /*xScale*/ ctx[4](/*just_year_parser*/ ctx[0](/*tick*/ ctx[23])) + "," + /*height*/ ctx[2] + ")");
-    			add_location(g, file$d, 78, 4, 1963);
+    			attr_dev(text_1, "class", "svelte-kdbq03");
+    			add_location(text_1, file$d, 84, 5, 2160);
+    			attr_dev(g, "class", g_class_value = "tick tick-" + /*tick*/ ctx[24] + " svelte-kdbq03");
+    			attr_dev(g, "transform", g_transform_value = "translate(" + /*xScale*/ ctx[5](/*just_year_parser*/ ctx[0](/*tick*/ ctx[24])) + "," + /*height*/ ctx[3] + ")");
+    			add_location(g, file$d, 77, 4, 1960);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, g, anchor);
@@ -26368,15 +26429,15 @@ var app = (function () {
     			append_dev(text_1, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*height*/ 4 && line_1_y__value !== (line_1_y__value = "-" + /*height*/ ctx[2])) {
+    			if (dirty & /*height*/ 8 && line_1_y__value !== (line_1_y__value = "-" + /*height*/ ctx[3])) {
     				attr_dev(line_1, "y1", line_1_y__value);
     			}
 
-    			if (dirty & /*width*/ 2 && t_value !== (t_value = (/*width*/ ctx[1] > 380
-    			? /*tick*/ ctx[23]
-    			: formatMobile$1(/*tick*/ ctx[23])) + "")) set_data_dev(t, t_value);
+    			if (dirty & /*width*/ 4 && t_value !== (t_value = (/*width*/ ctx[2] > 380
+    			? /*tick*/ ctx[24]
+    			: formatMobile$1(/*tick*/ ctx[24])) + "")) set_data_dev(t, t_value);
 
-    			if (dirty & /*xScale, just_year_parser, height*/ 21 && g_transform_value !== (g_transform_value = "translate(" + /*xScale*/ ctx[4](/*just_year_parser*/ ctx[0](/*tick*/ ctx[23])) + "," + /*height*/ ctx[2] + ")")) {
+    			if (dirty & /*xScale, just_year_parser, height*/ 41 && g_transform_value !== (g_transform_value = "translate(" + /*xScale*/ ctx[5](/*just_year_parser*/ ctx[0](/*tick*/ ctx[24])) + "," + /*height*/ ctx[3] + ")")) {
     				attr_dev(g, "transform", g_transform_value);
     			}
     		},
@@ -26389,14 +26450,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(78:3) {#each xTicks as tick}",
+    		source: "(77:3) {#each xTicks as tick}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:2) {#each Array.from(multiline_groups) as [key, points]}
+    // (95:2) {#each Array.from(multiline_groups) as [key, points]}
     function create_each_block$1(ctx) {
     	let path_1;
     	let path_1_d_value;
@@ -26407,9 +26468,13 @@ var app = (function () {
     			path_1 = svg_element("path");
     			attr_dev(path_1, "d", path_1_d_value = /*line*/ ctx[12](/*points*/ ctx[6]));
     			attr_dev(path_1, "fill", "none");
-    			attr_dev(path_1, "stroke", path_1_stroke_value = /*key*/ ctx[20] === "Russia" ? "steelblue" : "orange");
+
+    			attr_dev(path_1, "stroke", path_1_stroke_value = /*key*/ ctx[21] === /*selectedCountry*/ ctx[1]
+    			? "red"
+    			: "rgb(0, 158, 158)");
+
     			attr_dev(path_1, "stroke-width", "2");
-    			add_location(path_1, file$d, 96, 3, 2422);
+    			add_location(path_1, file$d, 95, 3, 2428);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, path_1, anchor);
@@ -26419,7 +26484,9 @@ var app = (function () {
     				attr_dev(path_1, "d", path_1_d_value);
     			}
 
-    			if (dirty & /*multiline_groups*/ 128 && path_1_stroke_value !== (path_1_stroke_value = /*key*/ ctx[20] === "Russia" ? "steelblue" : "orange")) {
+    			if (dirty & /*multiline_groups, selectedCountry*/ 130 && path_1_stroke_value !== (path_1_stroke_value = /*key*/ ctx[21] === /*selectedCountry*/ ctx[1]
+    			? "red"
+    			: "rgb(0, 158, 158)")) {
     				attr_dev(path_1, "stroke", path_1_stroke_value);
     			}
     		},
@@ -26432,7 +26499,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(96:2) {#each Array.from(multiline_groups) as [key, points]}",
+    		source: "(95:2) {#each Array.from(multiline_groups) as [key, points]}",
     		ctx
     	});
 
@@ -26445,8 +26512,7 @@ var app = (function () {
     	let g0;
     	let g0_transform_value;
     	let g1;
-    	let path0;
-    	let path1;
+    	let path_1;
     	let div_resize_listener;
     	let each_value_2 = /*yTicks*/ ctx[9];
     	validate_each_argument(each_value_2);
@@ -26488,8 +26554,7 @@ var app = (function () {
     				each_blocks_1[i].c();
     			}
 
-    			path0 = svg_element("path");
-    			path1 = svg_element("path");
+    			path_1 = svg_element("path");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
@@ -26497,21 +26562,18 @@ var app = (function () {
 
     			attr_dev(g0, "class", "axis y-axis");
     			attr_dev(g0, "transform", g0_transform_value = "translate(0, " + /*margin*/ ctx[11].top + ")");
-    			add_location(g0, file$d, 62, 2, 1563);
-    			attr_dev(g1, "class", "axis x-axis svelte-1x4yzyc");
-    			add_location(g1, file$d, 76, 2, 1907);
-    			attr_dev(path0, "class", "path-area svelte-1x4yzyc");
-    			attr_dev(path0, "d", /*area*/ ctx[8]);
-    			add_location(path0, file$d, 92, 2, 2284);
-    			attr_dev(path1, "class", "path-line svelte-1x4yzyc");
-    			attr_dev(path1, "d", /*path*/ ctx[5]);
-    			add_location(path1, file$d, 93, 2, 2323);
-    			attr_dev(svg, "width", /*width*/ ctx[1]);
-    			attr_dev(svg, "height", /*height*/ ctx[2]);
-    			add_location(svg, file$d, 61, 1, 1537);
-    			attr_dev(div, "class", "wrapper svelte-1x4yzyc");
-    			add_render_callback(() => /*div_elementresize_handler*/ ctx[19].call(div));
-    			add_location(div, file$d, 60, 0, 1461);
+    			add_location(g0, file$d, 61, 2, 1560);
+    			attr_dev(g1, "class", "axis x-axis svelte-kdbq03");
+    			add_location(g1, file$d, 75, 2, 1904);
+    			attr_dev(path_1, "class", "path-area svelte-kdbq03");
+    			attr_dev(path_1, "d", /*area*/ ctx[8]);
+    			add_location(path_1, file$d, 91, 2, 2281);
+    			attr_dev(svg, "width", /*width*/ ctx[2]);
+    			attr_dev(svg, "height", /*height*/ ctx[3]);
+    			add_location(svg, file$d, 60, 1, 1534);
+    			attr_dev(div, "class", "wrapper svelte-kdbq03");
+    			add_render_callback(() => /*div_elementresize_handler*/ ctx[20].call(div));
+    			add_location(div, file$d, 59, 0, 1458);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26535,8 +26597,7 @@ var app = (function () {
     				}
     			}
 
-    			append_dev(svg, path0);
-    			append_dev(svg, path1);
+    			append_dev(svg, path_1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				if (each_blocks[i]) {
@@ -26544,10 +26605,10 @@ var app = (function () {
     				}
     			}
 
-    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[19].bind(div));
+    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[20].bind(div));
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*yTicks, yScale, margin*/ 2568) {
+    			if (dirty & /*yTicks, yScale, margin*/ 2576) {
     				each_value_2 = /*yTicks*/ ctx[9];
     				validate_each_argument(each_value_2);
     				let i;
@@ -26571,7 +26632,7 @@ var app = (function () {
     				each_blocks_2.length = each_value_2.length;
     			}
 
-    			if (dirty & /*xTicks, xScale, just_year_parser, height, width, formatMobile, margin*/ 3095) {
+    			if (dirty & /*xTicks, xScale, just_year_parser, height, width, formatMobile, margin*/ 3117) {
     				each_value_1 = /*xTicks*/ ctx[10];
     				validate_each_argument(each_value_1);
     				let i;
@@ -26596,14 +26657,10 @@ var app = (function () {
     			}
 
     			if (dirty & /*area*/ 256) {
-    				attr_dev(path0, "d", /*area*/ ctx[8]);
+    				attr_dev(path_1, "d", /*area*/ ctx[8]);
     			}
 
-    			if (dirty & /*path*/ 32) {
-    				attr_dev(path1, "d", /*path*/ ctx[5]);
-    			}
-
-    			if (dirty & /*line, Array, multiline_groups*/ 4224) {
+    			if (dirty & /*line, Array, multiline_groups, selectedCountry*/ 4226) {
     				each_value = Array.from(/*multiline_groups*/ ctx[7]);
     				validate_each_argument(each_value);
     				let i;
@@ -26627,12 +26684,12 @@ var app = (function () {
     				each_blocks.length = each_value.length;
     			}
 
-    			if (dirty & /*width*/ 2) {
-    				attr_dev(svg, "width", /*width*/ ctx[1]);
+    			if (dirty & /*width*/ 4) {
+    				attr_dev(svg, "width", /*width*/ ctx[2]);
     			}
 
-    			if (dirty & /*height*/ 4) {
-    				attr_dev(svg, "height", /*height*/ ctx[2]);
+    			if (dirty & /*height*/ 8) {
+    				attr_dev(svg, "height", /*height*/ ctx[3]);
     			}
     		},
     		i: noop,
@@ -26677,7 +26734,7 @@ var app = (function () {
     	let { areachart_data } = $$props;
     	let { just_year_parser } = $$props;
     	let { linechart_data } = $$props;
-    	console.log(linechart_data);
+    	let { selectedCountry } = $$props;
     	let width = 400, height = 800;
     	const yTicks = [30, 60, 90];
     	const xTicks = [1995, 2000, 2005, 2010, 2015, 2020];
@@ -26690,35 +26747,40 @@ var app = (function () {
 
     	$$self.$$.on_mount.push(function () {
     		if (areachart_data === undefined && !('areachart_data' in $$props || $$self.$$.bound[$$self.$$.props['areachart_data']])) {
-    			console_1.warn("<Area> was created without expected prop 'areachart_data'");
+    			console.warn("<Area> was created without expected prop 'areachart_data'");
     		}
 
     		if (just_year_parser === undefined && !('just_year_parser' in $$props || $$self.$$.bound[$$self.$$.props['just_year_parser']])) {
-    			console_1.warn("<Area> was created without expected prop 'just_year_parser'");
+    			console.warn("<Area> was created without expected prop 'just_year_parser'");
     		}
 
     		if (linechart_data === undefined && !('linechart_data' in $$props || $$self.$$.bound[$$self.$$.props['linechart_data']])) {
-    			console_1.warn("<Area> was created without expected prop 'linechart_data'");
+    			console.warn("<Area> was created without expected prop 'linechart_data'");
+    		}
+
+    		if (selectedCountry === undefined && !('selectedCountry' in $$props || $$self.$$.bound[$$self.$$.props['selectedCountry']])) {
+    			console.warn("<Area> was created without expected prop 'selectedCountry'");
     		}
     	});
 
-    	const writable_props = ['areachart_data', 'just_year_parser', 'linechart_data'];
+    	const writable_props = ['areachart_data', 'just_year_parser', 'linechart_data', 'selectedCountry'];
 
     	Object_1.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1.warn(`<Area> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Area> was created with unknown prop '${key}'`);
     	});
 
     	function div_elementresize_handler() {
     		width = this.clientWidth;
     		height = this.clientHeight;
-    		$$invalidate(1, width);
-    		$$invalidate(2, height);
+    		$$invalidate(2, width);
+    		$$invalidate(3, height);
     	}
 
     	$$self.$$set = $$props => {
     		if ('areachart_data' in $$props) $$invalidate(13, areachart_data = $$props.areachart_data);
     		if ('just_year_parser' in $$props) $$invalidate(0, just_year_parser = $$props.just_year_parser);
     		if ('linechart_data' in $$props) $$invalidate(14, linechart_data = $$props.linechart_data);
+    		if ('selectedCountry' in $$props) $$invalidate(1, selectedCountry = $$props.selectedCountry);
     	};
 
     	$$self.$capture_state = () => ({
@@ -26726,6 +26788,7 @@ var app = (function () {
     		areachart_data,
     		just_year_parser,
     		linechart_data,
+    		selectedCountry,
     		width,
     		height,
     		yTicks,
@@ -26749,19 +26812,20 @@ var app = (function () {
     		if ('areachart_data' in $$props) $$invalidate(13, areachart_data = $$props.areachart_data);
     		if ('just_year_parser' in $$props) $$invalidate(0, just_year_parser = $$props.just_year_parser);
     		if ('linechart_data' in $$props) $$invalidate(14, linechart_data = $$props.linechart_data);
-    		if ('width' in $$props) $$invalidate(1, width = $$props.width);
-    		if ('height' in $$props) $$invalidate(2, height = $$props.height);
+    		if ('selectedCountry' in $$props) $$invalidate(1, selectedCountry = $$props.selectedCountry);
+    		if ('width' in $$props) $$invalidate(2, width = $$props.width);
+    		if ('height' in $$props) $$invalidate(3, height = $$props.height);
     		if ('line' in $$props) $$invalidate(12, line$1 = $$props.line);
     		if ('points' in $$props) $$invalidate(6, points = $$props.points);
     		if ('multiline_groups' in $$props) $$invalidate(7, multiline_groups = $$props.multiline_groups);
-    		if ('yScale' in $$props) $$invalidate(3, yScale = $$props.yScale);
-    		if ('xScale' in $$props) $$invalidate(4, xScale = $$props.xScale);
+    		if ('yScale' in $$props) $$invalidate(4, yScale = $$props.yScale);
+    		if ('xScale' in $$props) $$invalidate(5, xScale = $$props.xScale);
     		if ('minX' in $$props) $$invalidate(15, minX = $$props.minX);
     		if ('maxX' in $$props) $$invalidate(16, maxX = $$props.maxX);
-    		if ('path' in $$props) $$invalidate(5, path = $$props.path);
+    		if ('path' in $$props) $$invalidate(17, path = $$props.path);
     		if ('area' in $$props) $$invalidate(8, area = $$props.area);
-    		if ('innerHeight' in $$props) $$invalidate(17, innerHeight = $$props.innerHeight);
-    		if ('innerWidth' in $$props) $$invalidate(18, innerWidth = $$props.innerWidth);
+    		if ('innerHeight' in $$props) $$invalidate(18, innerHeight = $$props.innerHeight);
+    		if ('innerWidth' in $$props) $$invalidate(19, innerWidth = $$props.innerWidth);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -26769,20 +26833,20 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*width*/ 2) {
-    			 $$invalidate(18, innerWidth = width - margin.left - margin.right);
+    		if ($$self.$$.dirty & /*width*/ 4) {
+    			 $$invalidate(19, innerWidth = width - margin.left - margin.right);
     		}
 
-    		if ($$self.$$.dirty & /*height*/ 4) {
-    			 $$invalidate(17, innerHeight = height - margin.top - margin.bottom);
+    		if ($$self.$$.dirty & /*height*/ 8) {
+    			 $$invalidate(18, innerHeight = height - margin.top - margin.bottom);
     		}
 
-    		if ($$self.$$.dirty & /*areachart_data, innerWidth*/ 270336) {
-    			 $$invalidate(4, xScale = utcTime().domain(extent(areachart_data, d => d.date)).range([0, innerWidth]));
+    		if ($$self.$$.dirty & /*areachart_data, innerWidth*/ 532480) {
+    			 $$invalidate(5, xScale = utcTime().domain(extent(areachart_data, d => d.date)).range([0, innerWidth]));
     		}
 
-    		if ($$self.$$.dirty & /*innerHeight*/ 131072) {
-    			 $$invalidate(3, yScale = linear$2().domain([0, 100]).range([innerHeight, 0]));
+    		if ($$self.$$.dirty & /*innerHeight*/ 262144) {
+    			 $$invalidate(4, yScale = linear$2().domain([0, 100]).range([innerHeight, 0]));
     		}
 
     		if ($$self.$$.dirty & /*areachart_data*/ 8192) {
@@ -26793,15 +26857,15 @@ var app = (function () {
     			 $$invalidate(16, maxX = areachart_data[areachart_data.length - 1].date);
     		}
 
-    		if ($$self.$$.dirty & /*areachart_data, xScale, yScale*/ 8216) {
-    			 $$invalidate(5, path = `M${areachart_data.map(p => `${xScale(p.date)},${yScale(p.value)}`).join("L")}`);
+    		if ($$self.$$.dirty & /*areachart_data, xScale, yScale*/ 8240) {
+    			 $$invalidate(17, path = `M${areachart_data.map(p => `${xScale(p.date)},${yScale(p.value)}`).join("L")}`);
     		}
 
-    		if ($$self.$$.dirty & /*path, xScale, maxX, yScale, minX*/ 98360) {
+    		if ($$self.$$.dirty & /*path, xScale, maxX, yScale, minX*/ 229424) {
     			 $$invalidate(8, area = `${path}L${xScale(maxX)},${yScale(0)}L${xScale(minX)},${yScale(0)}Z`);
     		}
 
-    		if ($$self.$$.dirty & /*linechart_data, xScale, yScale*/ 16408) {
+    		if ($$self.$$.dirty & /*linechart_data, xScale, yScale*/ 16432) {
     			 $$invalidate(6, points = linechart_data.map(d => [xScale(d.date), yScale(d.unemployment), d.division]));
     		}
 
@@ -26812,11 +26876,11 @@ var app = (function () {
 
     	return [
     		just_year_parser,
+    		selectedCountry,
     		width,
     		height,
     		yScale,
     		xScale,
-    		path,
     		points,
     		multiline_groups,
     		area,
@@ -26828,6 +26892,7 @@ var app = (function () {
     		linechart_data,
     		minX,
     		maxX,
+    		path,
     		innerHeight,
     		innerWidth,
     		div_elementresize_handler
@@ -26841,7 +26906,8 @@ var app = (function () {
     		init(this, options, instance$d, create_fragment$d, safe_not_equal, {
     			areachart_data: 13,
     			just_year_parser: 0,
-    			linechart_data: 14
+    			linechart_data: 14,
+    			selectedCountry: 1
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -26875,6 +26941,14 @@ var app = (function () {
     	set linechart_data(value) {
     		throw new Error("<Area>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get selectedCountry() {
+    		throw new Error("<Area>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set selectedCountry(value) {
+    		throw new Error("<Area>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src\vis\Donut.svelte generated by Svelte v3.59.2 */
@@ -26884,40 +26958,56 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[14] = list[i];
+    	child_ctx[18] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[17] = list[i];
+    	child_ctx[21] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[20] = list[i];
+    	child_ctx[24] = list[i];
     	return child_ctx;
     }
 
-    // (63:12) {#each data_ready as slice}
+    // (112:12) {#each data_ready as slice}
     function create_each_block_2$1(ctx) {
     	let path;
     	let path_d_value;
+    	let path_fill_value;
 
     	const block = {
     		c: function create() {
     			path = svg_element("path");
-    			attr_dev(path, "d", path_d_value = /*arc*/ ctx[2](/*slice*/ ctx[20]));
+    			attr_dev(path, "d", path_d_value = /*arc*/ ctx[3](/*slice*/ ctx[24]));
     			attr_dev(path, "stroke", "white");
-    			add_location(path, file$e, 63, 16, 2178);
+
+    			attr_dev(path, "fill", path_fill_value = /*selectedCountry*/ ctx[0] === "Russia"
+    			? /*russia_color*/ ctx[7](/*slice*/ ctx[24].data[1])
+    			: /*selectedCountry*/ ctx[0] === "China"
+    				? /*china_color*/ ctx[8](/*slice*/ ctx[24].data[1])
+    				: undefined);
+
+    			add_location(path, file$e, 112, 16, 3572);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, path, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*arc*/ 4 && path_d_value !== (path_d_value = /*arc*/ ctx[2](/*slice*/ ctx[20]))) {
+    			if (dirty & /*arc, data_ready*/ 72 && path_d_value !== (path_d_value = /*arc*/ ctx[3](/*slice*/ ctx[24]))) {
     				attr_dev(path, "d", path_d_value);
+    			}
+
+    			if (dirty & /*selectedCountry, data_ready*/ 65 && path_fill_value !== (path_fill_value = /*selectedCountry*/ ctx[0] === "Russia"
+    			? /*russia_color*/ ctx[7](/*slice*/ ctx[24].data[1])
+    			: /*selectedCountry*/ ctx[0] === "China"
+    				? /*china_color*/ ctx[8](/*slice*/ ctx[24].data[1])
+    				: undefined)) {
+    				attr_dev(path, "fill", path_fill_value);
     			}
     		},
     		d: function destroy(detaching) {
@@ -26929,14 +27019,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2$1.name,
     		type: "each",
-    		source: "(63:12) {#each data_ready as slice}",
+    		source: "(112:12) {#each data_ready as slice}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (66:12) {#each data_ready as line}
+    // (123:12) {#each data_ready as line}
     function create_each_block_1$2(ctx) {
     	let polyline;
     	let polyline_points_value;
@@ -26947,14 +27037,14 @@ var app = (function () {
     			attr_dev(polyline, "fill", "none");
     			attr_dev(polyline, "stroke", "black");
     			attr_dev(polyline, "stroke-width", "1");
-    			attr_dev(polyline, "points", polyline_points_value = /*calcPoints*/ ctx[4](/*line*/ ctx[17]));
-    			add_location(polyline, file$e, 66, 16, 2295);
+    			attr_dev(polyline, "points", polyline_points_value = /*calcPoints*/ ctx[5](/*line*/ ctx[21]));
+    			add_location(polyline, file$e, 123, 16, 4010);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, polyline, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*calcPoints*/ 16 && polyline_points_value !== (polyline_points_value = /*calcPoints*/ ctx[4](/*line*/ ctx[17]))) {
+    			if (dirty & /*calcPoints, data_ready*/ 96 && polyline_points_value !== (polyline_points_value = /*calcPoints*/ ctx[5](/*line*/ ctx[21]))) {
     				attr_dev(polyline, "points", polyline_points_value);
     			}
     		},
@@ -26967,22 +27057,22 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(66:12) {#each data_ready as line}",
+    		source: "(123:12) {#each data_ready as line}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:12) {#each data_ready as d}
+    // (131:12) {#each data_ready as d}
     function create_each_block$2(ctx) {
     	let text_1;
 
-    	let t_value = (/*d*/ ctx[14].data[1][0] === "Framework-substantive, partial"
+    	let t_value = (/*d*/ ctx[18].data[1][0] === "Framework-substantive, partial"
     	? "Partial"
-    	: /*d*/ ctx[14].data[1][0] === "Framework-substantive, comprehensive"
+    	: /*d*/ ctx[18].data[1][0] === "Framework-substantive, comprehensive"
     		? "Comprehensive"
-    		: /*d*/ ctx[14].data[1][0]) + "";
+    		: /*d*/ ctx[18].data[1][0]) + "";
 
     	let t;
     	let text_1_transform_value;
@@ -26992,17 +27082,23 @@ var app = (function () {
     			text_1 = svg_element("text");
     			t = text(t_value);
     			attr_dev(text_1, "fill", "black");
-    			attr_dev(text_1, "font-size", "12px");
-    			attr_dev(text_1, "transform", text_1_transform_value = /*calcText*/ ctx[3](/*d*/ ctx[14]));
+    			attr_dev(text_1, "font-size", "14px");
+    			attr_dev(text_1, "transform", text_1_transform_value = /*calcText*/ ctx[4](/*d*/ ctx[18]));
     			attr_dev(text_1, "text-anchor", "middle");
-    			add_location(text_1, file$e, 74, 16, 2554);
+    			add_location(text_1, file$e, 131, 16, 4269);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, text_1, anchor);
     			append_dev(text_1, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*calcText*/ 8 && text_1_transform_value !== (text_1_transform_value = /*calcText*/ ctx[3](/*d*/ ctx[14]))) {
+    			if (dirty & /*data_ready*/ 64 && t_value !== (t_value = (/*d*/ ctx[18].data[1][0] === "Framework-substantive, partial"
+    			? "Partial"
+    			: /*d*/ ctx[18].data[1][0] === "Framework-substantive, comprehensive"
+    				? "Comprehensive"
+    				: /*d*/ ctx[18].data[1][0]) + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*calcText, data_ready*/ 80 && text_1_transform_value !== (text_1_transform_value = /*calcText*/ ctx[4](/*d*/ ctx[18]))) {
     				attr_dev(text_1, "transform", text_1_transform_value);
     			}
     		},
@@ -27015,7 +27111,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(74:12) {#each data_ready as d}",
+    		source: "(131:12) {#each data_ready as d}",
     		ctx
     	});
 
@@ -27030,7 +27126,7 @@ var app = (function () {
     	let each1_anchor;
     	let g_transform_value;
     	let div_resize_listener;
-    	let each_value_2 = /*data_ready*/ ctx[5];
+    	let each_value_2 = /*data_ready*/ ctx[6];
     	validate_each_argument(each_value_2);
     	let each_blocks_2 = [];
 
@@ -27038,7 +27134,7 @@ var app = (function () {
     		each_blocks_2[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
     	}
 
-    	let each_value_1 = /*data_ready*/ ctx[5];
+    	let each_value_1 = /*data_ready*/ ctx[6];
     	validate_each_argument(each_value_1);
     	let each_blocks_1 = [];
 
@@ -27046,7 +27142,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
     	}
 
-    	let each_value = /*data_ready*/ ctx[5];
+    	let each_value = /*data_ready*/ ctx[6];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -27076,14 +27172,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(g, "transform", g_transform_value = "translate(" + /*width*/ ctx[0] / 2 + " " + /*height*/ ctx[1] / 2 + ")");
-    			add_location(g, file$e, 61, 8, 2068);
-    			attr_dev(svg, "width", /*width*/ ctx[0]);
-    			attr_dev(svg, "height", /*height*/ ctx[1]);
-    			add_location(svg, file$e, 60, 4, 2036);
+    			attr_dev(g, "transform", g_transform_value = "translate(" + /*width*/ ctx[1] / 2 + " " + /*height*/ ctx[2] / 2 + ")");
+    			add_location(g, file$e, 110, 8, 3462);
+    			attr_dev(svg, "width", /*width*/ ctx[1]);
+    			attr_dev(svg, "height", /*height*/ ctx[2]);
+    			add_location(svg, file$e, 109, 4, 3430);
     			attr_dev(div, "class", "wrapper svelte-yeisvh");
-    			add_render_callback(() => /*div_elementresize_handler*/ ctx[11].call(div));
-    			add_location(div, file$e, 59, 0, 1957);
+    			add_render_callback(() => /*div_elementresize_handler*/ ctx[14].call(div));
+    			add_location(div, file$e, 108, 0, 3351);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -27115,11 +27211,11 @@ var app = (function () {
     				}
     			}
 
-    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[11].bind(div));
+    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[14].bind(div));
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*arc, data_ready*/ 36) {
-    				each_value_2 = /*data_ready*/ ctx[5];
+    			if (dirty & /*arc, data_ready, selectedCountry, russia_color, china_color, undefined*/ 457) {
+    				each_value_2 = /*data_ready*/ ctx[6];
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -27142,8 +27238,8 @@ var app = (function () {
     				each_blocks_2.length = each_value_2.length;
     			}
 
-    			if (dirty & /*calcPoints, data_ready*/ 48) {
-    				each_value_1 = /*data_ready*/ ctx[5];
+    			if (dirty & /*calcPoints, data_ready*/ 96) {
+    				each_value_1 = /*data_ready*/ ctx[6];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -27166,8 +27262,8 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty & /*calcText, data_ready*/ 40) {
-    				each_value = /*data_ready*/ ctx[5];
+    			if (dirty & /*calcText, data_ready*/ 80) {
+    				each_value = /*data_ready*/ ctx[6];
     				validate_each_argument(each_value);
     				let i;
 
@@ -27190,16 +27286,16 @@ var app = (function () {
     				each_blocks.length = each_value.length;
     			}
 
-    			if (dirty & /*width, height*/ 3 && g_transform_value !== (g_transform_value = "translate(" + /*width*/ ctx[0] / 2 + " " + /*height*/ ctx[1] / 2 + ")")) {
+    			if (dirty & /*width, height*/ 6 && g_transform_value !== (g_transform_value = "translate(" + /*width*/ ctx[1] / 2 + " " + /*height*/ ctx[2] / 2 + ")")) {
     				attr_dev(g, "transform", g_transform_value);
     			}
 
-    			if (dirty & /*width*/ 1) {
-    				attr_dev(svg, "width", /*width*/ ctx[0]);
+    			if (dirty & /*width*/ 2) {
+    				attr_dev(svg, "width", /*width*/ ctx[1]);
     			}
 
-    			if (dirty & /*height*/ 2) {
-    				attr_dev(svg, "height", /*height*/ ctx[1]);
+    			if (dirty & /*height*/ 4) {
+    				attr_dev(svg, "height", /*height*/ ctx[2]);
     			}
     		},
     		i: noop,
@@ -27228,6 +27324,7 @@ var app = (function () {
     	let innerWidth;
     	let innerHeight;
     	let radius;
+    	let data_ready;
     	let arc$1;
     	let outerArc;
     	let calcPoints;
@@ -27235,21 +27332,53 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Donut', slots, []);
     	let { donut_data } = $$props;
+    	let { selectedCountry } = $$props;
+
+    	// Define the desired order
+    	let desiredOrder = [
+    		"Pre-negotiation",
+    		"Ceasefire",
+    		"Framework-substantive, partial",
+    		"Framework-substantive, comprehensive",
+    		"Implementation"
+    	];
+
     	let width = 400, height = 800;
+
+    	const russia_color = ordinal().domain([
+    		"Pre-negotiation",
+    		"Ceasefire",
+    		"Framework-substantive, partial",
+    		"Framework-substantive, comprehensive",
+    		"Renewal",
+    		"Implementation",
+    		"Other"
+    	]).range(["#016099", "#df1f36", "#fd8189", "#fdd900", "#7b8ad6", "#3aae2a", "#c0de88"]);
+
+    	const china_color = ordinal().domain([
+    		"Pre-negotiation",
+    		"Ceasefire",
+    		"Framework-substantive, partial",
+    		"Framework-substantive, comprehensive",
+    		"Implementation"
+    	]).range(["#016099", "#df1f36", "#fd8189", "#fdd900", "#3aae2a"]);
+
     	const margin = { top: 10, right: 10, bottom: 10, left: 10 };
 
     	// Compute the position of each group on the pie:
     	const pie$1 = pie().sort(null).value(d => d[1][1].length); // Do not sort group by size
 
-    	const data_ready = pie$1(Object.entries(donut_data));
-
     	$$self.$$.on_mount.push(function () {
     		if (donut_data === undefined && !('donut_data' in $$props || $$self.$$.bound[$$self.$$.props['donut_data']])) {
     			console.warn("<Donut> was created without expected prop 'donut_data'");
     		}
+
+    		if (selectedCountry === undefined && !('selectedCountry' in $$props || $$self.$$.bound[$$self.$$.props['selectedCountry']])) {
+    			console.warn("<Donut> was created without expected prop 'selectedCountry'");
+    		}
     	});
 
-    	const writable_props = ['donut_data'];
+    	const writable_props = ['donut_data', 'selectedCountry'];
 
     	Object_1$1.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Donut> was created with unknown prop '${key}'`);
@@ -27258,42 +27387,50 @@ var app = (function () {
     	function div_elementresize_handler() {
     		width = this.clientWidth;
     		height = this.clientHeight;
-    		$$invalidate(0, width);
-    		$$invalidate(1, height);
+    		$$invalidate(1, width);
+    		$$invalidate(2, height);
     	}
 
     	$$self.$$set = $$props => {
-    		if ('donut_data' in $$props) $$invalidate(6, donut_data = $$props.donut_data);
+    		if ('donut_data' in $$props) $$invalidate(9, donut_data = $$props.donut_data);
+    		if ('selectedCountry' in $$props) $$invalidate(0, selectedCountry = $$props.selectedCountry);
     	};
 
     	$$self.$capture_state = () => ({
     		d3,
     		donut_data,
+    		selectedCountry,
+    		desiredOrder,
     		width,
     		height,
+    		russia_color,
+    		china_color,
     		margin,
     		pie: pie$1,
-    		data_ready,
     		radius,
     		outerArc,
     		calcText,
     		arc: arc$1,
     		calcPoints,
+    		data_ready,
     		innerHeight,
     		innerWidth
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('donut_data' in $$props) $$invalidate(6, donut_data = $$props.donut_data);
-    		if ('width' in $$props) $$invalidate(0, width = $$props.width);
-    		if ('height' in $$props) $$invalidate(1, height = $$props.height);
-    		if ('radius' in $$props) $$invalidate(7, radius = $$props.radius);
-    		if ('outerArc' in $$props) $$invalidate(8, outerArc = $$props.outerArc);
-    		if ('calcText' in $$props) $$invalidate(3, calcText = $$props.calcText);
-    		if ('arc' in $$props) $$invalidate(2, arc$1 = $$props.arc);
-    		if ('calcPoints' in $$props) $$invalidate(4, calcPoints = $$props.calcPoints);
-    		if ('innerHeight' in $$props) $$invalidate(9, innerHeight = $$props.innerHeight);
-    		if ('innerWidth' in $$props) $$invalidate(10, innerWidth = $$props.innerWidth);
+    		if ('donut_data' in $$props) $$invalidate(9, donut_data = $$props.donut_data);
+    		if ('selectedCountry' in $$props) $$invalidate(0, selectedCountry = $$props.selectedCountry);
+    		if ('desiredOrder' in $$props) $$invalidate(15, desiredOrder = $$props.desiredOrder);
+    		if ('width' in $$props) $$invalidate(1, width = $$props.width);
+    		if ('height' in $$props) $$invalidate(2, height = $$props.height);
+    		if ('radius' in $$props) $$invalidate(10, radius = $$props.radius);
+    		if ('outerArc' in $$props) $$invalidate(11, outerArc = $$props.outerArc);
+    		if ('calcText' in $$props) $$invalidate(4, calcText = $$props.calcText);
+    		if ('arc' in $$props) $$invalidate(3, arc$1 = $$props.arc);
+    		if ('calcPoints' in $$props) $$invalidate(5, calcPoints = $$props.calcPoints);
+    		if ('data_ready' in $$props) $$invalidate(6, data_ready = $$props.data_ready);
+    		if ('innerHeight' in $$props) $$invalidate(12, innerHeight = $$props.innerHeight);
+    		if ('innerWidth' in $$props) $$invalidate(13, innerWidth = $$props.innerWidth);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -27301,30 +27438,43 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*width*/ 1) {
-    			 $$invalidate(10, innerWidth = width - margin.left - margin.right);
+    		if ($$self.$$.dirty & /*selectedCountry, donut_data*/ 513) {
+    			 if (selectedCountry == "China") {
+    				// Sort the array based on the desired order
+    				donut_data.sort((a, b) => {
+    					return desiredOrder.indexOf(a[0]) - desiredOrder.indexOf(b[0]);
+    				});
+    			}
     		}
 
-    		if ($$self.$$.dirty & /*height*/ 2) {
-    			 $$invalidate(9, innerHeight = height - margin.top - margin.bottom);
+    		if ($$self.$$.dirty & /*width*/ 2) {
+    			 $$invalidate(13, innerWidth = width - margin.left - margin.right);
     		}
 
-    		if ($$self.$$.dirty & /*innerWidth, innerHeight*/ 1536) {
-    			 $$invalidate(7, radius = Math.min(innerWidth, innerHeight) / 2);
+    		if ($$self.$$.dirty & /*height*/ 4) {
+    			 $$invalidate(12, innerHeight = height - margin.top - margin.bottom);
     		}
 
-    		if ($$self.$$.dirty & /*radius*/ 128) {
+    		if ($$self.$$.dirty & /*innerWidth, innerHeight*/ 12288) {
+    			 $$invalidate(10, radius = Math.min(innerWidth, innerHeight) / 2);
+    		}
+
+    		if ($$self.$$.dirty & /*donut_data*/ 512) {
+    			 $$invalidate(6, data_ready = pie$1(Object.entries(donut_data)));
+    		}
+
+    		if ($$self.$$.dirty & /*radius*/ 1024) {
     			// The arc generator
-    			 $$invalidate(2, arc$1 = arc().innerRadius(radius * 0.5).outerRadius(radius * 0.8)); // This is the size of the donut hole
+    			 $$invalidate(3, arc$1 = arc().innerRadius(radius * 0.5).outerRadius(radius * 0.8).cornerRadius(4)); // This is the size of the donut hole
     		}
 
-    		if ($$self.$$.dirty & /*radius*/ 128) {
+    		if ($$self.$$.dirty & /*radius*/ 1024) {
     			// Another arc that won't be drawn. Just for labels positioning
-    			 $$invalidate(8, outerArc = arc().innerRadius(radius * 0.9).outerRadius(radius * 0.9));
+    			 $$invalidate(11, outerArc = arc().innerRadius(radius * 0.9).outerRadius(radius * 0.9));
     		}
 
-    		if ($$self.$$.dirty & /*arc, outerArc, radius*/ 388) {
-    			 $$invalidate(4, calcPoints = function (d) {
+    		if ($$self.$$.dirty & /*arc, outerArc, radius*/ 3080) {
+    			 $$invalidate(5, calcPoints = function (d) {
     				const posA = arc$1.centroid(d); // line insertion in the slice
     				const posB = outerArc.centroid(d); // line break: we use the other arc generator that has been built only for that
     				const posC = outerArc.centroid(d); // Label position = almost the same as posB
@@ -27334,8 +27484,8 @@ var app = (function () {
     			});
     		}
 
-    		if ($$self.$$.dirty & /*outerArc, radius*/ 384) {
-    			 $$invalidate(3, calcText = function (d) {
+    		if ($$self.$$.dirty & /*outerArc, radius*/ 3072) {
+    			 $$invalidate(4, calcText = function (d) {
     				const pos = outerArc.centroid(d);
     				const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
     				pos[0] = radius * 0.88 * (midangle < Math.PI ? 1 : -1);
@@ -27346,12 +27496,15 @@ var app = (function () {
     	};
 
     	return [
+    		selectedCountry,
     		width,
     		height,
     		arc$1,
     		calcText,
     		calcPoints,
     		data_ready,
+    		russia_color,
+    		china_color,
     		donut_data,
     		radius,
     		outerArc,
@@ -27364,7 +27517,7 @@ var app = (function () {
     class Donut extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$e, create_fragment$e, safe_not_equal, { donut_data: 6 });
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, { donut_data: 9, selectedCountry: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -27381,11 +27534,19 @@ var app = (function () {
     	set donut_data(value) {
     		throw new Error("<Donut>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get selectedCountry() {
+    		throw new Error("<Donut>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set selectedCountry(value) {
+    		throw new Error("<Donut>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src\vis\Bars.svelte generated by Svelte v3.59.2 */
 
-    const { Object: Object_1$2, console: console_1$1 } = globals;
+    const { Object: Object_1$2, console: console_1 } = globals;
     const file$f = "src\\vis\\Bars.svelte";
 
     function get_each_context$3(ctx, list, i) {
@@ -27406,7 +27567,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (83:16) {#each groups as tick}
+    // (80:16) {#each groups as tick}
     function create_each_block_2$2(ctx) {
     	let g;
     	let text_1;
@@ -27426,10 +27587,10 @@ var app = (function () {
     			t = text(t_value);
     			attr_dev(text_1, "y", "-2");
     			attr_dev(text_1, "class", "svelte-1wk4drw");
-    			add_location(text_1, file$f, 87, 24, 2192);
+    			add_location(text_1, file$f, 84, 24, 2308);
     			attr_dev(g, "class", g_class_value = "tick tick-" + /*tick*/ ctx[19] + " svelte-1wk4drw");
-    			attr_dev(g, "transform", g_transform_value = "translate(" + /*xScale*/ ctx[3](/*tick*/ ctx[19]) + "," + /*height*/ ctx[1] + ")");
-    			add_location(g, file$f, 83, 20, 2019);
+    			attr_dev(g, "transform", g_transform_value = "translate(" + /*xScale*/ ctx[4](/*tick*/ ctx[19]) + "," + /*height*/ ctx[1] + ")");
+    			add_location(g, file$f, 80, 20, 2135);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, g, anchor);
@@ -27441,7 +27602,7 @@ var app = (function () {
     			? /*tick*/ ctx[19]
     			: formatMobile$2(/*tick*/ ctx[19])) + "")) set_data_dev(t, t_value);
 
-    			if (dirty & /*xScale, height*/ 10 && g_transform_value !== (g_transform_value = "translate(" + /*xScale*/ ctx[3](/*tick*/ ctx[19]) + "," + /*height*/ ctx[1] + ")")) {
+    			if (dirty & /*xScale, height*/ 18 && g_transform_value !== (g_transform_value = "translate(" + /*xScale*/ ctx[4](/*tick*/ ctx[19]) + "," + /*height*/ ctx[1] + ")")) {
     				attr_dev(g, "transform", g_transform_value);
     			}
     		},
@@ -27454,14 +27615,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2$2.name,
     		type: "each",
-    		source: "(83:16) {#each groups as tick}",
+    		source: "(80:16) {#each groups as tick}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:16) {#each yTicks as tick}
+    // (92:16) {#each yTicks as tick}
     function create_each_block_1$3(ctx) {
     	let g;
     	let line;
@@ -27482,13 +27643,13 @@ var app = (function () {
     			t1 = text(t1_value);
     			attr_dev(line, "x2", "100%");
     			attr_dev(line, "class", "svelte-1wk4drw");
-    			add_location(line, file$f, 99, 24, 2699);
+    			add_location(line, file$f, 96, 24, 2815);
     			attr_dev(text_1, "y", "-4");
     			attr_dev(text_1, "class", "svelte-1wk4drw");
-    			add_location(text_1, file$f, 100, 24, 2743);
+    			add_location(text_1, file$f, 97, 24, 2859);
     			attr_dev(g, "class", g_class_value = "tick tick-" + /*tick*/ ctx[19] + " svelte-1wk4drw");
-    			attr_dev(g, "transform", g_transform_value = "translate(0, " + (/*yScale*/ ctx[2](/*tick*/ ctx[19]) - /*margin*/ ctx[5].bottom) + ")");
-    			add_location(g, file$f, 95, 20, 2516);
+    			attr_dev(g, "transform", g_transform_value = "translate(0, " + (/*yScale*/ ctx[3](/*tick*/ ctx[19]) - /*margin*/ ctx[5].bottom) + ")");
+    			add_location(g, file$f, 92, 20, 2632);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, g, anchor);
@@ -27498,7 +27659,7 @@ var app = (function () {
     			append_dev(text_1, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*yScale*/ 4 && g_transform_value !== (g_transform_value = "translate(0, " + (/*yScale*/ ctx[2](/*tick*/ ctx[19]) - /*margin*/ ctx[5].bottom) + ")")) {
+    			if (dirty & /*yScale*/ 8 && g_transform_value !== (g_transform_value = "translate(0, " + (/*yScale*/ ctx[3](/*tick*/ ctx[19]) - /*margin*/ ctx[5].bottom) + ")")) {
     				attr_dev(g, "transform", g_transform_value);
     			}
     		},
@@ -27511,20 +27672,21 @@ var app = (function () {
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(95:16) {#each yTicks as tick}",
+    		source: "(92:16) {#each yTicks as tick}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (108:12) {#each formatted_barchart_data as bar}
+    // (105:12) {#each formatted_barchart_data as bar}
     function create_each_block$3(ctx) {
     	let rect;
     	let rect_x_value;
     	let rect_y_value;
     	let rect_width_value;
     	let rect_height_value;
+    	let rect_fill_value;
     	let text_1;
     	let t_value = Math.round(/*bar*/ ctx[16].value) + "";
     	let t;
@@ -27540,12 +27702,13 @@ var app = (function () {
     			attr_dev(rect, "y", rect_y_value = /*bar*/ ctx[16].y);
     			attr_dev(rect, "width", rect_width_value = /*bar*/ ctx[16].width);
     			attr_dev(rect, "height", rect_height_value = /*bar*/ ctx[16].height);
-    			add_location(rect, file$f, 108, 16, 3003);
+    			attr_dev(rect, "fill", rect_fill_value = /*bar*/ ctx[16].key === "All" ? "black" : "red");
+    			add_location(rect, file$f, 105, 16, 3119);
     			attr_dev(text_1, "x", text_1_x_value = /*bar*/ ctx[16].x + /*bar*/ ctx[16].width / 2);
     			attr_dev(text_1, "y", text_1_y_value = /*bar*/ ctx[16].y - 3);
     			attr_dev(text_1, "text-anchor", "middle");
     			attr_dev(text_1, "font-size", "14px");
-    			add_location(text_1, file$f, 114, 16, 3188);
+    			add_location(text_1, file$f, 112, 16, 3368);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, rect, anchor);
@@ -27553,29 +27716,33 @@ var app = (function () {
     			append_dev(text_1, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*formatted_barchart_data*/ 16 && rect_x_value !== (rect_x_value = /*bar*/ ctx[16].x)) {
+    			if (dirty & /*formatted_barchart_data*/ 4 && rect_x_value !== (rect_x_value = /*bar*/ ctx[16].x)) {
     				attr_dev(rect, "x", rect_x_value);
     			}
 
-    			if (dirty & /*formatted_barchart_data*/ 16 && rect_y_value !== (rect_y_value = /*bar*/ ctx[16].y)) {
+    			if (dirty & /*formatted_barchart_data*/ 4 && rect_y_value !== (rect_y_value = /*bar*/ ctx[16].y)) {
     				attr_dev(rect, "y", rect_y_value);
     			}
 
-    			if (dirty & /*formatted_barchart_data*/ 16 && rect_width_value !== (rect_width_value = /*bar*/ ctx[16].width)) {
+    			if (dirty & /*formatted_barchart_data*/ 4 && rect_width_value !== (rect_width_value = /*bar*/ ctx[16].width)) {
     				attr_dev(rect, "width", rect_width_value);
     			}
 
-    			if (dirty & /*formatted_barchart_data*/ 16 && rect_height_value !== (rect_height_value = /*bar*/ ctx[16].height)) {
+    			if (dirty & /*formatted_barchart_data*/ 4 && rect_height_value !== (rect_height_value = /*bar*/ ctx[16].height)) {
     				attr_dev(rect, "height", rect_height_value);
     			}
 
-    			if (dirty & /*formatted_barchart_data*/ 16 && t_value !== (t_value = Math.round(/*bar*/ ctx[16].value) + "")) set_data_dev(t, t_value);
+    			if (dirty & /*formatted_barchart_data*/ 4 && rect_fill_value !== (rect_fill_value = /*bar*/ ctx[16].key === "All" ? "black" : "red")) {
+    				attr_dev(rect, "fill", rect_fill_value);
+    			}
 
-    			if (dirty & /*formatted_barchart_data*/ 16 && text_1_x_value !== (text_1_x_value = /*bar*/ ctx[16].x + /*bar*/ ctx[16].width / 2)) {
+    			if (dirty & /*formatted_barchart_data*/ 4 && t_value !== (t_value = Math.round(/*bar*/ ctx[16].value) + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*formatted_barchart_data*/ 4 && text_1_x_value !== (text_1_x_value = /*bar*/ ctx[16].x + /*bar*/ ctx[16].width / 2)) {
     				attr_dev(text_1, "x", text_1_x_value);
     			}
 
-    			if (dirty & /*formatted_barchart_data*/ 16 && text_1_y_value !== (text_1_y_value = /*bar*/ ctx[16].y - 3)) {
+    			if (dirty & /*formatted_barchart_data*/ 4 && text_1_y_value !== (text_1_y_value = /*bar*/ ctx[16].y - 3)) {
     				attr_dev(text_1, "y", text_1_y_value);
     			}
     		},
@@ -27589,7 +27756,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(108:12) {#each formatted_barchart_data as bar}",
+    		source: "(105:12) {#each formatted_barchart_data as bar}",
     		ctx
     	});
 
@@ -27620,7 +27787,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
     	}
 
-    	let each_value = /*formatted_barchart_data*/ ctx[4];
+    	let each_value = /*formatted_barchart_data*/ ctx[2];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -27650,17 +27817,17 @@ var app = (function () {
     			}
 
     			attr_dev(g0, "class", "axis x-axis svelte-1wk4drw");
-    			add_location(g0, file$f, 81, 12, 1934);
+    			add_location(g0, file$f, 78, 12, 2050);
     			attr_dev(g1, "class", "axis y-axis");
     			attr_dev(g1, "transform", g1_transform_value = "translate(0, " + /*margin*/ ctx[5].top + ")");
-    			add_location(g1, file$f, 93, 12, 2392);
-    			add_location(g2, file$f, 80, 8, 1917);
+    			add_location(g1, file$f, 90, 12, 2508);
+    			add_location(g2, file$f, 77, 8, 2033);
     			attr_dev(svg, "width", /*width*/ ctx[0]);
     			attr_dev(svg, "height", /*height*/ ctx[1]);
-    			add_location(svg, file$f, 79, 4, 1885);
+    			add_location(svg, file$f, 76, 4, 2001);
     			attr_dev(div, "class", "wrapper svelte-1wk4drw");
-    			add_render_callback(() => /*div_elementresize_handler*/ ctx[12].call(div));
-    			add_location(div, file$f, 78, 0, 1806);
+    			add_render_callback(() => /*div_elementresize_handler*/ ctx[14].call(div));
+    			add_location(div, file$f, 75, 0, 1922);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -27691,10 +27858,10 @@ var app = (function () {
     				}
     			}
 
-    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[12].bind(div));
+    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[14].bind(div));
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*groups, xScale, height, width, formatMobile*/ 139) {
+    			if (dirty & /*groups, xScale, height, width, formatMobile*/ 147) {
     				each_value_2 = /*groups*/ ctx[7];
     				validate_each_argument(each_value_2);
     				let i;
@@ -27718,7 +27885,7 @@ var app = (function () {
     				each_blocks_2.length = each_value_2.length;
     			}
 
-    			if (dirty & /*yTicks, yScale, margin*/ 100) {
+    			if (dirty & /*yTicks, yScale, margin*/ 104) {
     				each_value_1 = /*yTicks*/ ctx[6];
     				validate_each_argument(each_value_1);
     				let i;
@@ -27742,8 +27909,8 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty & /*formatted_barchart_data, Math*/ 16) {
-    				each_value = /*formatted_barchart_data*/ ctx[4];
+    			if (dirty & /*formatted_barchart_data, Math*/ 4) {
+    				each_value = /*formatted_barchart_data*/ ctx[2];
     				validate_each_argument(each_value);
     				let i;
 
@@ -27796,10 +27963,6 @@ var app = (function () {
     	return block;
     }
 
-    function showText(d) {
-    	console.log(d);
-    }
-
     function formatMobile$2(tick) {
     	return "'" + tick.toString().slice(-2);
     }
@@ -27814,7 +27977,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Bars', slots, []);
     	let { barchart_data } = $$props;
-    	console.log(barchart_data);
+    	let { selectedCountry } = $$props;
     	let width = 400, height = 800, radius = 8;
     	const margin = { top: 10, right: 10, bottom: 10, left: 10 };
     	const yTicks = [10, 20, 30, 40];
@@ -27831,19 +27994,21 @@ var app = (function () {
     	];
 
     	let subgroups = ["All"];
-    	let keys = Object.keys(barchart_data[0]);
-    	subgroups.push(keys[2]);
 
     	$$self.$$.on_mount.push(function () {
     		if (barchart_data === undefined && !('barchart_data' in $$props || $$self.$$.bound[$$self.$$.props['barchart_data']])) {
-    			console_1$1.warn("<Bars> was created without expected prop 'barchart_data'");
+    			console_1.warn("<Bars> was created without expected prop 'barchart_data'");
+    		}
+
+    		if (selectedCountry === undefined && !('selectedCountry' in $$props || $$self.$$.bound[$$self.$$.props['selectedCountry']])) {
+    			console_1.warn("<Bars> was created without expected prop 'selectedCountry'");
     		}
     	});
 
-    	const writable_props = ['barchart_data'];
+    	const writable_props = ['barchart_data', 'selectedCountry'];
 
     	Object_1$2.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$1.warn(`<Bars> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1.warn(`<Bars> was created with unknown prop '${key}'`);
     	});
 
     	function div_elementresize_handler() {
@@ -27855,11 +28020,13 @@ var app = (function () {
 
     	$$self.$$set = $$props => {
     		if ('barchart_data' in $$props) $$invalidate(8, barchart_data = $$props.barchart_data);
+    		if ('selectedCountry' in $$props) $$invalidate(9, selectedCountry = $$props.selectedCountry);
     	};
 
     	$$self.$capture_state = () => ({
     		d3,
     		barchart_data,
+    		selectedCountry,
     		width,
     		height,
     		radius,
@@ -27867,31 +28034,29 @@ var app = (function () {
     		yTicks,
     		groups,
     		subgroups,
-    		keys,
-    		showText,
     		formatMobile: formatMobile$2,
+    		formatted_barchart_data,
     		yScale,
     		innerHeight,
     		xScaleSubgroup,
     		xScale,
-    		formatted_barchart_data,
     		innerWidth
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('barchart_data' in $$props) $$invalidate(8, barchart_data = $$props.barchart_data);
+    		if ('selectedCountry' in $$props) $$invalidate(9, selectedCountry = $$props.selectedCountry);
     		if ('width' in $$props) $$invalidate(0, width = $$props.width);
     		if ('height' in $$props) $$invalidate(1, height = $$props.height);
     		if ('radius' in $$props) radius = $$props.radius;
     		if ('groups' in $$props) $$invalidate(7, groups = $$props.groups);
-    		if ('subgroups' in $$props) $$invalidate(14, subgroups = $$props.subgroups);
-    		if ('keys' in $$props) keys = $$props.keys;
-    		if ('yScale' in $$props) $$invalidate(2, yScale = $$props.yScale);
-    		if ('innerHeight' in $$props) $$invalidate(9, innerHeight = $$props.innerHeight);
-    		if ('xScaleSubgroup' in $$props) $$invalidate(10, xScaleSubgroup = $$props.xScaleSubgroup);
-    		if ('xScale' in $$props) $$invalidate(3, xScale = $$props.xScale);
-    		if ('formatted_barchart_data' in $$props) $$invalidate(4, formatted_barchart_data = $$props.formatted_barchart_data);
-    		if ('innerWidth' in $$props) $$invalidate(11, innerWidth = $$props.innerWidth);
+    		if ('subgroups' in $$props) $$invalidate(10, subgroups = $$props.subgroups);
+    		if ('formatted_barchart_data' in $$props) $$invalidate(2, formatted_barchart_data = $$props.formatted_barchart_data);
+    		if ('yScale' in $$props) $$invalidate(3, yScale = $$props.yScale);
+    		if ('innerHeight' in $$props) $$invalidate(11, innerHeight = $$props.innerHeight);
+    		if ('xScaleSubgroup' in $$props) $$invalidate(12, xScaleSubgroup = $$props.xScaleSubgroup);
+    		if ('xScale' in $$props) $$invalidate(4, xScale = $$props.xScale);
+    		if ('innerWidth' in $$props) $$invalidate(13, innerWidth = $$props.innerWidth);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -27900,28 +28065,36 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*width*/ 1) {
-    			 $$invalidate(11, innerWidth = width - margin.left - margin.right);
+    			 $$invalidate(13, innerWidth = width - margin.left - margin.right);
     		}
 
     		if ($$self.$$.dirty & /*height*/ 2) {
-    			 $$invalidate(9, innerHeight = height - margin.top - margin.bottom);
+    			 $$invalidate(11, innerHeight = height - margin.top - margin.bottom);
     		}
 
-    		if ($$self.$$.dirty & /*innerWidth*/ 2048) {
-    			 $$invalidate(3, xScale = band().domain(groups).range([0, innerWidth]).padding([0.2]));
+    		if ($$self.$$.dirty & /*barchart_data, subgroups*/ 1280) {
+    			 if (barchart_data) {
+    				$$invalidate(10, subgroups = ["All"]); // Reset to ["All"]
+    				let keys = Object.keys(barchart_data[0]); // Get keys from the first object in barchart_data
+    				subgroups.push(keys[2]); // Add the specific key you need
+    			}
     		}
 
-    		if ($$self.$$.dirty & /*xScale*/ 8) {
-    			 $$invalidate(10, xScaleSubgroup = band().domain(subgroups).range([0, xScale.bandwidth()]).padding([0.05]));
+    		if ($$self.$$.dirty & /*innerWidth*/ 8192) {
+    			 $$invalidate(4, xScale = band().domain(groups).range([0, innerWidth]).padding([0.2]));
     		}
 
-    		if ($$self.$$.dirty & /*innerHeight*/ 512) {
-    			 $$invalidate(2, yScale = linear$2().domain([0, 45]).range([innerHeight, 0]));
+    		if ($$self.$$.dirty & /*subgroups, xScale*/ 1040) {
+    			 $$invalidate(12, xScaleSubgroup = band().domain(subgroups).range([0, xScale.bandwidth()]).padding([0.05]));
     		}
 
-    		if ($$self.$$.dirty & /*barchart_data, xScale, xScaleSubgroup, yScale, innerHeight*/ 1804) {
-    			 $$invalidate(4, formatted_barchart_data = barchart_data.map(d => {
-    				return ["All", "Russia"].map(key => ({
+    		if ($$self.$$.dirty & /*innerHeight*/ 2048) {
+    			 $$invalidate(3, yScale = linear$2().domain([0, 45]).range([innerHeight, 0]));
+    		}
+
+    		if ($$self.$$.dirty & /*barchart_data, selectedCountry, xScale, xScaleSubgroup, yScale, innerHeight*/ 6936) {
+    			 $$invalidate(2, formatted_barchart_data = barchart_data.map(d => {
+    				return ["All", selectedCountry].map(key => ({
     					key,
     					value: d[key],
     					group: d.group,
@@ -27933,21 +28106,23 @@ var app = (function () {
     			}).flat());
     		}
 
-    		if ($$self.$$.dirty & /*barchart_data*/ 256) {
-    			 console.log(barchart_data);
+    		if ($$self.$$.dirty & /*formatted_barchart_data*/ 4) {
+    			 console.log(formatted_barchart_data);
     		}
     	};
 
     	return [
     		width,
     		height,
+    		formatted_barchart_data,
     		yScale,
     		xScale,
-    		formatted_barchart_data,
     		margin,
     		yTicks,
     		groups,
     		barchart_data,
+    		selectedCountry,
+    		subgroups,
     		innerHeight,
     		xScaleSubgroup,
     		innerWidth,
@@ -27958,7 +28133,7 @@ var app = (function () {
     class Bars extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$f, create_fragment$f, safe_not_equal, { barchart_data: 8 });
+    		init(this, options, instance$f, create_fragment$f, safe_not_equal, { barchart_data: 8, selectedCountry: 9 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -27973,6 +28148,14 @@ var app = (function () {
     	}
 
     	set barchart_data(value) {
+    		throw new Error("<Bars>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get selectedCountry() {
+    		throw new Error("<Bars>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set selectedCountry(value) {
     		throw new Error("<Bars>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -28458,10 +28641,10 @@ var app = (function () {
 
     /* src\App.svelte generated by Svelte v3.59.2 */
 
-    const { Object: Object_1$3, console: console_1$2 } = globals;
+    const { Object: Object_1$3, console: console_1$1 } = globals;
     const file$h = "src\\App.svelte";
 
-    // (397:2) <Arrow color="black" {animation}>
+    // (443:2) <Arrow color="black" {animation}>
     function create_default_slot_7(ctx) {
     	let t;
 
@@ -28481,14 +28664,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(397:2) <Arrow color=\\\"black\\\" {animation}>",
+    		source: "(443:2) <Arrow color=\\\"black\\\" {animation}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (385:0) <Header  bgcolor="white"  bgfixed={true}  theme="light"  center={true}  short={false} >
+    // (431:0) <Header  bgcolor="white"  bgfixed={true}  theme="light"  center={true}  short={false} >
     function create_default_slot_6(ctx) {
     	let h1;
     	let t1;
@@ -28518,12 +28701,12 @@ var app = (function () {
     			t3 = space();
     			div = element("div");
     			create_component(arrow.$$.fragment);
-    			add_location(h1, file$h, 391, 1, 9512);
+    			add_location(h1, file$h, 437, 1, 10615);
     			attr_dev(p, "class", "text-big");
     			set_style(p, "margin-top", "5px");
-    			add_location(p, file$h, 392, 1, 9531);
+    			add_location(p, file$h, 438, 1, 10634);
     			set_style(div, "margin-top", "90px");
-    			add_location(div, file$h, 395, 1, 9624);
+    			add_location(div, file$h, 441, 1, 10727);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -28537,7 +28720,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const arrow_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[1] & /*$$scope*/ 8388608) {
     				arrow_changes.$$scope = { dirty, ctx };
     			}
 
@@ -28566,14 +28749,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(385:0) <Header  bgcolor=\\\"white\\\"  bgfixed={true}  theme=\\\"light\\\"  center={true}  short={false} >",
+    		source: "(431:0) <Header  bgcolor=\\\"white\\\"  bgfixed={true}  theme=\\\"light\\\"  center={true}  short={false} >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (401:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (447:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_5(ctx) {
     	let p;
 
@@ -28582,7 +28765,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Timeline of Agreements";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 401, 1, 9797);
+    			add_location(p, file$h, 447, 1, 10900);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -28597,15 +28780,15 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(401:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(447:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (409:4) {#if beeswarm_data}
-    function create_if_block_6(ctx) {
+    // (455:4) {#if beeswarm_data}
+    function create_if_block_20(ctx) {
     	let div;
     	let beeswarm;
     	let current;
@@ -28614,6 +28797,7 @@ var app = (function () {
     			props: {
     				beeswarm_data: /*beeswarm_data*/ ctx[5],
     				just_year_parser: /*just_year_parser*/ ctx[10],
+    				selectedCountry: /*selectedCountry*/ ctx[1],
     				step: /*step*/ ctx[3]
     			},
     			$$inline: true
@@ -28623,8 +28807,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(beeswarm.$$.fragment);
-    			attr_dev(div, "class", "chart svelte-1dcu6sc");
-    			add_location(div, file$h, 409, 5, 10022);
+    			attr_dev(div, "class", "chart svelte-12z3yr8");
+    			add_location(div, file$h, 455, 5, 11125);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -28634,6 +28818,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const beeswarm_changes = {};
     			if (dirty[0] & /*beeswarm_data*/ 32) beeswarm_changes.beeswarm_data = /*beeswarm_data*/ ctx[5];
+    			if (dirty[0] & /*selectedCountry*/ 2) beeswarm_changes.selectedCountry = /*selectedCountry*/ ctx[1];
     			if (dirty[0] & /*step*/ 8) beeswarm_changes.step = /*step*/ ctx[3];
     			beeswarm.$set(beeswarm_changes);
     		},
@@ -28654,22 +28839,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_6.name,
+    		id: create_if_block_20.name,
     		type: "if",
-    		source: "(409:4) {#if beeswarm_data}",
+    		source: "(455:4) {#if beeswarm_data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (406:1) 
+    // (452:1) 
     function create_background_slot_4(ctx) {
     	let div1;
     	let figure;
     	let div0;
     	let current;
-    	let if_block = /*beeswarm_data*/ ctx[5] && create_if_block_6(ctx);
+    	let if_block = /*beeswarm_data*/ ctx[5] && create_if_block_20(ctx);
 
     	const block = {
     		c: function create() {
@@ -28678,10 +28863,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 407, 3, 9958);
-    			add_location(figure, file$h, 406, 2, 9946);
+    			add_location(div0, file$h, 453, 3, 11061);
+    			add_location(figure, file$h, 452, 2, 11049);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 405, 1, 9920);
+    			add_location(div1, file$h, 451, 1, 11023);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -28699,7 +28884,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block_6(ctx);
+    					if_block = create_if_block_20(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div0, null);
@@ -28733,128 +28918,15 @@ var app = (function () {
     		block,
     		id: create_background_slot_4.name,
     		type: "slot",
-    		source: "(406:1) ",
+    		source: "(452:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (448:4) {:else}
-    function create_else_block$4(ctx) {
-    	let p;
-    	let t0;
-    	let br0;
-    	let br1;
-    	let t1;
-    	let span0;
-    	let t2;
-    	let span1;
-
-    	const block = {
-    		c: function create() {
-    			p = element("p");
-    			t0 = text("Default text for other countries or when no specific\n\t\t\t\t\t\tcountry is selected.");
-    			br0 = element("br");
-    			br1 = element("br");
-    			t1 = space();
-    			span0 = element("span");
-    			t2 = space();
-    			span1 = element("span");
-    			span1.textContent = "General information (hover over for more detail)";
-    			add_location(br0, file$h, 450, 26, 11336);
-    			add_location(br1, file$h, 450, 32, 11342);
-    			attr_dev(span0, "class", "dot svelte-1dcu6sc");
-    			add_location(span0, file$h, 451, 6, 11355);
-    			attr_dev(span1, "id", "leg_p");
-    			attr_dev(span1, "class", "svelte-1dcu6sc");
-    			add_location(span1, file$h, 452, 6, 11387);
-    			add_location(p, file$h, 448, 5, 11247);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, p, anchor);
-    			append_dev(p, t0);
-    			append_dev(p, br0);
-    			append_dev(p, br1);
-    			append_dev(p, t1);
-    			append_dev(p, span0);
-    			append_dev(p, t2);
-    			append_dev(p, span1);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_else_block$4.name,
-    		type: "else",
-    		source: "(448:4) {:else}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (436:42) 
-    function create_if_block_5(ctx) {
-    	let p0;
-    	let t0;
-    	let br0;
-    	let br1;
-    	let span;
-    	let t1;
-    	let p1;
-
-    	const block = {
-    		c: function create() {
-    			p0 = element("p");
-    			t0 = text("China is not the most prolific third-party signatory of\n\t\t\t\t\t\tpeace agreements since 1990, ranking 15th of all actors,\n\t\t\t\t\t\twho have acted as third-party signatories. In terms of\n\t\t\t\t\t\tfrequency, this puts it alongside actors such as Egypt,\n\t\t\t\t\t\tKenya, and Nigeria.");
-    			br0 = element("br");
-    			br1 = element("br");
-    			span = element("span");
-    			t1 = space();
-    			p1 = element("p");
-    			p1.textContent = "Individual peace agreements signed by China (hover over\n\t\t\t\t\t\tfor more detail)";
-    			add_location(br0, file$h, 441, 25, 11067);
-    			add_location(br1, file$h, 441, 31, 11073);
-    			attr_dev(span, "class", "dot svelte-1dcu6sc");
-    			add_location(span, file$h, 441, 37, 11079);
-    			add_location(p0, file$h, 436, 5, 10790);
-    			attr_dev(p1, "id", "leg_p");
-    			attr_dev(p1, "class", "svelte-1dcu6sc");
-    			add_location(p1, file$h, 443, 5, 11120);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, p0, anchor);
-    			append_dev(p0, t0);
-    			append_dev(p0, br0);
-    			append_dev(p0, br1);
-    			append_dev(p0, span);
-    			insert_dev(target, t1, anchor);
-    			insert_dev(target, p1, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p0);
-    			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(p1);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_5.name,
-    		type: "if",
-    		source: "(436:42) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (421:4) {#if selectedCountry === "Russia"}
-    function create_if_block_4(ctx) {
+    // (487:42) 
+    function create_if_block_19(ctx) {
     	let p;
     	let t1;
     	let div;
@@ -28865,22 +28937,22 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			p = element("p");
-    			p.textContent = "Russia is the second most prolific international\n\t\t\t\t\t\tthird-party signatory of peace agreements between\n\t\t\t\t\t\t1990-2022. It follows the United Nations, and comes\n\t\t\t\t\t\tahead of the United States, the African Union, and the\n\t\t\t\t\t\tEuropean Union.";
+    			p.textContent = "China is not the most prolific third-party signatory of\n\t\t\t\t\t\tpeace agreements since 1990, ranking 15th of all actors,\n\t\t\t\t\t\twho have acted as third-party signatories. In terms of\n\t\t\t\t\t\tfrequency, this puts it alongside actors such as Egypt,\n\t\t\t\t\t\tKenya, and Nigeria.";
     			t1 = space();
     			div = element("div");
     			span0 = element("span");
     			t2 = space();
     			span1 = element("span");
-    			span1.textContent = "Individual peace agreements signed by Russia (hover\n\t\t\t\t\t\t\tover for more detail)";
-    			add_location(p, file$h, 421, 5, 10283);
-    			attr_dev(span0, "class", "dot svelte-1dcu6sc");
-    			add_location(span0, file$h, 429, 6, 10578);
-    			attr_dev(span1, "id", "leg_p");
-    			attr_dev(span1, "class", "svelte-1dcu6sc");
-    			add_location(span1, file$h, 430, 6, 10610);
+    			span1.textContent = "Individual peace agreements signed by China (hover\n\t\t\t\t\t\t\tover for more detail)";
+    			add_location(p, file$h, 487, 5, 11951);
+    			attr_dev(span0, "class", "dot svelte-12z3yr8");
+    			add_location(span0, file$h, 495, 6, 12268);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 496, 6, 12300);
     			attr_dev(div, "id", "legend");
-    			attr_dev(div, "class", "svelte-1dcu6sc");
-    			add_location(div, file$h, 428, 5, 10554);
+    			attr_dev(div, "class", "svelte-12z3yr8");
+    			add_location(div, file$h, 494, 5, 12244);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -28899,16 +28971,295 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4.name,
+    		id: create_if_block_19.name,
     		type: "if",
-    		source: "(421:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		source: "(487:42) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (418:1) 
+    // (472:4) {#if selectedCountry === "Russia"}
+    function create_if_block_18(ctx) {
+    	let p;
+    	let t1;
+    	let div;
+    	let span0;
+    	let t2;
+    	let span1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Russia is the second most prolific international\n\t\t\t\t\t\tthird-party signatory of peace agreements between\n\t\t\t\t\t\t1990-2022. It follows the United Nations, and comes\n\t\t\t\t\t\tahead of the United States, the African Union, and the\n\t\t\t\t\t\tEuropean Union.";
+    			t1 = space();
+    			div = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Individual peace agreements signed by Russia (hover\n\t\t\t\t\t\t\tover for more detail)";
+    			add_location(p, file$h, 472, 5, 11438);
+    			attr_dev(span0, "class", "dot svelte-12z3yr8");
+    			add_location(span0, file$h, 480, 6, 11733);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 481, 6, 11765);
+    			attr_dev(div, "id", "legend");
+    			attr_dev(div, "class", "svelte-12z3yr8");
+    			add_location(div, file$h, 479, 5, 11709);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, span0);
+    			append_dev(div, t2);
+    			append_dev(div, span1);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_18.name,
+    		type: "if",
+    		source: "(472:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (523:42) 
+    function create_if_block_17(ctx) {
+    	let p;
+    	let t1;
+    	let div;
+    	let span0;
+    	let t2;
+    	let span1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "As one of the UN Security Council (UNSC) permanent\n\t\t\t\t\t\tmembers, China has participated in all major\n\t\t\t\t\t\tinternational conferences (e.g., for Cambodia, Bosnia\n\t\t\t\t\t\tand Herzegovina, Afghanistan, Libya), with the key\n\t\t\t\t\t\texception of negotiations relating to Israel and\n\t\t\t\t\t\tPalestine. Nearly all agreements signed by China as a\n\t\t\t\t\t\tthird-party have been the result of large international\n\t\t\t\t\t\tconferences or UNSC resolutions.";
+    			t1 = space();
+    			div = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Peace agreements resulting from large international\n\t\t\t\t\t\t\tconferences or UNSC resolutions.";
+    			add_location(p, file$h, 523, 5, 13164);
+    			attr_dev(span0, "class", "dot svelte-12z3yr8");
+    			set_style(span0, "background-color", "red");
+    			add_location(span0, file$h, 534, 6, 13648);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 535, 6, 13711);
+    			attr_dev(div, "id", "legend");
+    			attr_dev(div, "class", "svelte-12z3yr8");
+    			add_location(div, file$h, 533, 5, 13624);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, span0);
+    			append_dev(div, t2);
+    			append_dev(div, span1);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_17.name,
+    		type: "if",
+    		source: "(523:42) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (508:4) {#if selectedCountry === "Russia"}
+    function create_if_block_16(ctx) {
+    	let p;
+    	let t1;
+    	let div;
+    	let span0;
+    	let t2;
+    	let span1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Russia has most often acted as a third-party signatory\n\t\t\t\t\t\tin the 1990s. Majority of these agreements relate to the\n\t\t\t\t\t\tdissolution of the Soviet Union. Many of these are\n\t\t\t\t\t\tprotracted conflicts, where Russia continues acting as a\n\t\t\t\t\t\tthird - party signatory of peace agreements.";
+    			t1 = space();
+    			div = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Peace agreements addressing conflicts in the former\n\t\t\t\t\t\t\tSoviet Union territories.";
+    			add_location(p, file$h, 508, 5, 12573);
+    			attr_dev(span0, "class", "dot svelte-12z3yr8");
+    			set_style(span0, "background-color", "red");
+    			add_location(span0, file$h, 516, 6, 12911);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 517, 6, 12974);
+    			attr_dev(div, "id", "legend");
+    			attr_dev(div, "class", "svelte-12z3yr8");
+    			add_location(div, file$h, 515, 5, 12887);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, span0);
+    			append_dev(div, t2);
+    			append_dev(div, span1);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_16.name,
+    		type: "if",
+    		source: "(508:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (562:42) 
+    function create_if_block_15(ctx) {
+    	let p;
+    	let t1;
+    	let div;
+    	let span0;
+    	let t2;
+    	let span1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Most agreements China has signed include the UN or other\n\t\t\t\t\t\tpermanent members of the UN Security Council.";
+    			t1 = space();
+    			div = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Peace agreements signed by China and the UN or all\n\t\t\t\t\t\t\tother permanent members of the UNSC.";
+    			add_location(p, file$h, 562, 5, 14649);
+    			attr_dev(span0, "class", "dot svelte-12z3yr8");
+    			set_style(span0, "background-color", "red");
+    			add_location(span0, file$h, 567, 6, 14807);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 568, 6, 14870);
+    			attr_dev(div, "id", "legend");
+    			attr_dev(div, "class", "svelte-12z3yr8");
+    			add_location(div, file$h, 566, 5, 14783);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, span0);
+    			append_dev(div, t2);
+    			append_dev(div, span1);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_15.name,
+    		type: "if",
+    		source: "(562:42) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (546:4) {#if selectedCountry === "Russia"}
+    function create_if_block_14(ctx) {
+    	let p;
+    	let t1;
+    	let div;
+    	let span0;
+    	let t2;
+    	let span1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Over the last decade, Russia increasingly acts as a\n\t\t\t\t\t\tsignatory on agreements related to conflicts in Syria\n\t\t\t\t\t\tand, reflecting its increased engagements in Africa:\n\t\t\t\t\t\tLibya, and the Central African Republic. These are\n\t\t\t\t\t\tinternationalised conflicts, where Russia is also\n\t\t\t\t\t\tmilitarily engaged in supporting conflict parties.";
+    			t1 = space();
+    			div = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Peace agreements addressing conflicts in Syria,\n\t\t\t\t\t\t\tLibya, and the Central African Republic.";
+    			add_location(p, file$h, 546, 5, 13995);
+    			attr_dev(span0, "class", "dot svelte-12z3yr8");
+    			set_style(span0, "background-color", "red");
+    			add_location(span0, file$h, 555, 6, 14385);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 556, 6, 14448);
+    			attr_dev(div, "id", "legend");
+    			attr_dev(div, "class", "svelte-12z3yr8");
+    			add_location(div, file$h, 554, 5, 14361);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, span0);
+    			append_dev(div, t2);
+    			append_dev(div, span1);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_14.name,
+    		type: "if",
+    		source: "(546:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (469:1) 
     function create_foreground_slot_4(ctx) {
     	let div3;
     	let section0;
@@ -28916,82 +29267,122 @@ var app = (function () {
     	let t0;
     	let section1;
     	let div1;
-    	let p0;
-    	let t2;
+    	let t1;
     	let section2;
     	let div2;
-    	let p1;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*selectedCountry*/ ctx[0] === "Russia") return create_if_block_4;
-    		if (/*selectedCountry*/ ctx[0] === "China") return create_if_block_5;
-    		return create_else_block$4;
+    		if (/*selectedCountry*/ ctx[1] === "Russia") return create_if_block_18;
+    		if (/*selectedCountry*/ ctx[1] === "China") return create_if_block_19;
     	}
 
     	let current_block_type = select_block_type(ctx);
-    	let if_block = current_block_type(ctx);
+    	let if_block0 = current_block_type && current_block_type(ctx);
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (/*selectedCountry*/ ctx[1] === "Russia") return create_if_block_16;
+    		if (/*selectedCountry*/ ctx[1] === "China") return create_if_block_17;
+    	}
+
+    	let current_block_type_1 = select_block_type_1(ctx);
+    	let if_block1 = current_block_type_1 && current_block_type_1(ctx);
+
+    	function select_block_type_2(ctx, dirty) {
+    		if (/*selectedCountry*/ ctx[1] === "Russia") return create_if_block_14;
+    		if (/*selectedCountry*/ ctx[1] === "China") return create_if_block_15;
+    	}
+
+    	let current_block_type_2 = select_block_type_2(ctx);
+    	let if_block2 = current_block_type_2 && current_block_type_2(ctx);
 
     	const block = {
     		c: function create() {
     			div3 = element("div");
     			section0 = element("section");
     			div0 = element("div");
-    			if_block.c();
+    			if (if_block0) if_block0.c();
     			t0 = space();
     			section1 = element("section");
     			div1 = element("div");
-    			p0 = element("p");
-    			p0.textContent = "Russia has most often acted as a third-party signatory in\n\t\t\t\t\tthe 1990s. Majority of these agreements relate to the\n\t\t\t\t\tdissolution of the Soviet Union.";
-    			t2 = space();
+    			if (if_block1) if_block1.c();
+    			t1 = space();
     			section2 = element("section");
     			div2 = element("div");
-    			p1 = element("p");
-    			p1.textContent = "Russia has most often acted as a third-party signatory in\n\t\t\t\t\tthe 1990s. Majority of these agreements relate to the\n\t\t\t\t\tdissolution of the Soviet Union.";
+    			if (if_block2) if_block2.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 419, 3, 10214);
+    			add_location(div0, file$h, 470, 3, 11369);
     			attr_dev(section0, "data-id", "chart01");
-    			add_location(section0, file$h, 418, 2, 10183);
-    			add_location(p0, file$h, 461, 4, 11580);
+    			add_location(section0, file$h, 469, 2, 11338);
     			attr_dev(div1, "class", "col-medium");
-    			add_location(div1, file$h, 460, 3, 11551);
+    			add_location(div1, file$h, 506, 3, 12504);
     			attr_dev(section1, "data-id", "chart02");
-    			add_location(section1, file$h, 459, 2, 11520);
-    			add_location(p1, file$h, 470, 4, 11838);
+    			add_location(section1, file$h, 505, 2, 12473);
     			attr_dev(div2, "class", "col-medium");
-    			add_location(div2, file$h, 469, 3, 11809);
+    			add_location(div2, file$h, 544, 3, 13926);
     			attr_dev(section2, "data-id", "chart03");
-    			add_location(section2, file$h, 468, 2, 11778);
+    			add_location(section2, file$h, 543, 2, 13895);
     			attr_dev(div3, "slot", "foreground");
-    			add_location(div3, file$h, 417, 1, 10157);
+    			add_location(div3, file$h, 468, 1, 11312);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
     			append_dev(div3, section0);
     			append_dev(section0, div0);
-    			if_block.m(div0, null);
+    			if (if_block0) if_block0.m(div0, null);
     			append_dev(div3, t0);
     			append_dev(div3, section1);
     			append_dev(section1, div1);
-    			append_dev(div1, p0);
-    			append_dev(div3, t2);
+    			if (if_block1) if_block1.m(div1, null);
+    			append_dev(div3, t1);
     			append_dev(div3, section2);
     			append_dev(section2, div2);
-    			append_dev(div2, p1);
+    			if (if_block2) if_block2.m(div2, null);
     		},
     		p: function update(ctx, dirty) {
     			if (current_block_type !== (current_block_type = select_block_type(ctx))) {
-    				if_block.d(1);
-    				if_block = current_block_type(ctx);
+    				if (if_block0) if_block0.d(1);
+    				if_block0 = current_block_type && current_block_type(ctx);
 
-    				if (if_block) {
-    					if_block.c();
-    					if_block.m(div0, null);
+    				if (if_block0) {
+    					if_block0.c();
+    					if_block0.m(div0, null);
+    				}
+    			}
+
+    			if (current_block_type_1 !== (current_block_type_1 = select_block_type_1(ctx))) {
+    				if (if_block1) if_block1.d(1);
+    				if_block1 = current_block_type_1 && current_block_type_1(ctx);
+
+    				if (if_block1) {
+    					if_block1.c();
+    					if_block1.m(div1, null);
+    				}
+    			}
+
+    			if (current_block_type_2 !== (current_block_type_2 = select_block_type_2(ctx))) {
+    				if (if_block2) if_block2.d(1);
+    				if_block2 = current_block_type_2 && current_block_type_2(ctx);
+
+    				if (if_block2) {
+    					if_block2.c();
+    					if_block2.m(div2, null);
     				}
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div3);
-    			if_block.d();
+
+    			if (if_block0) {
+    				if_block0.d();
+    			}
+
+    			if (if_block1) {
+    				if_block1.d();
+    			}
+
+    			if (if_block2) {
+    				if_block2.d();
+    			}
     		}
     	};
 
@@ -28999,14 +29390,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot_4.name,
     		type: "slot",
-    		source: "(418:1) ",
+    		source: "(469:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (481:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (580:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_4(ctx) {
     	let p;
 
@@ -29015,7 +29406,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Russia and other UN Security Council Permanent Members";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 481, 1, 12118);
+    			add_location(p, file$h, 580, 1, 15139);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29030,24 +29421,25 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(481:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(580:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (491:4) {#if areachart_data && linechart_data}
-    function create_if_block_3(ctx) {
+    // (590:4) {#if areachart_data && linechart_data}
+    function create_if_block_13(ctx) {
     	let div;
     	let area;
     	let current;
 
     	area = new Area({
     			props: {
-    				areachart_data: /*areachart_data*/ ctx[6],
+    				areachart_data: /*areachart_data*/ ctx[8],
     				just_year_parser: /*just_year_parser*/ ctx[10],
-    				linechart_data: /*linechart_data*/ ctx[11]
+    				linechart_data: /*linechart_data*/ ctx[11],
+    				selectedCountry: /*selectedCountry*/ ctx[1]
     			},
     			$$inline: true
     		});
@@ -29056,8 +29448,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(area.$$.fragment);
-    			attr_dev(div, "class", "chart svelte-1dcu6sc");
-    			add_location(div, file$h, 491, 5, 12398);
+    			attr_dev(div, "class", "chart svelte-12z3yr8");
+    			add_location(div, file$h, 590, 5, 15419);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29066,7 +29458,8 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const area_changes = {};
-    			if (dirty[0] & /*areachart_data*/ 64) area_changes.areachart_data = /*areachart_data*/ ctx[6];
+    			if (dirty[0] & /*areachart_data*/ 256) area_changes.areachart_data = /*areachart_data*/ ctx[8];
+    			if (dirty[0] & /*selectedCountry*/ 2) area_changes.selectedCountry = /*selectedCountry*/ ctx[1];
     			area.$set(area_changes);
     		},
     		i: function intro(local) {
@@ -29086,22 +29479,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3.name,
+    		id: create_if_block_13.name,
     		type: "if",
-    		source: "(491:4) {#if areachart_data && linechart_data}",
+    		source: "(590:4) {#if areachart_data && linechart_data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (488:1) 
+    // (587:1) 
     function create_background_slot_3(ctx) {
     	let div1;
     	let figure;
     	let div0;
     	let current;
-    	let if_block = /*areachart_data*/ ctx[6] && /*linechart_data*/ ctx[11] && create_if_block_3(ctx);
+    	let if_block = /*areachart_data*/ ctx[8] && /*linechart_data*/ ctx[11] && create_if_block_13(ctx);
 
     	const block = {
     		c: function create() {
@@ -29110,10 +29503,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 489, 3, 12315);
-    			add_location(figure, file$h, 488, 2, 12303);
+    			add_location(div0, file$h, 588, 3, 15336);
+    			add_location(figure, file$h, 587, 2, 15324);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 487, 1, 12277);
+    			add_location(div1, file$h, 586, 1, 15298);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -29123,15 +29516,15 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*areachart_data*/ ctx[6] && /*linechart_data*/ ctx[11]) {
+    			if (/*areachart_data*/ ctx[8] && /*linechart_data*/ ctx[11]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty[0] & /*areachart_data*/ 64) {
+    					if (dirty[0] & /*areachart_data*/ 256) {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block_3(ctx);
+    					if_block = create_if_block_13(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div0, null);
@@ -29165,44 +29558,283 @@ var app = (function () {
     		block,
     		id: create_background_slot_3.name,
     		type: "slot",
-    		source: "(488:1) ",
+    		source: "(587:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (504:1) 
+    // (633:42) 
+    function create_if_block_12(ctx) {
+    	let p;
+    	let t1;
+    	let div0;
+    	let span0;
+    	let t2;
+    	let span1;
+    	let t4;
+    	let div1;
+    	let span2;
+    	let t5;
+    	let span3;
+    	let t7;
+    	let div2;
+    	let span4;
+    	let t8;
+    	let span5;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "China is the least prolific third-party signatory of\n\t\t\t\t\t\tpeace agreements of all UN Security Council permanent\n\t\t\t\t\t\tmembers. China signed 39 agreements as a third-party\n\t\t\t\t\t\tsince 1990, in comparison to Russian 134 signatures and\n\t\t\t\t\t\tthe US 132 signatures.";
+    			t1 = space();
+    			div0 = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Overall agreements.";
+    			t4 = space();
+    			div1 = element("div");
+    			span2 = element("span");
+    			t5 = space();
+    			span3 = element("span");
+    			span3.textContent = "Chinese agreements.";
+    			t7 = space();
+    			div2 = element("div");
+    			span4 = element("span");
+    			t8 = space();
+    			span5 = element("span");
+    			span5.textContent = "Russian agreements.";
+    			add_location(p, file$h, 633, 5, 16568);
+    			attr_dev(span0, "class", "rect svelte-12z3yr8");
+    			set_style(span0, "background-color", "rgba(0, 100, 100, 0.3)");
+    			add_location(span0, file$h, 641, 6, 16880);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 645, 6, 16984);
+    			attr_dev(div0, "id", "legend");
+    			attr_dev(div0, "class", "svelte-12z3yr8");
+    			add_location(div0, file$h, 640, 5, 16856);
+    			attr_dev(span2, "class", "line svelte-12z3yr8");
+    			set_style(span2, "background-color", "red");
+    			add_location(span2, file$h, 648, 6, 17075);
+    			attr_dev(span3, "id", "legend_text");
+    			attr_dev(span3, "class", "svelte-12z3yr8");
+    			add_location(span3, file$h, 650, 6, 17146);
+    			attr_dev(div1, "id", "legend");
+    			attr_dev(div1, "class", "svelte-12z3yr8");
+    			add_location(div1, file$h, 647, 5, 17051);
+    			attr_dev(span4, "class", "line svelte-12z3yr8");
+    			set_style(span4, "background-color", "rgb(0, 158, 158)");
+    			add_location(span4, file$h, 653, 6, 17237);
+    			attr_dev(span5, "id", "legend_text");
+    			attr_dev(span5, "class", "svelte-12z3yr8");
+    			add_location(span5, file$h, 657, 6, 17335);
+    			attr_dev(div2, "id", "legend");
+    			attr_dev(div2, "class", "svelte-12z3yr8");
+    			add_location(div2, file$h, 652, 5, 17213);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, span0);
+    			append_dev(div0, t2);
+    			append_dev(div0, span1);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, span2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span3);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, span4);
+    			append_dev(div2, t8);
+    			append_dev(div2, span5);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(div2);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_12.name,
+    		type: "if",
+    		source: "(633:42) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (607:4) {#if selectedCountry === "Russia"}
+    function create_if_block_11(ctx) {
+    	let p;
+    	let t1;
+    	let div0;
+    	let span0;
+    	let t2;
+    	let span1;
+    	let t4;
+    	let div1;
+    	let span2;
+    	let t5;
+    	let span3;
+    	let t7;
+    	let div2;
+    	let span4;
+    	let t8;
+    	let span5;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Russia is the most prolific signatory of peace\n\t\t\t\t\t\tagreements of all UN Security Council Permanent Members.\n\t\t\t\t\t\tIn a number of years (1995, 2016-2018) it has signed\n\t\t\t\t\t\tmore agreements than the United Nations.";
+    			t1 = space();
+    			div0 = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Overall agreements.";
+    			t4 = space();
+    			div1 = element("div");
+    			span2 = element("span");
+    			t5 = space();
+    			span3 = element("span");
+    			span3.textContent = "Russian agreements.";
+    			t7 = space();
+    			div2 = element("div");
+    			span4 = element("span");
+    			t8 = space();
+    			span5 = element("span");
+    			span5.textContent = "Chinese agreements.";
+    			add_location(p, file$h, 607, 5, 15738);
+    			attr_dev(span0, "class", "rect svelte-12z3yr8");
+    			set_style(span0, "background-color", "rgba(0, 100, 100, 0.3)");
+    			add_location(span0, file$h, 614, 6, 16003);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 618, 6, 16107);
+    			attr_dev(div0, "id", "legend");
+    			attr_dev(div0, "class", "svelte-12z3yr8");
+    			add_location(div0, file$h, 613, 5, 15979);
+    			attr_dev(span2, "class", "line svelte-12z3yr8");
+    			set_style(span2, "background-color", "red");
+    			add_location(span2, file$h, 621, 6, 16198);
+    			attr_dev(span3, "id", "legend_text");
+    			attr_dev(span3, "class", "svelte-12z3yr8");
+    			add_location(span3, file$h, 623, 6, 16269);
+    			attr_dev(div1, "id", "legend");
+    			attr_dev(div1, "class", "svelte-12z3yr8");
+    			add_location(div1, file$h, 620, 5, 16174);
+    			attr_dev(span4, "class", "line svelte-12z3yr8");
+    			set_style(span4, "background-color", "rgb(0, 158, 158)");
+    			add_location(span4, file$h, 626, 6, 16360);
+    			attr_dev(span5, "id", "legend_text");
+    			attr_dev(span5, "class", "svelte-12z3yr8");
+    			add_location(span5, file$h, 630, 6, 16458);
+    			attr_dev(div2, "id", "legend");
+    			attr_dev(div2, "class", "svelte-12z3yr8");
+    			add_location(div2, file$h, 625, 5, 16336);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, span0);
+    			append_dev(div0, t2);
+    			append_dev(div0, span1);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, span2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span3);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, span4);
+    			append_dev(div2, t8);
+    			append_dev(div2, span5);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(div2);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_11.name,
+    		type: "if",
+    		source: "(607:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (604:1) 
     function create_foreground_slot_3(ctx) {
     	let div1;
     	let section;
     	let div0;
-    	let p;
+
+    	function select_block_type_3(ctx, dirty) {
+    		if (/*selectedCountry*/ ctx[1] === "Russia") return create_if_block_11;
+    		if (/*selectedCountry*/ ctx[1] === "China") return create_if_block_12;
+    	}
+
+    	let current_block_type = select_block_type_3(ctx);
+    	let if_block = current_block_type && current_block_type(ctx);
 
     	const block = {
     		c: function create() {
     			div1 = element("div");
     			section = element("section");
     			div0 = element("div");
-    			p = element("p");
-    			p.textContent = "Russia has most often acted as a third-party signatory in\n\t\t\t\t\tthe 1990s. Majority of these agreements relate to the\n\t\t\t\t\tdissolution of the Soviet Union.";
-    			add_location(p, file$h, 506, 4, 12652);
+    			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 505, 3, 12623);
+    			add_location(div0, file$h, 605, 3, 15669);
     			attr_dev(section, "data-id", "area01");
-    			add_location(section, file$h, 504, 2, 12593);
+    			add_location(section, file$h, 604, 2, 15639);
     			attr_dev(div1, "slot", "foreground");
-    			add_location(div1, file$h, 503, 1, 12567);
+    			add_location(div1, file$h, 603, 1, 15613);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, section);
     			append_dev(section, div0);
-    			append_dev(div0, p);
+    			if (if_block) if_block.m(div0, null);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (current_block_type !== (current_block_type = select_block_type_3(ctx))) {
+    				if (if_block) if_block.d(1);
+    				if_block = current_block_type && current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(div0, null);
+    				}
+    			}
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
+
+    			if (if_block) {
+    				if_block.d();
+    			}
     		}
     	};
 
@@ -29210,14 +29842,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot_3.name,
     		type: "slot",
-    		source: "(504:1) ",
+    		source: "(604:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (517:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (666:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_3(ctx) {
     	let p;
 
@@ -29226,7 +29858,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Agreement Stages";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 517, 1, 12932);
+    			add_location(p, file$h, 666, 1, 17514);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29241,21 +29873,24 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(517:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(666:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (525:4) {#if donut_data}
-    function create_if_block_2(ctx) {
+    // (674:4) {#if donut_data}
+    function create_if_block_10(ctx) {
     	let div;
     	let donut;
     	let current;
 
     	donut = new Donut({
-    			props: { donut_data: /*donut_data*/ ctx[7] },
+    			props: {
+    				donut_data: /*donut_data*/ ctx[6],
+    				selectedCountry: /*selectedCountry*/ ctx[1]
+    			},
     			$$inline: true
     		});
 
@@ -29263,8 +29898,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(donut.$$.fragment);
-    			attr_dev(div, "class", "chart svelte-1dcu6sc");
-    			add_location(div, file$h, 525, 5, 13148);
+    			attr_dev(div, "class", "chart svelte-12z3yr8");
+    			add_location(div, file$h, 674, 5, 17730);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29273,7 +29908,8 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const donut_changes = {};
-    			if (dirty[0] & /*donut_data*/ 128) donut_changes.donut_data = /*donut_data*/ ctx[7];
+    			if (dirty[0] & /*donut_data*/ 64) donut_changes.donut_data = /*donut_data*/ ctx[6];
+    			if (dirty[0] & /*selectedCountry*/ 2) donut_changes.selectedCountry = /*selectedCountry*/ ctx[1];
     			donut.$set(donut_changes);
     		},
     		i: function intro(local) {
@@ -29293,22 +29929,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2.name,
+    		id: create_if_block_10.name,
     		type: "if",
-    		source: "(525:4) {#if donut_data}",
+    		source: "(674:4) {#if donut_data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (522:1) 
+    // (671:1) 
     function create_background_slot_2(ctx) {
     	let div1;
     	let figure;
     	let div0;
     	let current;
-    	let if_block = /*donut_data*/ ctx[7] && create_if_block_2(ctx);
+    	let if_block = /*donut_data*/ ctx[6] && create_if_block_10(ctx);
 
     	const block = {
     		c: function create() {
@@ -29317,10 +29953,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 523, 3, 13087);
-    			add_location(figure, file$h, 522, 2, 13075);
+    			add_location(div0, file$h, 672, 3, 17669);
+    			add_location(figure, file$h, 671, 2, 17657);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 521, 1, 13049);
+    			add_location(div1, file$h, 670, 1, 17631);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -29330,15 +29966,15 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*donut_data*/ ctx[7]) {
+    			if (/*donut_data*/ ctx[6]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty[0] & /*donut_data*/ 128) {
+    					if (dirty[0] & /*donut_data*/ 64) {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block_2(ctx);
+    					if_block = create_if_block_10(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div0, null);
@@ -29372,44 +30008,145 @@ var app = (function () {
     		block,
     		id: create_background_slot_2.name,
     		type: "slot",
-    		source: "(522:1) ",
+    		source: "(671:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (534:1) 
+    // (696:42) 
+    function create_if_block_9(ctx) {
+    	let p;
+    	let t0;
+    	let a;
+    	let t2;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("Chinese involvement as a third-party signatory seems to\n\t\t\t\t\t\tcome at the point when there is a broad international\n\t\t\t\t\t\tconsensus regarding a peace process. Implementation\n\t\t\t\t\t\tagreements are the biggest category and represent 31% of\n\t\t\t\t\t\tall agreements signed by China. For more details on the\n\t\t\t\t\t\tcategories see\n\t\t\t\t\t\t");
+    			a = element("a");
+    			a.textContent = "here";
+    			t2 = text(".");
+    			attr_dev(a, "href", "https://www.peaceagreements.org/files/Definitions_v7.pdf");
+    			attr_dev(a, "target", "_blank");
+    			add_location(a, file$h, 703, 6, 18669);
+    			add_location(p, file$h, 696, 5, 18333);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, a);
+    			append_dev(p, t2);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_9.name,
+    		type: "if",
+    		source: "(696:42) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (686:4) {#if selectedCountry === "Russia"}
+    function create_if_block_8(ctx) {
+    	let p;
+    	let t0;
+    	let a;
+    	let t2;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("Russia primarily signs pre-negotiation and ceasefire\n\t\t\t\t\t\tagreements. These represent over half of all agreements\n\t\t\t\t\t\tsigned. For more details on the categories see\n\t\t\t\t\t\t");
+    			a = element("a");
+    			a.textContent = "here";
+    			t2 = text(".");
+    			attr_dev(a, "href", "https://www.peaceagreements.org/files/Definitions_v7.pdf");
+    			attr_dev(a, "target", "_blank");
+    			add_location(a, file$h, 690, 6, 18161);
+    			add_location(p, file$h, 686, 5, 17977);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, a);
+    			append_dev(p, t2);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_8.name,
+    		type: "if",
+    		source: "(686:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (683:1) 
     function create_foreground_slot_2(ctx) {
     	let div1;
     	let section;
     	let div0;
-    	let p;
+
+    	function select_block_type_4(ctx, dirty) {
+    		if (/*selectedCountry*/ ctx[1] === "Russia") return create_if_block_8;
+    		if (/*selectedCountry*/ ctx[1] === "China") return create_if_block_9;
+    	}
+
+    	let current_block_type = select_block_type_4(ctx);
+    	let if_block = current_block_type && current_block_type(ctx);
 
     	const block = {
     		c: function create() {
     			div1 = element("div");
     			section = element("section");
     			div0 = element("div");
-    			p = element("p");
-    			p.textContent = "Russia has most often acted as a third-party signatory in\n\t\t\t\t\tthe 1990s. Majority of these agreements relate to the\n\t\t\t\t\tdissolution of the Soviet Union.";
-    			add_location(p, file$h, 536, 4, 13337);
+    			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 535, 3, 13308);
+    			add_location(div0, file$h, 684, 3, 17908);
     			attr_dev(section, "data-id", "donut01");
-    			add_location(section, file$h, 534, 2, 13277);
+    			add_location(section, file$h, 683, 2, 17877);
     			attr_dev(div1, "slot", "foreground");
-    			add_location(div1, file$h, 533, 1, 13251);
+    			add_location(div1, file$h, 682, 1, 17851);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, section);
     			append_dev(section, div0);
-    			append_dev(div0, p);
+    			if (if_block) if_block.m(div0, null);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (current_block_type !== (current_block_type = select_block_type_4(ctx))) {
+    				if (if_block) if_block.d(1);
+    				if_block = current_block_type && current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(div0, null);
+    				}
+    			}
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
+
+    			if (if_block) {
+    				if_block.d();
+    			}
     		}
     	};
 
@@ -29417,14 +30154,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot_2.name,
     		type: "slot",
-    		source: "(534:1) ",
+    		source: "(683:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (547:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (715:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_2(ctx) {
     	let p;
 
@@ -29433,7 +30170,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Comparison of Agreement Stages";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 547, 1, 13617);
+    			add_location(p, file$h, 715, 1, 18910);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29448,21 +30185,24 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(547:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(715:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (555:4) {#if barchart_data}
-    function create_if_block_1$1(ctx) {
+    // (723:4) {#if barchart_data}
+    function create_if_block_7(ctx) {
     	let div;
     	let bars;
     	let current;
 
     	bars = new Bars({
-    			props: { barchart_data: /*barchart_data*/ ctx[8] },
+    			props: {
+    				barchart_data: /*barchart_data*/ ctx[7],
+    				selectedCountry: /*selectedCountry*/ ctx[1]
+    			},
     			$$inline: true
     		});
 
@@ -29470,8 +30210,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(bars.$$.fragment);
-    			attr_dev(div, "class", "chart svelte-1dcu6sc");
-    			add_location(div, file$h, 555, 5, 13848);
+    			attr_dev(div, "class", "chart svelte-12z3yr8");
+    			add_location(div, file$h, 723, 5, 19141);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29480,7 +30220,8 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const bars_changes = {};
-    			if (dirty[0] & /*barchart_data*/ 256) bars_changes.barchart_data = /*barchart_data*/ ctx[8];
+    			if (dirty[0] & /*barchart_data*/ 128) bars_changes.barchart_data = /*barchart_data*/ ctx[7];
+    			if (dirty[0] & /*selectedCountry*/ 2) bars_changes.selectedCountry = /*selectedCountry*/ ctx[1];
     			bars.$set(bars_changes);
     		},
     		i: function intro(local) {
@@ -29500,22 +30241,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$1.name,
+    		id: create_if_block_7.name,
     		type: "if",
-    		source: "(555:4) {#if barchart_data}",
+    		source: "(723:4) {#if barchart_data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (552:1) 
+    // (720:1) 
     function create_background_slot_1(ctx) {
     	let div1;
     	let figure;
     	let div0;
     	let current;
-    	let if_block = /*barchart_data*/ ctx[8] && create_if_block_1$1(ctx);
+    	let if_block = /*barchart_data*/ ctx[7] && create_if_block_7(ctx);
 
     	const block = {
     		c: function create() {
@@ -29524,10 +30265,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 553, 3, 13784);
-    			add_location(figure, file$h, 552, 2, 13772);
+    			add_location(div0, file$h, 721, 3, 19077);
+    			add_location(figure, file$h, 720, 2, 19065);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 551, 1, 13746);
+    			add_location(div1, file$h, 719, 1, 19039);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -29537,15 +30278,15 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*barchart_data*/ ctx[8]) {
+    			if (/*barchart_data*/ ctx[7]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty[0] & /*barchart_data*/ 256) {
+    					if (dirty[0] & /*barchart_data*/ 128) {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block_1$1(ctx);
+    					if_block = create_if_block_7(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div0, null);
@@ -29579,80 +30320,635 @@ var app = (function () {
     		block,
     		id: create_background_slot_1.name,
     		type: "slot",
-    		source: "(552:1) ",
+    		source: "(720:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (564:1) 
+    // (755:42) 
+    function create_if_block_6(ctx) {
+    	let p;
+    	let t1;
+    	let div0;
+    	let span0;
+    	let t2;
+    	let span1;
+    	let t4;
+    	let div1;
+    	let span2;
+    	let t5;
+    	let span3;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Compared with all agreements, China signs more\n\t\t\t\t\t\tcomprehensive and implementation agreements, and less\n\t\t\t\t\t\tceasefires and partial ones.";
+    			t1 = space();
+    			div0 = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Overall agreements (% of all).";
+    			t4 = space();
+    			div1 = element("div");
+    			span2 = element("span");
+    			t5 = space();
+    			span3 = element("span");
+    			span3.textContent = "Chinese signature (% of all signed by China).";
+    			add_location(p, file$h, 755, 5, 19991);
+    			attr_dev(span0, "class", "rect svelte-12z3yr8");
+    			set_style(span0, "background-color", "black");
+    			add_location(span0, file$h, 761, 6, 20182);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 763, 6, 20255);
+    			attr_dev(div0, "id", "legend");
+    			attr_dev(div0, "class", "svelte-12z3yr8");
+    			add_location(div0, file$h, 760, 5, 20158);
+    			attr_dev(span2, "class", "rect svelte-12z3yr8");
+    			set_style(span2, "background-color", "red");
+    			add_location(span2, file$h, 768, 6, 20372);
+    			attr_dev(span3, "id", "legend_text");
+    			attr_dev(span3, "class", "svelte-12z3yr8");
+    			add_location(span3, file$h, 770, 6, 20443);
+    			attr_dev(div1, "id", "legend");
+    			attr_dev(div1, "class", "svelte-12z3yr8");
+    			add_location(div1, file$h, 767, 5, 20348);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, span0);
+    			append_dev(div0, t2);
+    			append_dev(div0, span1);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, span2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span3);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_6.name,
+    		type: "if",
+    		source: "(755:42) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (735:4) {#if selectedCountry === "Russia"}
+    function create_if_block_5(ctx) {
+    	let p;
+    	let t1;
+    	let div0;
+    	let span0;
+    	let t2;
+    	let span1;
+    	let t4;
+    	let div1;
+    	let span2;
+    	let t5;
+    	let span3;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Compared with all agreements, Russia signs more\n\t\t\t\t\t\tpre-negotiation agreements and less comprehensive and\n\t\t\t\t\t\timplementation agreements.";
+    			t1 = space();
+    			div0 = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Overall agreements (% of all).";
+    			t4 = space();
+    			div1 = element("div");
+    			span2 = element("span");
+    			t5 = space();
+    			span3 = element("span");
+    			span3.textContent = "Russian signature (% of all signed by Russia).";
+    			add_location(p, file$h, 735, 5, 19388);
+    			attr_dev(span0, "class", "rect svelte-12z3yr8");
+    			set_style(span0, "background-color", "black");
+    			add_location(span0, file$h, 741, 6, 19578);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 743, 6, 19651);
+    			attr_dev(div0, "id", "legend");
+    			attr_dev(div0, "class", "svelte-12z3yr8");
+    			add_location(div0, file$h, 740, 5, 19554);
+    			attr_dev(span2, "class", "rect svelte-12z3yr8");
+    			set_style(span2, "background-color", "red");
+    			add_location(span2, file$h, 748, 6, 19768);
+    			attr_dev(span3, "id", "legend_text");
+    			attr_dev(span3, "class", "svelte-12z3yr8");
+    			add_location(span3, file$h, 750, 6, 19839);
+    			attr_dev(div1, "id", "legend");
+    			attr_dev(div1, "class", "svelte-12z3yr8");
+    			add_location(div1, file$h, 747, 5, 19744);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, span0);
+    			append_dev(div0, t2);
+    			append_dev(div0, span1);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, span2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span3);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5.name,
+    		type: "if",
+    		source: "(735:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (800:42) 
+    function create_if_block_4(ctx) {
+    	let p;
+    	let t1;
+    	let div0;
+    	let span0;
+    	let t2;
+    	let span1;
+    	let t4;
+    	let div1;
+    	let span2;
+    	let t5;
+    	let span3;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Comprehensive agreements present only 6% of all\n\t\t\t\t\t\tagreements signed by third-parties, but amount to 10% of\n\t\t\t\t\t\tall agreements signed by China. Similarly, 31% of all\n\t\t\t\t\t\tagreements signed by China are implementation\n\t\t\t\t\t\tagreements, but the overall proportion of such\n\t\t\t\t\t\tagreements is 20%.";
+    			t1 = space();
+    			div0 = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Overall agreements (% of all).";
+    			t4 = space();
+    			div1 = element("div");
+    			span2 = element("span");
+    			t5 = space();
+    			span3 = element("span");
+    			span3.textContent = "Chinese signature (% of all signed by China).";
+    			add_location(p, file$h, 800, 5, 21286);
+    			attr_dev(span0, "class", "rect svelte-12z3yr8");
+    			set_style(span0, "background-color", "black");
+    			add_location(span0, file$h, 809, 6, 21636);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 811, 6, 21709);
+    			attr_dev(div0, "id", "legend");
+    			attr_dev(div0, "class", "svelte-12z3yr8");
+    			add_location(div0, file$h, 808, 5, 21612);
+    			attr_dev(span2, "class", "rect svelte-12z3yr8");
+    			set_style(span2, "background-color", "red");
+    			add_location(span2, file$h, 816, 6, 21826);
+    			attr_dev(span3, "id", "legend_text");
+    			attr_dev(span3, "class", "svelte-12z3yr8");
+    			add_location(span3, file$h, 818, 6, 21897);
+    			attr_dev(div1, "id", "legend");
+    			attr_dev(div1, "class", "svelte-12z3yr8");
+    			add_location(div1, file$h, 815, 5, 21802);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, span0);
+    			append_dev(div0, t2);
+    			append_dev(div0, span1);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, span2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span3);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_4.name,
+    		type: "if",
+    		source: "(800:42) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (780:4) {#if selectedCountry === "Russia"}
+    function create_if_block_3(ctx) {
+    	let p;
+    	let t1;
+    	let div0;
+    	let span0;
+    	let t2;
+    	let span1;
+    	let t4;
+    	let div1;
+    	let span2;
+    	let t5;
+    	let span3;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Pre-negotiation agreements represent 29% of all\n\t\t\t\t\t\tagreements with third-party signatories, but 35% of all\n\t\t\t\t\t\tagreements signed by Russia.";
+    			t1 = space();
+    			div0 = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Overall agreements (% of all).";
+    			t4 = space();
+    			div1 = element("div");
+    			span2 = element("span");
+    			t5 = space();
+    			span3 = element("span");
+    			span3.textContent = "Russian signature (% of all signed by Russia).";
+    			add_location(p, file$h, 780, 5, 20679);
+    			attr_dev(span0, "class", "rect svelte-12z3yr8");
+    			set_style(span0, "background-color", "black");
+    			add_location(span0, file$h, 786, 6, 20873);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 788, 6, 20946);
+    			attr_dev(div0, "id", "legend");
+    			attr_dev(div0, "class", "svelte-12z3yr8");
+    			add_location(div0, file$h, 785, 5, 20849);
+    			attr_dev(span2, "class", "rect svelte-12z3yr8");
+    			set_style(span2, "background-color", "red");
+    			add_location(span2, file$h, 793, 6, 21063);
+    			attr_dev(span3, "id", "legend_text");
+    			attr_dev(span3, "class", "svelte-12z3yr8");
+    			add_location(span3, file$h, 795, 6, 21134);
+    			attr_dev(div1, "id", "legend");
+    			attr_dev(div1, "class", "svelte-12z3yr8");
+    			add_location(div1, file$h, 792, 5, 21039);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, span0);
+    			append_dev(div0, t2);
+    			append_dev(div0, span1);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, span2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span3);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3.name,
+    		type: "if",
+    		source: "(780:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (850:42) 
+    function create_if_block_2(ctx) {
+    	let p;
+    	let t1;
+    	let div0;
+    	let span0;
+    	let t2;
+    	let span1;
+    	let t4;
+    	let div1;
+    	let span2;
+    	let t5;
+    	let span3;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "In contrast, only 8% of all agreements signed by China\n\t\t\t\t\t\tare ceasefires, with the overall proportion of such\n\t\t\t\t\t\tagreements at 19%.";
+    			t1 = space();
+    			div0 = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Overall agreements (% of all).";
+    			t4 = space();
+    			div1 = element("div");
+    			span2 = element("span");
+    			t5 = space();
+    			span3 = element("span");
+    			span3.textContent = "Chinese signature (% of all signed by China).";
+    			add_location(p, file$h, 850, 5, 22846);
+    			attr_dev(span0, "class", "rect svelte-12z3yr8");
+    			set_style(span0, "background-color", "black");
+    			add_location(span0, file$h, 856, 6, 23033);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 858, 6, 23106);
+    			attr_dev(div0, "id", "legend");
+    			attr_dev(div0, "class", "svelte-12z3yr8");
+    			add_location(div0, file$h, 855, 5, 23009);
+    			attr_dev(span2, "class", "rect svelte-12z3yr8");
+    			set_style(span2, "background-color", "red");
+    			add_location(span2, file$h, 863, 6, 23223);
+    			attr_dev(span3, "id", "legend_text");
+    			attr_dev(span3, "class", "svelte-12z3yr8");
+    			add_location(span3, file$h, 865, 6, 23294);
+    			attr_dev(div1, "id", "legend");
+    			attr_dev(div1, "class", "svelte-12z3yr8");
+    			add_location(div1, file$h, 862, 5, 23199);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, span0);
+    			append_dev(div0, t2);
+    			append_dev(div0, span1);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, span2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span3);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(850:42) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (828:4) {#if selectedCountry === "Russia"}
+    function create_if_block_1$1(ctx) {
+    	let p;
+    	let t1;
+    	let div0;
+    	let span0;
+    	let t2;
+    	let span1;
+    	let t4;
+    	let div1;
+    	let span2;
+    	let t5;
+    	let span3;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			p.textContent = "Comprehensive agreements represent 6% of all agreements\n\t\t\t\t\t\tsigned, but only 4% of all agreements signed by Russia.\n\t\t\t\t\t\tImplementation agreements represent 20% of all\n\t\t\t\t\t\tagreements signed, but only 17% of all agreements signed\n\t\t\t\t\t\tby Russia.";
+    			t1 = space();
+    			div0 = element("div");
+    			span0 = element("span");
+    			t2 = space();
+    			span1 = element("span");
+    			span1.textContent = "Overall agreements (% of all).";
+    			t4 = space();
+    			div1 = element("div");
+    			span2 = element("span");
+    			t5 = space();
+    			span3 = element("span");
+    			span3.textContent = "Russian signature (% of all signed by Russia).";
+    			add_location(p, file$h, 828, 5, 22133);
+    			attr_dev(span0, "class", "rect svelte-12z3yr8");
+    			set_style(span0, "background-color", "black");
+    			add_location(span0, file$h, 836, 6, 22433);
+    			attr_dev(span1, "id", "legend_text");
+    			attr_dev(span1, "class", "svelte-12z3yr8");
+    			add_location(span1, file$h, 838, 6, 22506);
+    			attr_dev(div0, "id", "legend");
+    			attr_dev(div0, "class", "svelte-12z3yr8");
+    			add_location(div0, file$h, 835, 5, 22409);
+    			attr_dev(span2, "class", "rect svelte-12z3yr8");
+    			set_style(span2, "background-color", "red");
+    			add_location(span2, file$h, 843, 6, 22623);
+    			attr_dev(span3, "id", "legend_text");
+    			attr_dev(span3, "class", "svelte-12z3yr8");
+    			add_location(span3, file$h, 845, 6, 22694);
+    			attr_dev(div1, "id", "legend");
+    			attr_dev(div1, "class", "svelte-12z3yr8");
+    			add_location(div1, file$h, 842, 5, 22599);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, span0);
+    			append_dev(div0, t2);
+    			append_dev(div0, span1);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, span2);
+    			append_dev(div1, t5);
+    			append_dev(div1, span3);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(828:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (732:1) 
     function create_foreground_slot_1(ctx) {
     	let div3;
     	let section0;
     	let div0;
-    	let p0;
-    	let t1;
+    	let t0;
     	let section1;
     	let div1;
-    	let p1;
-    	let t3;
+    	let t1;
     	let section2;
     	let div2;
-    	let p2;
+
+    	function select_block_type_5(ctx, dirty) {
+    		if (/*selectedCountry*/ ctx[1] === "Russia") return create_if_block_5;
+    		if (/*selectedCountry*/ ctx[1] === "China") return create_if_block_6;
+    	}
+
+    	let current_block_type = select_block_type_5(ctx);
+    	let if_block0 = current_block_type && current_block_type(ctx);
+
+    	function select_block_type_6(ctx, dirty) {
+    		if (/*selectedCountry*/ ctx[1] === "Russia") return create_if_block_3;
+    		if (/*selectedCountry*/ ctx[1] === "China") return create_if_block_4;
+    	}
+
+    	let current_block_type_1 = select_block_type_6(ctx);
+    	let if_block1 = current_block_type_1 && current_block_type_1(ctx);
+
+    	function select_block_type_7(ctx, dirty) {
+    		if (/*selectedCountry*/ ctx[1] === "Russia") return create_if_block_1$1;
+    		if (/*selectedCountry*/ ctx[1] === "China") return create_if_block_2;
+    	}
+
+    	let current_block_type_2 = select_block_type_7(ctx);
+    	let if_block2 = current_block_type_2 && current_block_type_2(ctx);
 
     	const block = {
     		c: function create() {
     			div3 = element("div");
     			section0 = element("section");
     			div0 = element("div");
-    			p0 = element("p");
-    			p0.textContent = "Russia has most often acted as a third-party signatory in\n\t\t\t\t\tthe 1990s. Majority of these agreements relate to the\n\t\t\t\t\tdissolution of the Soviet Union.";
-    			t1 = space();
+    			if (if_block0) if_block0.c();
+    			t0 = space();
     			section1 = element("section");
     			div1 = element("div");
-    			p1 = element("p");
-    			p1.textContent = "Russia has most often acted as a third-party signatory in\n\t\t\t\t\tthe 1990s. Majority of these agreements relate to the\n\t\t\t\t\tdissolution of the Soviet Union.";
-    			t3 = space();
+    			if (if_block1) if_block1.c();
+    			t1 = space();
     			section2 = element("section");
     			div2 = element("div");
-    			p2 = element("p");
-    			p2.textContent = "Russia has most often acted as a third-party signatory in\n\t\t\t\t\tthe 1990s. Majority of these agreements relate to the\n\t\t\t\t\tdissolution of the Soviet Union.";
-    			add_location(p0, file$h, 566, 4, 14037);
+    			if (if_block2) if_block2.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 565, 3, 14008);
+    			add_location(div0, file$h, 733, 3, 19319);
     			attr_dev(section0, "data-id", "bar01");
-    			add_location(section0, file$h, 564, 2, 13979);
-    			add_location(p1, file$h, 575, 4, 14293);
+    			add_location(section0, file$h, 732, 2, 19290);
     			attr_dev(div1, "class", "col-medium");
-    			add_location(div1, file$h, 574, 3, 14264);
+    			add_location(div1, file$h, 778, 3, 20610);
     			attr_dev(section1, "data-id", "bar02");
-    			add_location(section1, file$h, 573, 2, 14235);
-    			add_location(p2, file$h, 584, 4, 14549);
+    			add_location(section1, file$h, 777, 2, 20581);
     			attr_dev(div2, "class", "col-medium");
-    			add_location(div2, file$h, 583, 3, 14520);
+    			add_location(div2, file$h, 826, 3, 22064);
     			attr_dev(section2, "data-id", "bar03");
-    			add_location(section2, file$h, 582, 2, 14491);
+    			add_location(section2, file$h, 825, 2, 22035);
     			attr_dev(div3, "slot", "foreground");
-    			add_location(div3, file$h, 563, 1, 13953);
+    			add_location(div3, file$h, 731, 1, 19264);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
     			append_dev(div3, section0);
     			append_dev(section0, div0);
-    			append_dev(div0, p0);
-    			append_dev(div3, t1);
+    			if (if_block0) if_block0.m(div0, null);
+    			append_dev(div3, t0);
     			append_dev(div3, section1);
     			append_dev(section1, div1);
-    			append_dev(div1, p1);
-    			append_dev(div3, t3);
+    			if (if_block1) if_block1.m(div1, null);
+    			append_dev(div3, t1);
     			append_dev(div3, section2);
     			append_dev(section2, div2);
-    			append_dev(div2, p2);
+    			if (if_block2) if_block2.m(div2, null);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (current_block_type !== (current_block_type = select_block_type_5(ctx))) {
+    				if (if_block0) if_block0.d(1);
+    				if_block0 = current_block_type && current_block_type(ctx);
+
+    				if (if_block0) {
+    					if_block0.c();
+    					if_block0.m(div0, null);
+    				}
+    			}
+
+    			if (current_block_type_1 !== (current_block_type_1 = select_block_type_6(ctx))) {
+    				if (if_block1) if_block1.d(1);
+    				if_block1 = current_block_type_1 && current_block_type_1(ctx);
+
+    				if (if_block1) {
+    					if_block1.c();
+    					if_block1.m(div1, null);
+    				}
+    			}
+
+    			if (current_block_type_2 !== (current_block_type_2 = select_block_type_7(ctx))) {
+    				if (if_block2) if_block2.d(1);
+    				if_block2 = current_block_type_2 && current_block_type_2(ctx);
+
+    				if (if_block2) {
+    					if_block2.c();
+    					if_block2.m(div2, null);
+    				}
+    			}
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div3);
+
+    			if (if_block0) {
+    				if_block0.d();
+    			}
+
+    			if (if_block1) {
+    				if_block1.d();
+    			}
+
+    			if (if_block2) {
+    				if_block2.d();
+    			}
     		}
     	};
 
@@ -29660,14 +30956,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot_1.name,
     		type: "slot",
-    		source: "(564:1) ",
+    		source: "(732:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (703:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (984:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_1(ctx) {
     	let p;
 
@@ -29676,7 +30972,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Geography";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 703, 1, 18199);
+    			add_location(p, file$h, 984, 1, 26884);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29691,14 +30987,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(703:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(984:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (707:0) {#if mygeojson}
+    // (988:0) {#if mygeojson}
     function create_if_block$5(ctx) {
     	let scroller;
     	let updating_id;
@@ -29717,8 +31013,8 @@ var app = (function () {
     		$$scope: { ctx }
     	};
 
-    	if (/*id*/ ctx[1]["map"] !== void 0) {
-    		scroller_props.id = /*id*/ ctx[1]["map"];
+    	if (/*id*/ ctx[0]["map"] !== void 0) {
+    		scroller_props.id = /*id*/ ctx[0]["map"];
     	}
 
     	scroller = new Scroller({ props: scroller_props, $$inline: true });
@@ -29735,13 +31031,13 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const scroller_changes = {};
 
-    			if (dirty[0] & /*mygeojson, map*/ 20 | dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[0] & /*mygeojson, map*/ 20 | dirty[1] & /*$$scope*/ 8388608) {
     				scroller_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_id && dirty[0] & /*id*/ 2) {
+    			if (!updating_id && dirty[0] & /*id*/ 1) {
     				updating_id = true;
-    				scroller_changes.id = /*id*/ ctx[1]["map"];
+    				scroller_changes.id = /*id*/ ctx[0]["map"];
     				add_flush_callback(() => updating_id = false);
     			}
 
@@ -29765,14 +31061,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(707:0) {#if mygeojson}",
+    		source: "(988:0) {#if mygeojson}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (709:2) 
+    // (990:2) 
     function create_background_slot(ctx) {
     	let div1;
     	let figure;
@@ -29801,10 +31097,10 @@ var app = (function () {
     			div0 = element("div");
     			create_component(globe.$$.fragment);
     			attr_dev(div0, "class", "col-full height-full");
-    			add_location(div0, file$h, 710, 4, 18346);
-    			add_location(figure, file$h, 709, 3, 18333);
+    			add_location(div0, file$h, 991, 4, 27031);
+    			add_location(figure, file$h, 990, 3, 27018);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 708, 2, 18306);
+    			add_location(div1, file$h, 989, 2, 26991);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -29844,14 +31140,14 @@ var app = (function () {
     		block,
     		id: create_background_slot.name,
     		type: "slot",
-    		source: "(709:2) ",
+    		source: "(990:2) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (717:2) 
+    // (998:2) 
     function create_foreground_slot(ctx) {
     	let div2;
     	let section0;
@@ -29874,18 +31170,18 @@ var app = (function () {
     			div1 = element("div");
     			p1 = element("p");
     			p1.textContent = "Russia has most often acted as a third-party signatory\n\t\t\t\t\t\tin the 1990s. Majority of these agreements relate to the\n\t\t\t\t\t\tdissolution of the Soviet Union.";
-    			add_location(p0, file$h, 719, 5, 18540);
+    			add_location(p0, file$h, 1000, 5, 27225);
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 718, 4, 18510);
+    			add_location(div0, file$h, 999, 4, 27195);
     			attr_dev(section0, "data-id", "map01");
-    			add_location(section0, file$h, 717, 3, 18480);
-    			add_location(p1, file$h, 728, 5, 18805);
+    			add_location(section0, file$h, 998, 3, 27165);
+    			add_location(p1, file$h, 1009, 5, 27490);
     			attr_dev(div1, "class", "col-medium");
-    			add_location(div1, file$h, 727, 4, 18775);
+    			add_location(div1, file$h, 1008, 4, 27460);
     			attr_dev(section1, "data-id", "map02");
-    			add_location(section1, file$h, 726, 3, 18745);
+    			add_location(section1, file$h, 1007, 3, 27430);
     			attr_dev(div2, "slot", "foreground");
-    			add_location(div2, file$h, 716, 2, 18453);
+    			add_location(div2, file$h, 997, 2, 27138);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -29907,14 +31203,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot.name,
     		type: "slot",
-    		source: "(717:2) ",
+    		source: "(998:2) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (740:0) <Section>
+    // (1021:0) <Section>
     function create_default_slot(ctx) {
     	let h2;
     	let t1;
@@ -29927,9 +31223,9 @@ var app = (function () {
     			t1 = space();
     			p = element("p");
     			p.textContent = "Read our research on Russia and its approaches to conflict, peace\n\t\tprocesses and mediation.";
-    			add_location(h2, file$h, 740, 1, 19047);
+    			add_location(h2, file$h, 1021, 1, 27732);
     			attr_dev(p, "class", "mb");
-    			add_location(p, file$h, 741, 1, 19066);
+    			add_location(p, file$h, 1022, 1, 27751);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -29948,7 +31244,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(740:0) <Section>",
+    		source: "(1021:0) <Section>",
     		ctx
     	});
 
@@ -29998,8 +31294,8 @@ var app = (function () {
 
     	let dropdown_props = {};
 
-    	if (/*selectedCountry*/ ctx[0] !== void 0) {
-    		dropdown_props.selectedCountry = /*selectedCountry*/ ctx[0];
+    	if (/*selectedCountry*/ ctx[1] !== void 0) {
+    		dropdown_props.selectedCountry = /*selectedCountry*/ ctx[1];
     	}
 
     	dropdown = new Dropdown({ props: dropdown_props, $$inline: true });
@@ -30045,8 +31341,8 @@ var app = (function () {
     		$$scope: { ctx }
     	};
 
-    	if (/*id*/ ctx[1]["chart"] !== void 0) {
-    		scroller0_props.id = /*id*/ ctx[1]["chart"];
+    	if (/*id*/ ctx[0]["chart"] !== void 0) {
+    		scroller0_props.id = /*id*/ ctx[0]["chart"];
     	}
 
     	scroller0 = new Scroller({ props: scroller0_props, $$inline: true });
@@ -30078,8 +31374,8 @@ var app = (function () {
     		$$scope: { ctx }
     	};
 
-    	if (/*id*/ ctx[1]["area"] !== void 0) {
-    		scroller1_props.id = /*id*/ ctx[1]["area"];
+    	if (/*id*/ ctx[0]["area"] !== void 0) {
+    		scroller1_props.id = /*id*/ ctx[0]["area"];
     	}
 
     	scroller1 = new Scroller({ props: scroller1_props, $$inline: true });
@@ -30111,8 +31407,8 @@ var app = (function () {
     		$$scope: { ctx }
     	};
 
-    	if (/*id*/ ctx[1]["donut"] !== void 0) {
-    		scroller2_props.id = /*id*/ ctx[1]["donut"];
+    	if (/*id*/ ctx[0]["donut"] !== void 0) {
+    		scroller2_props.id = /*id*/ ctx[0]["donut"];
     	}
 
     	scroller2 = new Scroller({ props: scroller2_props, $$inline: true });
@@ -30144,8 +31440,8 @@ var app = (function () {
     		$$scope: { ctx }
     	};
 
-    	if (/*id*/ ctx[1]["bar"] !== void 0) {
-    		scroller3_props.id = /*id*/ ctx[1]["bar"];
+    	if (/*id*/ ctx[0]["bar"] !== void 0) {
+    		scroller3_props.id = /*id*/ ctx[0]["bar"];
     	}
 
     	scroller3 = new Scroller({ props: scroller3_props, $$inline: true });
@@ -30245,103 +31541,103 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const dropdown_changes = {};
 
-    			if (!updating_selectedCountry && dirty[0] & /*selectedCountry*/ 1) {
+    			if (!updating_selectedCountry && dirty[0] & /*selectedCountry*/ 2) {
     				updating_selectedCountry = true;
-    				dropdown_changes.selectedCountry = /*selectedCountry*/ ctx[0];
+    				dropdown_changes.selectedCountry = /*selectedCountry*/ ctx[1];
     				add_flush_callback(() => updating_selectedCountry = false);
     			}
 
     			dropdown.$set(dropdown_changes);
     			const header_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[1] & /*$$scope*/ 8388608) {
     				header_changes.$$scope = { dirty, ctx };
     			}
 
     			header.$set(header_changes);
     			const filler0_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[1] & /*$$scope*/ 8388608) {
     				filler0_changes.$$scope = { dirty, ctx };
     			}
 
     			filler0.$set(filler0_changes);
     			const scroller0_changes = {};
 
-    			if (dirty[0] & /*selectedCountry, beeswarm_data, step*/ 41 | dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[0] & /*selectedCountry, beeswarm_data, step*/ 42 | dirty[1] & /*$$scope*/ 8388608) {
     				scroller0_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_id && dirty[0] & /*id*/ 2) {
+    			if (!updating_id && dirty[0] & /*id*/ 1) {
     				updating_id = true;
-    				scroller0_changes.id = /*id*/ ctx[1]["chart"];
+    				scroller0_changes.id = /*id*/ ctx[0]["chart"];
     				add_flush_callback(() => updating_id = false);
     			}
 
     			scroller0.$set(scroller0_changes);
     			const filler1_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[1] & /*$$scope*/ 8388608) {
     				filler1_changes.$$scope = { dirty, ctx };
     			}
 
     			filler1.$set(filler1_changes);
     			const scroller1_changes = {};
 
-    			if (dirty[0] & /*areachart_data*/ 64 | dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[0] & /*selectedCountry, areachart_data*/ 258 | dirty[1] & /*$$scope*/ 8388608) {
     				scroller1_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_id_1 && dirty[0] & /*id*/ 2) {
+    			if (!updating_id_1 && dirty[0] & /*id*/ 1) {
     				updating_id_1 = true;
-    				scroller1_changes.id = /*id*/ ctx[1]["area"];
+    				scroller1_changes.id = /*id*/ ctx[0]["area"];
     				add_flush_callback(() => updating_id_1 = false);
     			}
 
     			scroller1.$set(scroller1_changes);
     			const filler2_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[1] & /*$$scope*/ 8388608) {
     				filler2_changes.$$scope = { dirty, ctx };
     			}
 
     			filler2.$set(filler2_changes);
     			const scroller2_changes = {};
 
-    			if (dirty[0] & /*donut_data*/ 128 | dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[0] & /*selectedCountry, donut_data*/ 66 | dirty[1] & /*$$scope*/ 8388608) {
     				scroller2_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_id_2 && dirty[0] & /*id*/ 2) {
+    			if (!updating_id_2 && dirty[0] & /*id*/ 1) {
     				updating_id_2 = true;
-    				scroller2_changes.id = /*id*/ ctx[1]["donut"];
+    				scroller2_changes.id = /*id*/ ctx[0]["donut"];
     				add_flush_callback(() => updating_id_2 = false);
     			}
 
     			scroller2.$set(scroller2_changes);
     			const filler3_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[1] & /*$$scope*/ 8388608) {
     				filler3_changes.$$scope = { dirty, ctx };
     			}
 
     			filler3.$set(filler3_changes);
     			const scroller3_changes = {};
 
-    			if (dirty[0] & /*barchart_data*/ 256 | dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[0] & /*selectedCountry, barchart_data*/ 130 | dirty[1] & /*$$scope*/ 8388608) {
     				scroller3_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_id_3 && dirty[0] & /*id*/ 2) {
+    			if (!updating_id_3 && dirty[0] & /*id*/ 1) {
     				updating_id_3 = true;
-    				scroller3_changes.id = /*id*/ ctx[1]["bar"];
+    				scroller3_changes.id = /*id*/ ctx[0]["bar"];
     				add_flush_callback(() => updating_id_3 = false);
     			}
 
     			scroller3.$set(scroller3_changes);
     			const filler4_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[1] & /*$$scope*/ 8388608) {
     				filler4_changes.$$scope = { dirty, ctx };
     			}
 
@@ -30372,7 +31668,7 @@ var app = (function () {
 
     			const section_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 524288) {
+    			if (dirty[1] & /*$$scope*/ 8388608) {
     				section_changes.$$scope = { dirty, ctx };
     			}
 
@@ -30637,10 +31933,14 @@ var app = (function () {
     	let beeswarm_data;
     	let russia_beeswarm_data;
     	let china_beeswarm_data;
+    	let donut_data;
+    	let russia_donut;
+    	let china_donut;
+    	let barchart_data;
+    	let russia_barchart_data;
+    	let china_barchart_data;
     	let areachart_data;
     	let linechart_data = [];
-    	let donut_data;
-    	let barchart_data;
 
     	let path = [
     		"./data/agts_rus_china.csv",
@@ -30694,7 +31994,7 @@ var app = (function () {
     			});
     		});
 
-    		$$invalidate(6, areachart_data = all_sorted); // final areachart_data
+    		$$invalidate(8, areachart_data = all_sorted); // final areachart_data
 
     		//prepare data for linechart
     		const act_group = groups(bees, d => d.global_actor, d => +d.year, d => d.AgtId);
@@ -30704,8 +32004,6 @@ var app = (function () {
     				return ascending(x[0], y[0]);
     			});
     		});
-
-    		console.log(act_group);
 
     		act_group.forEach(function (d) {
     			d[1].forEach(function (m) {
@@ -30719,9 +32017,10 @@ var app = (function () {
     		});
 
     		//prepare data for donut chart
-    		let donut = groups(russia, d => d.stage_label, d => d.AgtId);
+    		russia_donut = groups(russia, d => d.stage_label, d => d.AgtId);
 
-    		$$invalidate(7, donut_data = donut);
+    		china_donut = groups(china, d => d.stage_label, d => d.AgtId);
+    		$$invalidate(6, donut_data = russia_donut);
 
     		//prepare data for bar chart
     		//generate objects with percentages
@@ -30745,12 +32044,14 @@ var app = (function () {
     		};
 
     		let ru_stage_agt = groups(russia, d => d.stage_label, d => d.AgtId);
+    		let cn_stage_agt = groups(china, d => d.stage_label, d => d.AgtId);
     		const all_stage_agt = groups(area, d => d.stage_label, d => d.AgtId);
     		let all_percent_bar = object_calc(all_stage_agt);
     		let ru_percent_bar = object_calc(ru_stage_agt);
+    		let cn_percent_bar = object_calc(cn_stage_agt);
 
     		//prepare barchart data
-    		const comb_chart = all_percent_bar.map(obj1 => {
+    		const ru_comb_chart = all_percent_bar.map(obj1 => {
     			const obj2 = ru_percent_bar.find(obj2 => obj2.stage === obj1.stage);
 
     			return {
@@ -30759,15 +32060,30 @@ var app = (function () {
     			};
     		});
 
+    		const cn_comb_chart = all_percent_bar.map(obj1 => {
+    			const obj2 = cn_percent_bar.find(obj2 => obj2.stage === obj1.stage);
+
+    			return {
+    				...obj1,
+    				chart_data: obj2 ? obj2.percentage : 0
+    			};
+    		});
+
     		// Renamed attribute names
-    		const fin_comb_chart = comb_chart.map(obj => ({
+    		const ru_fin_comb_chart = ru_comb_chart.map(obj => ({
     			group: obj.stage,
     			All: obj.percentage,
     			Russia: obj.chart_data
     		}));
 
+    		const cn_fin_comb_chart = cn_comb_chart.map(obj => ({
+    			group: obj.stage,
+    			All: obj.percentage,
+    			China: obj.chart_data
+    		}));
+
     		//fix names of subgroups
-    		fin_comb_chart.forEach(obj => {
+    		ru_fin_comb_chart.forEach(obj => {
     			if (obj.group === "Framework-substantive, partial") {
     				obj.group = "Partial";
     			} else if (obj.group === "Framework-substantive, comprehensive") {
@@ -30775,53 +32091,67 @@ var app = (function () {
     			}
     		});
 
-    		$$invalidate(8, barchart_data = fin_comb_chart);
+    		cn_fin_comb_chart.forEach(obj => {
+    			if (obj.group === "Framework-substantive, partial") {
+    				obj.group = "Partial";
+    			} else if (obj.group === "Framework-substantive, comprehensive") {
+    				obj.group = "Comprehensive";
+    			}
+    		});
+
+    		russia_barchart_data = ru_fin_comb_chart;
+    		china_barchart_data = cn_fin_comb_chart;
+    		$$invalidate(7, barchart_data = russia_barchart_data);
     	});
 
     	function handleCountry(country) {
     		if (country.detail == "Russia") {
     			$$invalidate(5, beeswarm_data = russia_beeswarm_data);
+    			$$invalidate(6, donut_data = russia_donut);
+    			$$invalidate(7, barchart_data = russia_barchart_data);
     		} else {
     			$$invalidate(5, beeswarm_data = china_beeswarm_data);
+    			$$invalidate(6, donut_data = china_donut);
+    			$$invalidate(7, barchart_data = china_barchart_data);
     		}
     	}
 
     	const writable_props = [];
 
     	Object_1$3.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$2.warn(`<App> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$1.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
     	function dropdown_selectedCountry_binding(value) {
     		selectedCountry = value;
-    		$$invalidate(0, selectedCountry);
+    		$$invalidate(1, selectedCountry);
     	}
 
     	function scroller0_id_binding(value) {
     		if ($$self.$$.not_equal(id["chart"], value)) {
     			id["chart"] = value;
-    			$$invalidate(1, id);
+    			$$invalidate(0, id);
     		}
     	}
 
     	function scroller1_id_binding(value) {
     		if ($$self.$$.not_equal(id["area"], value)) {
     			id["area"] = value;
-    			$$invalidate(1, id);
+    			$$invalidate(0, id);
     		}
     	}
 
     	function scroller2_id_binding(value) {
     		if ($$self.$$.not_equal(id["donut"], value)) {
     			id["donut"] = value;
-    			$$invalidate(1, id);
+    			$$invalidate(0, id);
     		}
     	}
 
     	function scroller3_id_binding(value) {
     		if ($$self.$$.not_equal(id["bar"], value)) {
     			id["bar"] = value;
-    			$$invalidate(1, id);
+    			$$invalidate(0, id);
     		}
     	}
 
@@ -30833,7 +32163,7 @@ var app = (function () {
     	function scroller_id_binding(value) {
     		if ($$self.$$.not_equal(id["map"], value)) {
     			id["map"] = value;
-    			$$invalidate(1, id);
+    			$$invalidate(0, id);
     		}
     	}
 
@@ -30903,10 +32233,14 @@ var app = (function () {
     		beeswarm_data,
     		russia_beeswarm_data,
     		china_beeswarm_data,
+    		donut_data,
+    		russia_donut,
+    		china_donut,
+    		barchart_data,
+    		russia_barchart_data,
+    		china_barchart_data,
     		areachart_data,
     		linechart_data,
-    		donut_data,
-    		barchart_data,
     		path,
     		handleCountry,
     		region,
@@ -30914,13 +32248,13 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('selectedCountry' in $$props) $$invalidate(0, selectedCountry = $$props.selectedCountry);
+    		if ('selectedCountry' in $$props) $$invalidate(1, selectedCountry = $$props.selectedCountry);
     		if ('theme' in $$props) theme = $$props.theme;
     		if ('animation' in $$props) $$invalidate(9, animation = $$props.animation);
-    		if ('id' in $$props) $$invalidate(1, id = $$props.id);
+    		if ('id' in $$props) $$invalidate(0, id = $$props.id);
     		if ('idPrev' in $$props) idPrev = $$props.idPrev;
     		if ('data' in $$props) data = $$props.data;
-    		if ('metadata' in $$props) $$invalidate(33, metadata = $$props.metadata);
+    		if ('metadata' in $$props) $$invalidate(37, metadata = $$props.metadata);
     		if ('geojson' in $$props) geojson = $$props.geojson;
     		if ('map' in $$props) $$invalidate(2, map = $$props.map);
     		if ('hovered' in $$props) hovered = $$props.hovered;
@@ -30941,10 +32275,14 @@ var app = (function () {
     		if ('beeswarm_data' in $$props) $$invalidate(5, beeswarm_data = $$props.beeswarm_data);
     		if ('russia_beeswarm_data' in $$props) russia_beeswarm_data = $$props.russia_beeswarm_data;
     		if ('china_beeswarm_data' in $$props) china_beeswarm_data = $$props.china_beeswarm_data;
-    		if ('areachart_data' in $$props) $$invalidate(6, areachart_data = $$props.areachart_data);
+    		if ('donut_data' in $$props) $$invalidate(6, donut_data = $$props.donut_data);
+    		if ('russia_donut' in $$props) russia_donut = $$props.russia_donut;
+    		if ('china_donut' in $$props) china_donut = $$props.china_donut;
+    		if ('barchart_data' in $$props) $$invalidate(7, barchart_data = $$props.barchart_data);
+    		if ('russia_barchart_data' in $$props) russia_barchart_data = $$props.russia_barchart_data;
+    		if ('china_barchart_data' in $$props) china_barchart_data = $$props.china_barchart_data;
+    		if ('areachart_data' in $$props) $$invalidate(8, areachart_data = $$props.areachart_data);
     		if ('linechart_data' in $$props) $$invalidate(11, linechart_data = $$props.linechart_data);
-    		if ('donut_data' in $$props) $$invalidate(7, donut_data = $$props.donut_data);
-    		if ('barchart_data' in $$props) $$invalidate(8, barchart_data = $$props.barchart_data);
     		if ('path' in $$props) path = $$props.path;
     		if ('region' in $$props) $$invalidate(14, region = $$props.region);
     		if ('chartHighlighted' in $$props) chartHighlighted = $$props.chartHighlighted;
@@ -30967,25 +32305,21 @@ var app = (function () {
     			: []; // Array of district codes in 'region'
     		}
 
-    		if ($$self.$$.dirty[0] & /*selectedCountry*/ 1) {
-    			 console.log(selectedCountry);
-    		}
-
-    		if ($$self.$$.dirty[0] & /*id*/ 2) {
+    		if ($$self.$$.dirty[0] & /*id*/ 1) {
     			 id && runActions(Object.keys(actions)); // Run above code when 'id' object changes
     		}
     	};
 
     	return [
-    		selectedCountry,
     		id,
+    		selectedCountry,
     		map,
     		step,
     		mygeojson,
     		beeswarm_data,
-    		areachart_data,
     		donut_data,
     		barchart_data,
+    		areachart_data,
     		animation,
     		just_year_parser,
     		linechart_data,

@@ -4,27 +4,40 @@
     export let beeswarm_data;
     export let just_year_parser;
     export let step;
+    export let selectedCountry;
 
-    function fillBlack () {
+    function fillBlack() {
         document.querySelectorAll("circle").forEach((circle) => {
             circle.setAttribute("fill", "black");
         });
     }
 
-    $: if (step == "two") {
-        fillBlack()
-        document.querySelectorAll(".soviet").forEach((circle) => {
-            circle.setAttribute("fill", "red");
-        });
-    } else if (step == "three") {
-        fillBlack()
-        document.querySelectorAll(".syria").forEach((circle) => {
-            circle.setAttribute("fill", "red");
-        });
-    } else {
-        document.querySelectorAll("circle").forEach((circle) => {
-            circle.setAttribute("fill", "black");
-        });
+    $: {
+        if (step === "two") {
+            fillBlack();
+            if (selectedCountry === "Russia") {
+                document.querySelectorAll(".soviet").forEach((circle) => {
+                    circle.setAttribute("fill", "red");
+                });
+            } else if (selectedCountry === "China") {
+                document.querySelectorAll(".china_high").forEach((circle) => {
+                    circle.setAttribute("fill", "red");
+                });
+            }
+        } else if (step === "three") {
+            fillBlack();
+            if (selectedCountry === "Russia") {
+                document.querySelectorAll(".syria").forEach((circle) => {
+                    circle.setAttribute("fill", "red");
+                });
+            } else if (selectedCountry === "China") {
+                document.querySelectorAll(".un_p5").forEach((circle) => {
+                    circle.setAttribute("fill", "red");
+                });
+            }
+        } else {
+            fillBlack();
+        }
     }
 
     const soviet = [
@@ -46,6 +59,14 @@
     ];
 
     const syria = ["Syria", "Libya", "Central African Republic"];
+
+    let china_highlight = [
+        "Text of Joint Statement (29/09/2005)",
+        "Agreement on the Resolution of the Conflict in the Republic of South Sudan (ARCSS) (17/08/2015)",
+        "Agreement on the Cessation of Hostilities, Protection of Civilians and Humanitarian Access, Republic of South Sudan (21/12/2017)",
+        "Joint Trilateral Statement by the People’s Republic of China, the Kingdom of Saudi Arabia, and the Islamic Republic of Iran (10/03/2023)",
+        "The Nationwide Ceasefire Agreement (NCA) between The Government of the Republic of the Union of Myanmar and the Ethnic Armed Organizations (EAO) (15/10/2015)",
+    ];
 
     const xTicks = [1995, 2000, 2005, 2010, 2015, 2020];
 
@@ -127,10 +148,50 @@
     }
 
     function assignClass(d) {
-        let soviet_included = soviet.some((country) => d.Con.includes(country));
-        let syria_included = syria.some((country) => d.Con.includes(country));
+        let individual_info = d[1][0][1][0];
+        let soviet_included = soviet.some((country) =>
+            individual_info.Con.includes(country),
+        );
+        let syria_included = syria.some((country) =>
+            individual_info.Con.includes(country),
+        );
+
+        let all_actors = [];
+        d[1][0][1].forEach(function (x) {
+            all_actors.push(x.actor_name);
+        });
+
+        let specifiedCountries = [
+            "Russia",
+            "France",
+            "United Kingdom",
+            "United States",
+            "China",
+        ];
+        let containsUnitedNations = all_actors.includes("United Nations");
+        let containsEurope = all_actors.includes(
+            "Conference on Security and Cooperation in Europe",
+        );
+        let containsAllSpecifiedCountries = specifiedCountries.every(
+            (country) => all_actors.includes(country),
+        );
+
 
         let classes = [];
+        //Add china classes
+        if (!china_highlight.includes(d[1][0][1][0].agt_dat)) {
+            if (
+                containsUnitedNations ||
+                containsAllSpecifiedCountries ||
+                containsEurope ||
+                d[1][0][1][0].AgtId == 2433
+            ) {
+                classes.push("china_high un_p5");
+            } else {
+                classes.push("china_high");
+            }
+        }
+
         // Add "soviet" to the array if the condition is met
         if (soviet_included) {
             classes.push("soviet");
@@ -139,7 +200,7 @@
         if (syria_included) {
             classes.push("syria");
         }
-        
+
         // Join the class names into a single string separated by spaces
         return classes.join(" ");
     }
@@ -173,7 +234,7 @@
                         cy={node.y}
                         r={radius}
                         fill="black"
-                        class={assignClass(node[1][0][1][0])}
+                        class={assignClass(node)}
                         on:mouseover={(event) => handleMouseOver(event, node)}
                         on:mouseout={(event) => handleMouseOut(event, node)}
                         on:focus={(event) => handleMouseOver(event, node)}

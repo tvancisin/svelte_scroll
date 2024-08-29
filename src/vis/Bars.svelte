@@ -2,7 +2,7 @@
     import * as d3 from "d3";
 
     export let barchart_data;
-    console.log(barchart_data);
+    export let selectedCountry;
 
     let width = 400,
         height = 800,
@@ -32,8 +32,11 @@
     ];
 
     let subgroups = ["All"];
-    let keys = Object.keys(barchart_data[0]);
-    subgroups.push(keys[2]);
+    $: if (barchart_data) {
+        subgroups = ["All"]; // Reset to ["All"]
+        let keys = Object.keys(barchart_data[0]); // Get keys from the first object in barchart_data
+        subgroups.push(keys[2]); // Add the specific key you need
+    }
 
     $: xScale = d3
         .scaleBand()
@@ -51,7 +54,7 @@
 
     $: formatted_barchart_data = barchart_data
         .map((d) => {
-            return ["All", "Russia"].map((key) => ({
+            return ["All", selectedCountry].map((key) => ({
                 key,
                 value: d[key],
                 group: d.group,
@@ -63,13 +66,7 @@
         })
         .flat();
 
-    function showText (d) {
-        console.log(d);
-        
-    }
-
-    $: console.log(barchart_data);
-    
+    $: console.log(formatted_barchart_data);
 
     function formatMobile(tick) {
         return "'" + tick.toString().slice(-2);
@@ -111,13 +108,14 @@
                     y={bar.y}
                     width={bar.width}
                     height={bar.height}
+                    fill={bar.key === "All" ? "black" : "red"}
                 />
                 <text
-                    x={bar.x + (bar.width/2)} 
+                    x={bar.x + bar.width / 2}
                     y={bar.y - 3}
                     text-anchor="middle"
-                    font-size="14px"
-                >{Math.round(bar.value)}</text>
+                    font-size="14px">{Math.round(bar.value)}</text
+                >
             {/each}
         </g>
     </svg>

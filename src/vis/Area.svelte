@@ -4,8 +4,7 @@
 	export let areachart_data;
 	export let just_year_parser;
 	export let linechart_data;
-
-	console.log(linechart_data);
+	export let selectedCountry;
 
 	let width = 400,
 		height = 800;
@@ -91,13 +90,13 @@
 
 		<!-- data -->
 		<path class="path-area" d={area} />
-		<path class="path-line" d={path} />
+		<!-- <path class="path-line" d={path} /> -->
 
 		{#each Array.from(multiline_groups) as [key, points]}
 			<path
 				d={line(points)}
 				fill="none"
-				stroke={key === "Russia" ? "steelblue" : "orange"}
+				stroke={key === selectedCountry ? "red" : "rgb(0, 158, 158)"}
 				stroke-width="2"
 			/>
 		{/each}
@@ -134,13 +133,13 @@
 
 	.path-line {
 		fill: none;
-		stroke: rgb(0, 100, 100);
+		stroke: rgb(0, 158, 158);
 		stroke-linejoin: round;
 		stroke-linecap: round;
 		stroke-width: 2;
 	}
 
 	.path-area {
-		fill: rgba(0, 100, 100, 0.2);
+		fill: rgba(0, 100, 100, 0.3);
 	}
 </style>

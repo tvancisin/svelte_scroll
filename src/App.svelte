@@ -116,8 +116,6 @@
 		}
 	}
 
-	$: console.log(selectedCountry);
-
 	let step = null;
 
 	// Actions for Scroller components
@@ -208,13 +206,22 @@
 	let parser = d3.timeParse("%Y-%m-%d");
 	let just_year_parser = d3.timeParse("%Y");
 	let russia, china;
+
 	let beeswarm_data;
 	let russia_beeswarm_data;
 	let china_beeswarm_data;
+
+	let donut_data;
+	let russia_donut;
+	let china_donut;
+
+	let barchart_data;
+	let russia_barchart_data;
+	let china_barchart_data;
+
 	let areachart_data;
 	let linechart_data = [];
-	let donut_data;
-	let barchart_data;
+
 	let path = [
 		"./data/agts_rus_china.csv",
 		"./data/paax_practical_third_labelled_signatories.csv",
@@ -293,7 +300,6 @@
 				return d3.ascending(x[0], y[0]);
 			});
 		});
-		console.log(act_group);
 
 		act_group.forEach(function (d) {
 			d[1].forEach(function (m) {
@@ -307,12 +313,18 @@
 		});
 
 		//prepare data for donut chart
-		let donut = d3.groups(
+		russia_donut = d3.groups(
 			russia,
 			(d) => d.stage_label,
 			(d) => d.AgtId,
 		);
-		donut_data = donut;
+		china_donut = d3.groups(
+			china,
+			(d) => d.stage_label,
+			(d) => d.AgtId,
+		);
+
+		donut_data = russia_donut;
 
 		//prepare data for bar chart
 		//generate objects with percentages
@@ -335,6 +347,11 @@
 			(d) => d.stage_label,
 			(d) => d.AgtId,
 		);
+		let cn_stage_agt = d3.groups(
+			china,
+			(d) => d.stage_label,
+			(d) => d.AgtId,
+		);
 		const all_stage_agt = d3.groups(
 			area,
 			(d) => d.stage_label,
@@ -342,23 +359,37 @@
 		);
 		let all_percent_bar = object_calc(all_stage_agt);
 		let ru_percent_bar = object_calc(ru_stage_agt);
+		let cn_percent_bar = object_calc(cn_stage_agt);
 
 		//prepare barchart data
-		const comb_chart = all_percent_bar.map((obj1) => {
+		const ru_comb_chart = all_percent_bar.map((obj1) => {
 			const obj2 = ru_percent_bar.find(
 				(obj2) => obj2.stage === obj1.stage,
 			);
 			return { ...obj1, chart_data: obj2 ? obj2.percentage : 0 };
 		});
 
+		const cn_comb_chart = all_percent_bar.map((obj1) => {
+			const obj2 = cn_percent_bar.find(
+				(obj2) => obj2.stage === obj1.stage,
+			);
+			return { ...obj1, chart_data: obj2 ? obj2.percentage : 0 };
+		});
+
 		// Renamed attribute names
-		const fin_comb_chart = comb_chart.map((obj) => ({
+		const ru_fin_comb_chart = ru_comb_chart.map((obj) => ({
 			group: obj.stage,
 			All: obj.percentage,
 			Russia: obj.chart_data,
 		}));
+		const cn_fin_comb_chart = cn_comb_chart.map((obj) => ({
+			group: obj.stage,
+			All: obj.percentage,
+			China: obj.chart_data,
+		}));
+
 		//fix names of subgroups
-		fin_comb_chart.forEach((obj) => {
+		ru_fin_comb_chart.forEach((obj) => {
 			if (obj.group === "Framework-substantive, partial") {
 				obj.group = "Partial";
 			} else if (obj.group === "Framework-substantive, comprehensive") {
@@ -366,14 +397,29 @@
 			}
 		});
 
-		barchart_data = fin_comb_chart;
+		cn_fin_comb_chart.forEach((obj) => {
+			if (obj.group === "Framework-substantive, partial") {
+				obj.group = "Partial";
+			} else if (obj.group === "Framework-substantive, comprehensive") {
+				obj.group = "Comprehensive";
+			}
+		});
+
+		russia_barchart_data = ru_fin_comb_chart;
+		china_barchart_data = cn_fin_comb_chart;
+
+		barchart_data = russia_barchart_data;
 	});
 
 	function handleCountry(country) {
 		if (country.detail == "Russia") {
 			beeswarm_data = russia_beeswarm_data;
+			donut_data = russia_donut;
+			barchart_data = russia_barchart_data;
 		} else {
 			beeswarm_data = china_beeswarm_data;
+			donut_data = china_donut;
+			barchart_data = china_barchart_data;
 		}
 	}
 </script>
@@ -408,7 +454,12 @@
 			<div class="col-wide height-full">
 				{#if beeswarm_data}
 					<div class="chart">
-						<Beeswarm {beeswarm_data} {just_year_parser} {step} />
+						<Beeswarm
+							{beeswarm_data}
+							{just_year_parser}
+							{selectedCountry}
+							{step}
+						/>
 					</div>
 				{/if}
 			</div>
@@ -428,7 +479,7 @@
 					</p>
 					<div id="legend">
 						<span class="dot"></span>
-						<span id="leg_p"
+						<span id="legend_text"
 							>Individual peace agreements signed by Russia (hover
 							over for more detail)</span
 						>
@@ -439,40 +490,88 @@
 						peace agreements since 1990, ranking 15th of all actors,
 						who have acted as third-party signatories. In terms of
 						frequency, this puts it alongside actors such as Egypt,
-						Kenya, and Nigeria.<br /><br /><span class="dot"></span>
+						Kenya, and Nigeria.
 					</p>
-					<p id="leg_p">
-						Individual peace agreements signed by China (hover over
-						for more detail)
-					</p>
-				{:else}
-					<p>
-						Default text for other countries or when no specific
-						country is selected.<br /><br />
+					<div id="legend">
 						<span class="dot"></span>
-						<span id="leg_p"
-							>General information (hover over for more detail)</span
+						<span id="legend_text"
+							>Individual peace agreements signed by China (hover
+							over for more detail)</span
 						>
-					</p>
+					</div>
 				{/if}
 			</div>
 		</section>
+
 		<section data-id="chart02">
 			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
+				{#if selectedCountry === "Russia"}
+					<p>
+						Russia has most often acted as a third-party signatory
+						in the 1990s. Majority of these agreements relate to the
+						dissolution of the Soviet Union. Many of these are
+						protracted conflicts, where Russia continues acting as a
+						third - party signatory of peace agreements.
+					</p>
+					<div id="legend">
+						<span class="dot" style="background-color: red;"></span>
+						<span id="legend_text"
+							>Peace agreements addressing conflicts in the former
+							Soviet Union territories.</span
+						>
+					</div>
+				{:else if selectedCountry === "China"}
+					<p>
+						As one of the UN Security Council (UNSC) permanent
+						members, China has participated in all major
+						international conferences (e.g., for Cambodia, Bosnia
+						and Herzegovina, Afghanistan, Libya), with the key
+						exception of negotiations relating to Israel and
+						Palestine. Nearly all agreements signed by China as a
+						third-party have been the result of large international
+						conferences or UNSC resolutions.
+					</p>
+					<div id="legend">
+						<span class="dot" style="background-color: red;"></span>
+						<span id="legend_text"
+							>Peace agreements resulting from large international
+							conferences or UNSC resolutions.</span
+						>
+					</div>
+				{/if}
 			</div>
 		</section>
 		<section data-id="chart03">
 			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
+				{#if selectedCountry === "Russia"}
+					<p>
+						Over the last decade, Russia increasingly acts as a
+						signatory on agreements related to conflicts in Syria
+						and, reflecting its increased engagements in Africa:
+						Libya, and the Central African Republic. These are
+						internationalised conflicts, where Russia is also
+						militarily engaged in supporting conflict parties.
+					</p>
+					<div id="legend">
+						<span class="dot" style="background-color: red;"></span>
+						<span id="legend_text"
+							>Peace agreements addressing conflicts in Syria,
+							Libya, and the Central African Republic.</span
+						>
+					</div>
+				{:else if selectedCountry === "China"}
+					<p>
+						Most agreements China has signed include the UN or other
+						permanent members of the UN Security Council.
+					</p>
+					<div id="legend">
+						<span class="dot" style="background-color: red;"></span>
+						<span id="legend_text"
+							>Peace agreements signed by China and the UN or all
+							other permanent members of the UNSC.</span
+						>
+					</div>
+				{/if}
 			</div>
 		</section>
 	</div>
@@ -494,6 +593,7 @@
 							{areachart_data}
 							{just_year_parser}
 							{linechart_data}
+							{selectedCountry}
 						/>
 					</div>
 				{/if}
@@ -504,11 +604,60 @@
 	<div slot="foreground">
 		<section data-id="area01">
 			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
+				{#if selectedCountry === "Russia"}
+					<p>
+						Russia is the most prolific signatory of peace
+						agreements of all UN Security Council Permanent Members.
+						In a number of years (1995, 2016-2018) it has signed
+						more agreements than the United Nations.
+					</p>
+					<div id="legend">
+						<span
+							class="rect"
+							style="background-color: rgba(0, 100, 100, 0.3);"
+						></span>
+						<span id="legend_text">Overall agreements.</span>
+					</div>
+					<div id="legend">
+						<span class="line" style="background-color: red;"
+						></span>
+						<span id="legend_text">Russian agreements.</span>
+					</div>
+					<div id="legend">
+						<span
+							class="line"
+							style="background-color: rgb(0, 158, 158);"
+						></span>
+						<span id="legend_text">Chinese agreements.</span>
+					</div>
+				{:else if selectedCountry === "China"}
+					<p>
+						China is the least prolific third-party signatory of
+						peace agreements of all UN Security Council permanent
+						members. China signed 39 agreements as a third-party
+						since 1990, in comparison to Russian 134 signatures and
+						the US 132 signatures.
+					</p>
+					<div id="legend">
+						<span
+							class="rect"
+							style="background-color: rgba(0, 100, 100, 0.3);"
+						></span>
+						<span id="legend_text">Overall agreements.</span>
+					</div>
+					<div id="legend">
+						<span class="line" style="background-color: red;"
+						></span>
+						<span id="legend_text">Chinese agreements.</span>
+					</div>
+					<div id="legend">
+						<span
+							class="line"
+							style="background-color: rgb(0, 158, 158);"
+						></span>
+						<span id="legend_text">Russian agreements.</span>
+					</div>
+				{/if}
 			</div>
 		</section>
 	</div>
@@ -524,7 +673,7 @@
 			<div class="col-wide height-full">
 				{#if donut_data}
 					<div class="chart">
-						<Donut {donut_data} />
+						<Donut {donut_data} {selectedCountry} />
 					</div>
 				{/if}
 			</div>
@@ -534,11 +683,30 @@
 	<div slot="foreground">
 		<section data-id="donut01">
 			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
+				{#if selectedCountry === "Russia"}
+					<p>
+						Russia primarily signs pre-negotiation and ceasefire
+						agreements. These represent over half of all agreements
+						signed. For more details on the categories see
+						<a
+							href="https://www.peaceagreements.org/files/Definitions_v7.pdf"
+							target="_blank">here</a
+						>.
+					</p>
+				{:else if selectedCountry === "China"}
+					<p>
+						Chinese involvement as a third-party signatory seems to
+						come at the point when there is a broad international
+						consensus regarding a peace process. Implementation
+						agreements are the biggest category and represent 31% of
+						all agreements signed by China. For more details on the
+						categories see
+						<a
+							href="https://www.peaceagreements.org/files/Definitions_v7.pdf"
+							target="_blank">here</a
+						>.
+					</p>
+				{/if}
 			</div>
 		</section>
 	</div>
@@ -554,7 +722,7 @@
 			<div class="col-wide height-full">
 				{#if barchart_data}
 					<div class="chart">
-						<Bars {barchart_data} />
+						<Bars {barchart_data} {selectedCountry} />
 					</div>
 				{/if}
 			</div>
@@ -564,29 +732,142 @@
 	<div slot="foreground">
 		<section data-id="bar01">
 			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
+				{#if selectedCountry === "Russia"}
+					<p>
+						Compared with all agreements, Russia signs more
+						pre-negotiation agreements and less comprehensive and
+						implementation agreements.
+					</p>
+					<div id="legend">
+						<span class="rect" style="background-color: black;"
+						></span>
+						<span id="legend_text"
+							>Overall agreements (% of all).</span
+						>
+					</div>
+					<div id="legend">
+						<span class="rect" style="background-color: red;"
+						></span>
+						<span id="legend_text"
+							>Russian signature (% of all signed by Russia).</span
+						>
+					</div>
+				{:else if selectedCountry === "China"}
+					<p>
+						Compared with all agreements, China signs more
+						comprehensive and implementation agreements, and less
+						ceasefires and partial ones.
+					</p>
+					<div id="legend">
+						<span class="rect" style="background-color: black;"
+						></span>
+						<span id="legend_text"
+							>Overall agreements (% of all).</span
+						>
+					</div>
+					<div id="legend">
+						<span class="rect" style="background-color: red;"
+						></span>
+						<span id="legend_text"
+							>Chinese signature (% of all signed by China).</span
+						>
+					</div>
+				{/if}
 			</div>
 		</section>
 		<section data-id="bar02">
 			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
+				{#if selectedCountry === "Russia"}
+					<p>
+						Pre-negotiation agreements represent 29% of all
+						agreements with third-party signatories, but 35% of all
+						agreements signed by Russia.
+					</p>
+					<div id="legend">
+						<span class="rect" style="background-color: black;"
+						></span>
+						<span id="legend_text"
+							>Overall agreements (% of all).</span
+						>
+					</div>
+					<div id="legend">
+						<span class="rect" style="background-color: red;"
+						></span>
+						<span id="legend_text"
+							>Russian signature (% of all signed by Russia).</span
+						>
+					</div>
+				{:else if selectedCountry === "China"}
+					<p>
+						Comprehensive agreements present only 6% of all
+						agreements signed by third-parties, but amount to 10% of
+						all agreements signed by China. Similarly, 31% of all
+						agreements signed by China are implementation
+						agreements, but the overall proportion of such
+						agreements is 20%.
+					</p>
+					<div id="legend">
+						<span class="rect" style="background-color: black;"
+						></span>
+						<span id="legend_text"
+							>Overall agreements (% of all).</span
+						>
+					</div>
+					<div id="legend">
+						<span class="rect" style="background-color: red;"
+						></span>
+						<span id="legend_text"
+							>Chinese signature (% of all signed by China).</span
+						>
+					</div>
+				{/if}
 			</div>
 		</section>
 		<section data-id="bar03">
 			<div class="col-medium">
-				<p>
-					Russia has most often acted as a third-party signatory in
-					the 1990s. Majority of these agreements relate to the
-					dissolution of the Soviet Union.
-				</p>
+				{#if selectedCountry === "Russia"}
+					<p>
+						Comprehensive agreements represent 6% of all agreements
+						signed, but only 4% of all agreements signed by Russia.
+						Implementation agreements represent 20% of all
+						agreements signed, but only 17% of all agreements signed
+						by Russia.
+					</p>
+					<div id="legend">
+						<span class="rect" style="background-color: black;"
+						></span>
+						<span id="legend_text"
+							>Overall agreements (% of all).</span
+						>
+					</div>
+					<div id="legend">
+						<span class="rect" style="background-color: red;"
+						></span>
+						<span id="legend_text"
+							>Russian signature (% of all signed by Russia).</span
+						>
+					</div>
+				{:else if selectedCountry === "China"}
+					<p>
+						In contrast, only 8% of all agreements signed by China
+						are ceasefires, with the overall proportion of such
+						agreements at 19%.
+					</p>
+					<div id="legend">
+						<span class="rect" style="background-color: black;"
+						></span>
+						<span id="legend_text"
+							>Overall agreements (% of all).</span
+						>
+					</div>
+					<div id="legend">
+						<span class="rect" style="background-color: red;"
+						></span>
+						<span id="legend_text"
+							>Chinese signature (% of all signed by China).</span
+						>
+					</div>
+				{/if}
 			</div>
 		</section>
 	</div>
@@ -897,7 +1178,23 @@
 		flex-shrink: 0; /* Prevents the dot from shrinking in a flex container */
 	}
 
-	#leg_p {
+	.rect {
+		height: 18px;
+		width: 18px;
+		display: inline-block;
+		margin-right: 8px; /* Space between the dot and the text */
+		flex-shrink: 0; /* Prevents the dot from shrinking in a flex container */
+	}
+
+	.line {
+		height: 3px;
+		width: 18px;
+		display: inline-block;
+		margin-right: 8px; /* Space between the dot and the text */
+		flex-shrink: 0; /* Prevents the dot from shrinking in a flex container */
+	}
+
+	#legend_text {
 		font-size: 14px;
 		line-height: 1.5;
 		margin: 0;
