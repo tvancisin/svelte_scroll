@@ -28246,7 +28246,7 @@ var app = (function () {
     			set_style(div, "width", "100%");
     			set_style(div, "height", "100vh");
     			attr_dev(div, "class", "svelte-1k49t6h");
-    			add_location(div, file$g, 79, 0, 2489);
+    			add_location(div, file$g, 81, 0, 2509);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -28283,12 +28283,13 @@ var app = (function () {
     	let { map } = $$props;
 
     	onMount(() => {
+    		window.scrollTo(0, 0);
     		mapboxGl.accessToken = "pk.eyJ1Ijoic2FzaGFnYXJpYmFsZHkiLCJhIjoiY2xyajRlczBlMDhqMTJpcXF3dHJhdTVsNyJ9.P_6mX_qbcbxLDS1o_SxpFg";
 
     		$$invalidate(0, map = new mapboxGl.Map({
     				container: map,
     				style: "mapbox://styles/sashagaribaldy/cm0az6qe200pf01phd16v6qm0",
-    				center: [50.224518, 22.213995],
+    				center: [50, 22],
     				zoom: 2.5,
     				maxZoom: 5
     			}));
@@ -28648,7 +28649,7 @@ var app = (function () {
     const { Object: Object_1$3, console: console_1$1 } = globals;
     const file$h = "src\\App.svelte";
 
-    // (478:2) <Arrow color="black" {animation}>
+    // (428:2) <Arrow color="black" {animation}>
     function create_default_slot_7(ctx) {
     	let t;
 
@@ -28668,14 +28669,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(478:2) <Arrow color=\\\"black\\\" {animation}>",
+    		source: "(428:2) <Arrow color=\\\"black\\\" {animation}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (466:0) <Header  bgcolor="white"  bgfixed={true}  theme="light"  center={true}  short={false} >
+    // (416:0) <Header  bgcolor="white"  bgfixed={true}  theme="light"  center={true}  short={false} >
     function create_default_slot_6(ctx) {
     	let h1;
     	let t1;
@@ -28705,12 +28706,12 @@ var app = (function () {
     			t3 = space();
     			div = element("div");
     			create_component(arrow.$$.fragment);
-    			add_location(h1, file$h, 472, 1, 11479);
+    			add_location(h1, file$h, 422, 1, 10104);
     			attr_dev(p, "class", "text-big");
     			set_style(p, "margin-top", "5px");
-    			add_location(p, file$h, 473, 1, 11498);
+    			add_location(p, file$h, 423, 1, 10123);
     			set_style(div, "margin-top", "90px");
-    			add_location(div, file$h, 476, 1, 11591);
+    			add_location(div, file$h, 426, 1, 10216);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -28724,7 +28725,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const arrow_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[1] & /*$$scope*/ 4096) {
     				arrow_changes.$$scope = { dirty, ctx };
     			}
 
@@ -28753,14 +28754,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(466:0) <Header  bgcolor=\\\"white\\\"  bgfixed={true}  theme=\\\"light\\\"  center={true}  short={false} >",
+    		source: "(416:0) <Header  bgcolor=\\\"white\\\"  bgfixed={true}  theme=\\\"light\\\"  center={true}  short={false} >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (482:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (432:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_5(ctx) {
     	let p;
 
@@ -28769,7 +28770,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Timeline of Agreements";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 482, 1, 11764);
+    			add_location(p, file$h, 432, 1, 10389);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -28784,14 +28785,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(482:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(432:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (490:4) {#if beeswarm_data}
+    // (440:4) {#if beeswarm_data}
     function create_if_block_20(ctx) {
     	let div;
     	let beeswarm;
@@ -28802,7 +28803,7 @@ var app = (function () {
     				beeswarm_data: /*beeswarm_data*/ ctx[7],
     				just_year_parser: /*just_year_parser*/ ctx[12],
     				selectedCountry: /*selectedCountry*/ ctx[3],
-    				step: /*step*/ ctx[5]
+    				step: /*step*/ ctx[4]
     			},
     			$$inline: true
     		});
@@ -28812,7 +28813,7 @@ var app = (function () {
     			div = element("div");
     			create_component(beeswarm.$$.fragment);
     			attr_dev(div, "class", "chart svelte-1w6fx7x");
-    			add_location(div, file$h, 490, 5, 11989);
+    			add_location(div, file$h, 440, 5, 10614);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -28823,7 +28824,7 @@ var app = (function () {
     			const beeswarm_changes = {};
     			if (dirty[0] & /*beeswarm_data*/ 128) beeswarm_changes.beeswarm_data = /*beeswarm_data*/ ctx[7];
     			if (dirty[0] & /*selectedCountry*/ 8) beeswarm_changes.selectedCountry = /*selectedCountry*/ ctx[3];
-    			if (dirty[0] & /*step*/ 32) beeswarm_changes.step = /*step*/ ctx[5];
+    			if (dirty[0] & /*step*/ 16) beeswarm_changes.step = /*step*/ ctx[4];
     			beeswarm.$set(beeswarm_changes);
     		},
     		i: function intro(local) {
@@ -28845,14 +28846,14 @@ var app = (function () {
     		block,
     		id: create_if_block_20.name,
     		type: "if",
-    		source: "(490:4) {#if beeswarm_data}",
+    		source: "(440:4) {#if beeswarm_data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (487:1) 
+    // (437:1) 
     function create_background_slot_4(ctx) {
     	let div1;
     	let figure;
@@ -28867,10 +28868,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 488, 3, 11925);
-    			add_location(figure, file$h, 487, 2, 11913);
+    			add_location(div0, file$h, 438, 3, 10550);
+    			add_location(figure, file$h, 437, 2, 10538);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 486, 1, 11887);
+    			add_location(div1, file$h, 436, 1, 10512);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -28922,14 +28923,14 @@ var app = (function () {
     		block,
     		id: create_background_slot_4.name,
     		type: "slot",
-    		source: "(487:1) ",
+    		source: "(437:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (522:42) 
+    // (472:42) 
     function create_if_block_19(ctx) {
     	let p;
     	let t1;
@@ -28948,15 +28949,15 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Individual peace agreements signed by China (hover\n\t\t\t\t\t\t\tover for more detail)";
-    			add_location(p, file$h, 522, 5, 12815);
+    			add_location(p, file$h, 472, 5, 11440);
     			attr_dev(span0, "class", "dot svelte-1w6fx7x");
-    			add_location(span0, file$h, 530, 6, 13132);
+    			add_location(span0, file$h, 480, 6, 11757);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 531, 6, 13164);
+    			add_location(span1, file$h, 481, 6, 11789);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-1w6fx7x");
-    			add_location(div, file$h, 529, 5, 13108);
+    			add_location(div, file$h, 479, 5, 11733);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -28977,14 +28978,14 @@ var app = (function () {
     		block,
     		id: create_if_block_19.name,
     		type: "if",
-    		source: "(522:42) ",
+    		source: "(472:42) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (507:4) {#if selectedCountry === "Russia"}
+    // (457:4) {#if selectedCountry === "Russia"}
     function create_if_block_18(ctx) {
     	let p;
     	let t1;
@@ -29003,15 +29004,15 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Individual peace agreements signed by Russia (hover\n\t\t\t\t\t\t\tover for more detail)";
-    			add_location(p, file$h, 507, 5, 12302);
+    			add_location(p, file$h, 457, 5, 10927);
     			attr_dev(span0, "class", "dot svelte-1w6fx7x");
-    			add_location(span0, file$h, 515, 6, 12597);
+    			add_location(span0, file$h, 465, 6, 11222);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 516, 6, 12629);
+    			add_location(span1, file$h, 466, 6, 11254);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-1w6fx7x");
-    			add_location(div, file$h, 514, 5, 12573);
+    			add_location(div, file$h, 464, 5, 11198);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29032,14 +29033,14 @@ var app = (function () {
     		block,
     		id: create_if_block_18.name,
     		type: "if",
-    		source: "(507:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		source: "(457:4) {#if selectedCountry === \\\"Russia\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (558:42) 
+    // (508:42) 
     function create_if_block_17(ctx) {
     	let p;
     	let t1;
@@ -29058,16 +29059,16 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Peace agreements resulting from large international\n\t\t\t\t\t\t\tconferences or UNSC resolutions.";
-    			add_location(p, file$h, 558, 5, 14028);
+    			add_location(p, file$h, 508, 5, 12653);
     			attr_dev(span0, "class", "dot svelte-1w6fx7x");
     			set_style(span0, "background-color", "red");
-    			add_location(span0, file$h, 569, 6, 14512);
+    			add_location(span0, file$h, 519, 6, 13137);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 570, 6, 14575);
+    			add_location(span1, file$h, 520, 6, 13200);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-1w6fx7x");
-    			add_location(div, file$h, 568, 5, 14488);
+    			add_location(div, file$h, 518, 5, 13113);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29088,14 +29089,14 @@ var app = (function () {
     		block,
     		id: create_if_block_17.name,
     		type: "if",
-    		source: "(558:42) ",
+    		source: "(508:42) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (543:4) {#if selectedCountry === "Russia"}
+    // (493:4) {#if selectedCountry === "Russia"}
     function create_if_block_16(ctx) {
     	let p;
     	let t1;
@@ -29114,16 +29115,16 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Peace agreements addressing conflicts in the former\n\t\t\t\t\t\t\tSoviet Union territories.";
-    			add_location(p, file$h, 543, 5, 13437);
+    			add_location(p, file$h, 493, 5, 12062);
     			attr_dev(span0, "class", "dot svelte-1w6fx7x");
     			set_style(span0, "background-color", "red");
-    			add_location(span0, file$h, 551, 6, 13775);
+    			add_location(span0, file$h, 501, 6, 12400);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 552, 6, 13838);
+    			add_location(span1, file$h, 502, 6, 12463);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-1w6fx7x");
-    			add_location(div, file$h, 550, 5, 13751);
+    			add_location(div, file$h, 500, 5, 12376);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29144,14 +29145,14 @@ var app = (function () {
     		block,
     		id: create_if_block_16.name,
     		type: "if",
-    		source: "(543:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		source: "(493:4) {#if selectedCountry === \\\"Russia\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (597:42) 
+    // (547:42) 
     function create_if_block_15(ctx) {
     	let p;
     	let t1;
@@ -29170,16 +29171,16 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Peace agreements signed by China and the UN or all\n\t\t\t\t\t\t\tother permanent members of the UNSC.";
-    			add_location(p, file$h, 597, 5, 15513);
+    			add_location(p, file$h, 547, 5, 14138);
     			attr_dev(span0, "class", "dot svelte-1w6fx7x");
     			set_style(span0, "background-color", "red");
-    			add_location(span0, file$h, 602, 6, 15671);
+    			add_location(span0, file$h, 552, 6, 14296);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 603, 6, 15734);
+    			add_location(span1, file$h, 553, 6, 14359);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-1w6fx7x");
-    			add_location(div, file$h, 601, 5, 15647);
+    			add_location(div, file$h, 551, 5, 14272);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29200,14 +29201,14 @@ var app = (function () {
     		block,
     		id: create_if_block_15.name,
     		type: "if",
-    		source: "(597:42) ",
+    		source: "(547:42) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (581:4) {#if selectedCountry === "Russia"}
+    // (531:4) {#if selectedCountry === "Russia"}
     function create_if_block_14(ctx) {
     	let p;
     	let t1;
@@ -29226,16 +29227,16 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Peace agreements addressing conflicts in Syria,\n\t\t\t\t\t\t\tLibya, and the Central African Republic.";
-    			add_location(p, file$h, 581, 5, 14859);
+    			add_location(p, file$h, 531, 5, 13484);
     			attr_dev(span0, "class", "dot svelte-1w6fx7x");
     			set_style(span0, "background-color", "red");
-    			add_location(span0, file$h, 590, 6, 15249);
+    			add_location(span0, file$h, 540, 6, 13874);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 591, 6, 15312);
+    			add_location(span1, file$h, 541, 6, 13937);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-1w6fx7x");
-    			add_location(div, file$h, 589, 5, 15225);
+    			add_location(div, file$h, 539, 5, 13850);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29256,14 +29257,14 @@ var app = (function () {
     		block,
     		id: create_if_block_14.name,
     		type: "if",
-    		source: "(581:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		source: "(531:4) {#if selectedCountry === \\\"Russia\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (504:1) 
+    // (454:1) 
     function create_foreground_slot_4(ctx) {
     	let div3;
     	let section0;
@@ -29314,19 +29315,19 @@ var app = (function () {
     			div2 = element("div");
     			if (if_block2) if_block2.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 505, 3, 12233);
+    			add_location(div0, file$h, 455, 3, 10858);
     			attr_dev(section0, "data-id", "chart01");
-    			add_location(section0, file$h, 504, 2, 12202);
+    			add_location(section0, file$h, 454, 2, 10827);
     			attr_dev(div1, "class", "col-medium");
-    			add_location(div1, file$h, 541, 3, 13368);
+    			add_location(div1, file$h, 491, 3, 11993);
     			attr_dev(section1, "data-id", "chart02");
-    			add_location(section1, file$h, 540, 2, 13337);
+    			add_location(section1, file$h, 490, 2, 11962);
     			attr_dev(div2, "class", "col-medium");
-    			add_location(div2, file$h, 579, 3, 14790);
+    			add_location(div2, file$h, 529, 3, 13415);
     			attr_dev(section2, "data-id", "chart03");
-    			add_location(section2, file$h, 578, 2, 14759);
+    			add_location(section2, file$h, 528, 2, 13384);
     			attr_dev(div3, "slot", "foreground");
-    			add_location(div3, file$h, 503, 1, 12176);
+    			add_location(div3, file$h, 453, 1, 10801);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -29394,14 +29395,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot_4.name,
     		type: "slot",
-    		source: "(504:1) ",
+    		source: "(454:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (615:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (565:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_4(ctx) {
     	let p;
 
@@ -29410,7 +29411,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Russia and other UN Security Council Permanent Members";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 615, 1, 16003);
+    			add_location(p, file$h, 565, 1, 14628);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29425,14 +29426,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(615:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(565:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (625:4) {#if areachart_data && linechart_data}
+    // (575:4) {#if areachart_data && linechart_data}
     function create_if_block_13(ctx) {
     	let div;
     	let area;
@@ -29453,7 +29454,7 @@ var app = (function () {
     			div = element("div");
     			create_component(area.$$.fragment);
     			attr_dev(div, "class", "chart svelte-1w6fx7x");
-    			add_location(div, file$h, 625, 5, 16283);
+    			add_location(div, file$h, 575, 5, 14908);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29485,14 +29486,14 @@ var app = (function () {
     		block,
     		id: create_if_block_13.name,
     		type: "if",
-    		source: "(625:4) {#if areachart_data && linechart_data}",
+    		source: "(575:4) {#if areachart_data && linechart_data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (622:1) 
+    // (572:1) 
     function create_background_slot_3(ctx) {
     	let div1;
     	let figure;
@@ -29507,10 +29508,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 623, 3, 16200);
-    			add_location(figure, file$h, 622, 2, 16188);
+    			add_location(div0, file$h, 573, 3, 14825);
+    			add_location(figure, file$h, 572, 2, 14813);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 621, 1, 16162);
+    			add_location(div1, file$h, 571, 1, 14787);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -29562,14 +29563,14 @@ var app = (function () {
     		block,
     		id: create_background_slot_3.name,
     		type: "slot",
-    		source: "(622:1) ",
+    		source: "(572:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (668:42) 
+    // (618:42) 
     function create_if_block_12(ctx) {
     	let p;
     	let t1;
@@ -29610,34 +29611,34 @@ var app = (function () {
     			t8 = space();
     			span5 = element("span");
     			span5.textContent = "Russian agreements.";
-    			add_location(p, file$h, 668, 5, 17432);
+    			add_location(p, file$h, 618, 5, 16057);
     			attr_dev(span0, "class", "rect svelte-1w6fx7x");
     			set_style(span0, "background-color", "rgba(0, 100, 100, 0.3)");
-    			add_location(span0, file$h, 676, 6, 17744);
+    			add_location(span0, file$h, 626, 6, 16369);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 680, 6, 17848);
+    			add_location(span1, file$h, 630, 6, 16473);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-1w6fx7x");
-    			add_location(div0, file$h, 675, 5, 17720);
+    			add_location(div0, file$h, 625, 5, 16345);
     			attr_dev(span2, "class", "line svelte-1w6fx7x");
     			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 683, 6, 17939);
+    			add_location(span2, file$h, 633, 6, 16564);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-1w6fx7x");
-    			add_location(span3, file$h, 685, 6, 18010);
+    			add_location(span3, file$h, 635, 6, 16635);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-1w6fx7x");
-    			add_location(div1, file$h, 682, 5, 17915);
+    			add_location(div1, file$h, 632, 5, 16540);
     			attr_dev(span4, "class", "line svelte-1w6fx7x");
     			set_style(span4, "background-color", "rgb(0, 158, 158)");
-    			add_location(span4, file$h, 688, 6, 18101);
+    			add_location(span4, file$h, 638, 6, 16726);
     			attr_dev(span5, "id", "legend_text");
     			attr_dev(span5, "class", "svelte-1w6fx7x");
-    			add_location(span5, file$h, 692, 6, 18199);
+    			add_location(span5, file$h, 642, 6, 16824);
     			attr_dev(div2, "id", "legend");
     			attr_dev(div2, "class", "svelte-1w6fx7x");
-    			add_location(div2, file$h, 687, 5, 18077);
+    			add_location(div2, file$h, 637, 5, 16702);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29672,14 +29673,14 @@ var app = (function () {
     		block,
     		id: create_if_block_12.name,
     		type: "if",
-    		source: "(668:42) ",
+    		source: "(618:42) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (642:4) {#if selectedCountry === "Russia"}
+    // (592:4) {#if selectedCountry === "Russia"}
     function create_if_block_11(ctx) {
     	let p;
     	let t1;
@@ -29720,34 +29721,34 @@ var app = (function () {
     			t8 = space();
     			span5 = element("span");
     			span5.textContent = "Chinese agreements.";
-    			add_location(p, file$h, 642, 5, 16602);
+    			add_location(p, file$h, 592, 5, 15227);
     			attr_dev(span0, "class", "rect svelte-1w6fx7x");
     			set_style(span0, "background-color", "rgba(0, 100, 100, 0.3)");
-    			add_location(span0, file$h, 649, 6, 16867);
+    			add_location(span0, file$h, 599, 6, 15492);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 653, 6, 16971);
+    			add_location(span1, file$h, 603, 6, 15596);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-1w6fx7x");
-    			add_location(div0, file$h, 648, 5, 16843);
+    			add_location(div0, file$h, 598, 5, 15468);
     			attr_dev(span2, "class", "line svelte-1w6fx7x");
     			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 656, 6, 17062);
+    			add_location(span2, file$h, 606, 6, 15687);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-1w6fx7x");
-    			add_location(span3, file$h, 658, 6, 17133);
+    			add_location(span3, file$h, 608, 6, 15758);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-1w6fx7x");
-    			add_location(div1, file$h, 655, 5, 17038);
+    			add_location(div1, file$h, 605, 5, 15663);
     			attr_dev(span4, "class", "line svelte-1w6fx7x");
     			set_style(span4, "background-color", "rgb(0, 158, 158)");
-    			add_location(span4, file$h, 661, 6, 17224);
+    			add_location(span4, file$h, 611, 6, 15849);
     			attr_dev(span5, "id", "legend_text");
     			attr_dev(span5, "class", "svelte-1w6fx7x");
-    			add_location(span5, file$h, 665, 6, 17322);
+    			add_location(span5, file$h, 615, 6, 15947);
     			attr_dev(div2, "id", "legend");
     			attr_dev(div2, "class", "svelte-1w6fx7x");
-    			add_location(div2, file$h, 660, 5, 17200);
+    			add_location(div2, file$h, 610, 5, 15825);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29782,14 +29783,14 @@ var app = (function () {
     		block,
     		id: create_if_block_11.name,
     		type: "if",
-    		source: "(642:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		source: "(592:4) {#if selectedCountry === \\\"Russia\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (639:1) 
+    // (589:1) 
     function create_foreground_slot_3(ctx) {
     	let div1;
     	let section;
@@ -29810,11 +29811,11 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 640, 3, 16533);
+    			add_location(div0, file$h, 590, 3, 15158);
     			attr_dev(section, "data-id", "area01");
-    			add_location(section, file$h, 639, 2, 16503);
+    			add_location(section, file$h, 589, 2, 15128);
     			attr_dev(div1, "slot", "foreground");
-    			add_location(div1, file$h, 638, 1, 16477);
+    			add_location(div1, file$h, 588, 1, 15102);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -29846,14 +29847,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot_3.name,
     		type: "slot",
-    		source: "(639:1) ",
+    		source: "(589:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (701:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (651:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_3(ctx) {
     	let p;
 
@@ -29862,7 +29863,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Agreement Stages";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 701, 1, 18378);
+    			add_location(p, file$h, 651, 1, 17003);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29877,14 +29878,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(701:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(651:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (709:4) {#if donut_data}
+    // (659:4) {#if donut_data}
     function create_if_block_10(ctx) {
     	let div;
     	let donut;
@@ -29903,7 +29904,7 @@ var app = (function () {
     			div = element("div");
     			create_component(donut.$$.fragment);
     			attr_dev(div, "class", "chart svelte-1w6fx7x");
-    			add_location(div, file$h, 709, 5, 18594);
+    			add_location(div, file$h, 659, 5, 17219);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29935,14 +29936,14 @@ var app = (function () {
     		block,
     		id: create_if_block_10.name,
     		type: "if",
-    		source: "(709:4) {#if donut_data}",
+    		source: "(659:4) {#if donut_data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (706:1) 
+    // (656:1) 
     function create_background_slot_2(ctx) {
     	let div1;
     	let figure;
@@ -29957,10 +29958,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 707, 3, 18533);
-    			add_location(figure, file$h, 706, 2, 18521);
+    			add_location(div0, file$h, 657, 3, 17158);
+    			add_location(figure, file$h, 656, 2, 17146);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 705, 1, 18495);
+    			add_location(div1, file$h, 655, 1, 17120);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -30012,14 +30013,14 @@ var app = (function () {
     		block,
     		id: create_background_slot_2.name,
     		type: "slot",
-    		source: "(706:1) ",
+    		source: "(656:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (731:42) 
+    // (681:42) 
     function create_if_block_9(ctx) {
     	let p;
     	let t0;
@@ -30035,8 +30036,8 @@ var app = (function () {
     			t2 = text(".");
     			attr_dev(a, "href", "https://www.peaceagreements.org/files/Definitions_v7.pdf");
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$h, 738, 6, 19533);
-    			add_location(p, file$h, 731, 5, 19197);
+    			add_location(a, file$h, 688, 6, 18158);
+    			add_location(p, file$h, 681, 5, 17822);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30053,14 +30054,14 @@ var app = (function () {
     		block,
     		id: create_if_block_9.name,
     		type: "if",
-    		source: "(731:42) ",
+    		source: "(681:42) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (721:4) {#if selectedCountry === "Russia"}
+    // (671:4) {#if selectedCountry === "Russia"}
     function create_if_block_8(ctx) {
     	let p;
     	let t0;
@@ -30076,8 +30077,8 @@ var app = (function () {
     			t2 = text(".");
     			attr_dev(a, "href", "https://www.peaceagreements.org/files/Definitions_v7.pdf");
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$h, 725, 6, 19025);
-    			add_location(p, file$h, 721, 5, 18841);
+    			add_location(a, file$h, 675, 6, 17650);
+    			add_location(p, file$h, 671, 5, 17466);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30094,14 +30095,14 @@ var app = (function () {
     		block,
     		id: create_if_block_8.name,
     		type: "if",
-    		source: "(721:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		source: "(671:4) {#if selectedCountry === \\\"Russia\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (718:1) 
+    // (668:1) 
     function create_foreground_slot_2(ctx) {
     	let div1;
     	let section;
@@ -30122,11 +30123,11 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 719, 3, 18772);
+    			add_location(div0, file$h, 669, 3, 17397);
     			attr_dev(section, "data-id", "donut01");
-    			add_location(section, file$h, 718, 2, 18741);
+    			add_location(section, file$h, 668, 2, 17366);
     			attr_dev(div1, "slot", "foreground");
-    			add_location(div1, file$h, 717, 1, 18715);
+    			add_location(div1, file$h, 667, 1, 17340);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -30158,14 +30159,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot_2.name,
     		type: "slot",
-    		source: "(718:1) ",
+    		source: "(668:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (750:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (700:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_2(ctx) {
     	let p;
 
@@ -30174,7 +30175,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Comparison of Agreement Stages";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 750, 1, 19774);
+    			add_location(p, file$h, 700, 1, 18399);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30189,14 +30190,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(750:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(700:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (758:4) {#if barchart_data}
+    // (708:4) {#if barchart_data}
     function create_if_block_7(ctx) {
     	let div;
     	let bars;
@@ -30215,7 +30216,7 @@ var app = (function () {
     			div = element("div");
     			create_component(bars.$$.fragment);
     			attr_dev(div, "class", "chart svelte-1w6fx7x");
-    			add_location(div, file$h, 758, 5, 20005);
+    			add_location(div, file$h, 708, 5, 18630);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -30247,14 +30248,14 @@ var app = (function () {
     		block,
     		id: create_if_block_7.name,
     		type: "if",
-    		source: "(758:4) {#if barchart_data}",
+    		source: "(708:4) {#if barchart_data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (755:1) 
+    // (705:1) 
     function create_background_slot_1(ctx) {
     	let div1;
     	let figure;
@@ -30269,10 +30270,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 756, 3, 19941);
-    			add_location(figure, file$h, 755, 2, 19929);
+    			add_location(div0, file$h, 706, 3, 18566);
+    			add_location(figure, file$h, 705, 2, 18554);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 754, 1, 19903);
+    			add_location(div1, file$h, 704, 1, 18528);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -30324,14 +30325,14 @@ var app = (function () {
     		block,
     		id: create_background_slot_1.name,
     		type: "slot",
-    		source: "(755:1) ",
+    		source: "(705:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (790:42) 
+    // (740:42) 
     function create_if_block_6(ctx) {
     	let p;
     	let t1;
@@ -30361,25 +30362,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Chinese signature (% of all signed by China).";
-    			add_location(p, file$h, 790, 5, 20855);
+    			add_location(p, file$h, 740, 5, 19480);
     			attr_dev(span0, "class", "rect svelte-1w6fx7x");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 796, 6, 21046);
+    			add_location(span0, file$h, 746, 6, 19671);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 798, 6, 21119);
+    			add_location(span1, file$h, 748, 6, 19744);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-1w6fx7x");
-    			add_location(div0, file$h, 795, 5, 21022);
+    			add_location(div0, file$h, 745, 5, 19647);
     			attr_dev(span2, "class", "rect svelte-1w6fx7x");
     			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 803, 6, 21236);
+    			add_location(span2, file$h, 753, 6, 19861);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-1w6fx7x");
-    			add_location(span3, file$h, 805, 6, 21307);
+    			add_location(span3, file$h, 755, 6, 19932);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-1w6fx7x");
-    			add_location(div1, file$h, 802, 5, 21212);
+    			add_location(div1, file$h, 752, 5, 19837);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30407,14 +30408,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6.name,
     		type: "if",
-    		source: "(790:42) ",
+    		source: "(740:42) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (770:4) {#if selectedCountry === "Russia"}
+    // (720:4) {#if selectedCountry === "Russia"}
     function create_if_block_5(ctx) {
     	let p;
     	let t1;
@@ -30444,25 +30445,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Russian signature (% of all signed by Russia).";
-    			add_location(p, file$h, 770, 5, 20252);
+    			add_location(p, file$h, 720, 5, 18877);
     			attr_dev(span0, "class", "rect svelte-1w6fx7x");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 776, 6, 20442);
+    			add_location(span0, file$h, 726, 6, 19067);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 778, 6, 20515);
+    			add_location(span1, file$h, 728, 6, 19140);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-1w6fx7x");
-    			add_location(div0, file$h, 775, 5, 20418);
+    			add_location(div0, file$h, 725, 5, 19043);
     			attr_dev(span2, "class", "rect svelte-1w6fx7x");
     			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 783, 6, 20632);
+    			add_location(span2, file$h, 733, 6, 19257);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-1w6fx7x");
-    			add_location(span3, file$h, 785, 6, 20703);
+    			add_location(span3, file$h, 735, 6, 19328);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-1w6fx7x");
-    			add_location(div1, file$h, 782, 5, 20608);
+    			add_location(div1, file$h, 732, 5, 19233);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30490,14 +30491,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(770:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		source: "(720:4) {#if selectedCountry === \\\"Russia\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (835:42) 
+    // (785:42) 
     function create_if_block_4(ctx) {
     	let p;
     	let t1;
@@ -30527,25 +30528,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Chinese signature (% of all signed by China).";
-    			add_location(p, file$h, 835, 5, 22150);
+    			add_location(p, file$h, 785, 5, 20775);
     			attr_dev(span0, "class", "rect svelte-1w6fx7x");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 844, 6, 22500);
+    			add_location(span0, file$h, 794, 6, 21125);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 846, 6, 22573);
+    			add_location(span1, file$h, 796, 6, 21198);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-1w6fx7x");
-    			add_location(div0, file$h, 843, 5, 22476);
+    			add_location(div0, file$h, 793, 5, 21101);
     			attr_dev(span2, "class", "rect svelte-1w6fx7x");
     			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 851, 6, 22690);
+    			add_location(span2, file$h, 801, 6, 21315);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-1w6fx7x");
-    			add_location(span3, file$h, 853, 6, 22761);
+    			add_location(span3, file$h, 803, 6, 21386);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-1w6fx7x");
-    			add_location(div1, file$h, 850, 5, 22666);
+    			add_location(div1, file$h, 800, 5, 21291);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30573,14 +30574,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(835:42) ",
+    		source: "(785:42) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (815:4) {#if selectedCountry === "Russia"}
+    // (765:4) {#if selectedCountry === "Russia"}
     function create_if_block_3(ctx) {
     	let p;
     	let t1;
@@ -30610,25 +30611,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Russian signature (% of all signed by Russia).";
-    			add_location(p, file$h, 815, 5, 21543);
+    			add_location(p, file$h, 765, 5, 20168);
     			attr_dev(span0, "class", "rect svelte-1w6fx7x");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 821, 6, 21737);
+    			add_location(span0, file$h, 771, 6, 20362);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 823, 6, 21810);
+    			add_location(span1, file$h, 773, 6, 20435);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-1w6fx7x");
-    			add_location(div0, file$h, 820, 5, 21713);
+    			add_location(div0, file$h, 770, 5, 20338);
     			attr_dev(span2, "class", "rect svelte-1w6fx7x");
     			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 828, 6, 21927);
+    			add_location(span2, file$h, 778, 6, 20552);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-1w6fx7x");
-    			add_location(span3, file$h, 830, 6, 21998);
+    			add_location(span3, file$h, 780, 6, 20623);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-1w6fx7x");
-    			add_location(div1, file$h, 827, 5, 21903);
+    			add_location(div1, file$h, 777, 5, 20528);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30656,14 +30657,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(815:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		source: "(765:4) {#if selectedCountry === \\\"Russia\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (885:42) 
+    // (835:42) 
     function create_if_block_2(ctx) {
     	let p;
     	let t1;
@@ -30693,25 +30694,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Chinese signature (% of all signed by China).";
-    			add_location(p, file$h, 885, 5, 23710);
+    			add_location(p, file$h, 835, 5, 22335);
     			attr_dev(span0, "class", "rect svelte-1w6fx7x");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 891, 6, 23897);
+    			add_location(span0, file$h, 841, 6, 22522);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 893, 6, 23970);
+    			add_location(span1, file$h, 843, 6, 22595);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-1w6fx7x");
-    			add_location(div0, file$h, 890, 5, 23873);
+    			add_location(div0, file$h, 840, 5, 22498);
     			attr_dev(span2, "class", "rect svelte-1w6fx7x");
     			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 898, 6, 24087);
+    			add_location(span2, file$h, 848, 6, 22712);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-1w6fx7x");
-    			add_location(span3, file$h, 900, 6, 24158);
+    			add_location(span3, file$h, 850, 6, 22783);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-1w6fx7x");
-    			add_location(div1, file$h, 897, 5, 24063);
+    			add_location(div1, file$h, 847, 5, 22688);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30739,14 +30740,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(885:42) ",
+    		source: "(835:42) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (863:4) {#if selectedCountry === "Russia"}
+    // (813:4) {#if selectedCountry === "Russia"}
     function create_if_block_1$1(ctx) {
     	let p;
     	let t1;
@@ -30776,25 +30777,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Russian signature (% of all signed by Russia).";
-    			add_location(p, file$h, 863, 5, 22997);
+    			add_location(p, file$h, 813, 5, 21622);
     			attr_dev(span0, "class", "rect svelte-1w6fx7x");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 871, 6, 23297);
+    			add_location(span0, file$h, 821, 6, 21922);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-1w6fx7x");
-    			add_location(span1, file$h, 873, 6, 23370);
+    			add_location(span1, file$h, 823, 6, 21995);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-1w6fx7x");
-    			add_location(div0, file$h, 870, 5, 23273);
+    			add_location(div0, file$h, 820, 5, 21898);
     			attr_dev(span2, "class", "rect svelte-1w6fx7x");
     			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 878, 6, 23487);
+    			add_location(span2, file$h, 828, 6, 22112);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-1w6fx7x");
-    			add_location(span3, file$h, 880, 6, 23558);
+    			add_location(span3, file$h, 830, 6, 22183);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-1w6fx7x");
-    			add_location(div1, file$h, 877, 5, 23463);
+    			add_location(div1, file$h, 827, 5, 22088);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30822,14 +30823,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(863:4) {#if selectedCountry === \\\"Russia\\\"}",
+    		source: "(813:4) {#if selectedCountry === \\\"Russia\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (767:1) 
+    // (717:1) 
     function create_foreground_slot_1(ctx) {
     	let div3;
     	let section0;
@@ -30880,19 +30881,19 @@ var app = (function () {
     			div2 = element("div");
     			if (if_block2) if_block2.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 768, 3, 20183);
+    			add_location(div0, file$h, 718, 3, 18808);
     			attr_dev(section0, "data-id", "bar01");
-    			add_location(section0, file$h, 767, 2, 20154);
+    			add_location(section0, file$h, 717, 2, 18779);
     			attr_dev(div1, "class", "col-medium");
-    			add_location(div1, file$h, 813, 3, 21474);
+    			add_location(div1, file$h, 763, 3, 20099);
     			attr_dev(section1, "data-id", "bar02");
-    			add_location(section1, file$h, 812, 2, 21445);
+    			add_location(section1, file$h, 762, 2, 20070);
     			attr_dev(div2, "class", "col-medium");
-    			add_location(div2, file$h, 861, 3, 22928);
+    			add_location(div2, file$h, 811, 3, 21553);
     			attr_dev(section2, "data-id", "bar03");
-    			add_location(section2, file$h, 860, 2, 22899);
+    			add_location(section2, file$h, 810, 2, 21524);
     			attr_dev(div3, "slot", "foreground");
-    			add_location(div3, file$h, 766, 1, 20128);
+    			add_location(div3, file$h, 716, 1, 18753);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -30960,14 +30961,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot_1.name,
     		type: "slot",
-    		source: "(767:1) ",
+    		source: "(717:1) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1019:0) <Filler theme="light" short={true} wide={true} center={true}>
+    // (861:0) <Filler theme="light" short={true} wide={true} center={true}>
     function create_default_slot_1(ctx) {
     	let p;
 
@@ -30976,7 +30977,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Geography";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 1019, 1, 27748);
+    			add_location(p, file$h, 861, 1, 23003);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30991,21 +30992,21 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(1019:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
+    		source: "(861:0) <Filler theme=\\\"light\\\" short={true} wide={true} center={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1023:0) {#if mygeojson}
+    // (865:0) {#if mygeojson}
     function create_if_block$5(ctx) {
     	let scroller;
     	let updating_id;
     	let current;
 
     	function scroller_id_binding(value) {
-    		/*scroller_id_binding*/ ctx[26](value);
+    		/*scroller_id_binding*/ ctx[24](value);
     	}
 
     	let scroller_props = {
@@ -31035,7 +31036,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const scroller_changes = {};
 
-    			if (dirty[0] & /*mygeojson, map*/ 80 | dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[0] & /*mygeojson, map*/ 96 | dirty[1] & /*$$scope*/ 4096) {
     				scroller_changes.$$scope = { dirty, ctx };
     			}
 
@@ -31065,14 +31066,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(1023:0) {#if mygeojson}",
+    		source: "(865:0) {#if mygeojson}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1025:2) 
+    // (867:2) 
     function create_background_slot(ctx) {
     	let div1;
     	let figure;
@@ -31082,13 +31083,13 @@ var app = (function () {
     	let current;
 
     	function globe_map_binding(value) {
-    		/*globe_map_binding*/ ctx[25](value);
+    		/*globe_map_binding*/ ctx[23](value);
     	}
 
     	let globe_props = { mygeojson: /*mygeojson*/ ctx[6] };
 
-    	if (/*map*/ ctx[4] !== void 0) {
-    		globe_props.map = /*map*/ ctx[4];
+    	if (/*map*/ ctx[5] !== void 0) {
+    		globe_props.map = /*map*/ ctx[5];
     	}
 
     	globe = new Globe({ props: globe_props, $$inline: true });
@@ -31102,10 +31103,10 @@ var app = (function () {
     			div0 = element("div");
     			create_component(globe.$$.fragment);
     			attr_dev(div0, "class", "col-full height-full");
-    			add_location(div0, file$h, 1026, 4, 27895);
-    			add_location(figure, file$h, 1025, 3, 27882);
+    			add_location(div0, file$h, 868, 4, 23150);
+    			add_location(figure, file$h, 867, 3, 23137);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 1024, 2, 27855);
+    			add_location(div1, file$h, 866, 2, 23110);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -31118,9 +31119,9 @@ var app = (function () {
     			const globe_changes = {};
     			if (dirty[0] & /*mygeojson*/ 64) globe_changes.mygeojson = /*mygeojson*/ ctx[6];
 
-    			if (!updating_map && dirty[0] & /*map*/ 16) {
+    			if (!updating_map && dirty[0] & /*map*/ 32) {
     				updating_map = true;
-    				globe_changes.map = /*map*/ ctx[4];
+    				globe_changes.map = /*map*/ ctx[5];
     				add_flush_callback(() => updating_map = false);
     			}
 
@@ -31145,14 +31146,14 @@ var app = (function () {
     		block,
     		id: create_background_slot.name,
     		type: "slot",
-    		source: "(1025:2) ",
+    		source: "(867:2) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1037:2) 
+    // (879:2) 
     function create_foreground_slot(ctx) {
     	let div2;
     	let section0;
@@ -31175,18 +31176,18 @@ var app = (function () {
     			div1 = element("div");
     			p1 = element("p");
     			p1.textContent = "Russia has most often acted as a third-party signatory\n\t\t\t\t\t\tin the 1990s. Majority of these agreements relate to the\n\t\t\t\t\t\tdissolution of the Soviet Union.";
-    			add_location(p0, file$h, 1039, 5, 28143);
+    			add_location(p0, file$h, 881, 5, 23398);
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 1038, 4, 28113);
+    			add_location(div0, file$h, 880, 4, 23368);
     			attr_dev(section0, "data-id", "map01");
-    			add_location(section0, file$h, 1037, 3, 28083);
-    			add_location(p1, file$h, 1048, 5, 28408);
+    			add_location(section0, file$h, 879, 3, 23338);
+    			add_location(p1, file$h, 890, 5, 23663);
     			attr_dev(div1, "class", "col-medium");
-    			add_location(div1, file$h, 1047, 4, 28378);
+    			add_location(div1, file$h, 889, 4, 23633);
     			attr_dev(section1, "data-id", "map02");
-    			add_location(section1, file$h, 1046, 3, 28348);
+    			add_location(section1, file$h, 888, 3, 23603);
     			attr_dev(div2, "slot", "foreground");
-    			add_location(div2, file$h, 1036, 2, 28056);
+    			add_location(div2, file$h, 878, 2, 23311);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -31208,14 +31209,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot.name,
     		type: "slot",
-    		source: "(1037:2) ",
+    		source: "(879:2) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1060:0) <Section>
+    // (902:0) <Section>
     function create_default_slot(ctx) {
     	let h2;
     	let t1;
@@ -31228,9 +31229,9 @@ var app = (function () {
     			t1 = space();
     			p = element("p");
     			p.textContent = "Read our research on Russia and its approaches to conflict, peace\n\t\tprocesses and mediation.";
-    			add_location(h2, file$h, 1060, 1, 28650);
+    			add_location(h2, file$h, 902, 1, 23905);
     			attr_dev(p, "class", "mb");
-    			add_location(p, file$h, 1061, 1, 28669);
+    			add_location(p, file$h, 903, 1, 23924);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -31249,7 +31250,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(1060:0) <Section>",
+    		source: "(902:0) <Section>",
     		ctx
     	});
 
@@ -31294,15 +31295,13 @@ var app = (function () {
     	let t15;
     	let t16;
     	let section;
-    	let t17;
-    	let divider;
     	let current;
     	let mounted;
     	let dispose;
     	onsheader = new ONSHeader({ props: { center: false }, $$inline: true });
 
     	function dropdown_selectedCountry_binding(value) {
-    		/*dropdown_selectedCountry_binding*/ ctx[19](value);
+    		/*dropdown_selectedCountry_binding*/ ctx[17](value);
     	}
 
     	let dropdown_props = {};
@@ -31341,7 +31340,7 @@ var app = (function () {
     		});
 
     	function scroller0_id_binding(value) {
-    		/*scroller0_id_binding*/ ctx[21](value);
+    		/*scroller0_id_binding*/ ctx[19](value);
     	}
 
     	let scroller0_props = {
@@ -31374,7 +31373,7 @@ var app = (function () {
     		});
 
     	function scroller1_id_binding(value) {
-    		/*scroller1_id_binding*/ ctx[22](value);
+    		/*scroller1_id_binding*/ ctx[20](value);
     	}
 
     	let scroller1_props = {
@@ -31407,7 +31406,7 @@ var app = (function () {
     		});
 
     	function scroller2_id_binding(value) {
-    		/*scroller2_id_binding*/ ctx[23](value);
+    		/*scroller2_id_binding*/ ctx[21](value);
     	}
 
     	let scroller2_props = {
@@ -31440,7 +31439,7 @@ var app = (function () {
     		});
 
     	function scroller3_id_binding(value) {
-    		/*scroller3_id_binding*/ ctx[24](value);
+    		/*scroller3_id_binding*/ ctx[22](value);
     	}
 
     	let scroller3_props = {
@@ -31482,8 +31481,6 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	divider = new Divider({ $$inline: true });
-
     	const block = {
     		c: function create() {
     			create_component(onsheader.$$.fragment);
@@ -31520,20 +31517,18 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t16 = space();
     			create_component(section.$$.fragment);
-    			t17 = space();
-    			create_component(divider.$$.fragment);
     			attr_dev(button, "id", "loading_button");
     			attr_dev(button, "class", "svelte-1w6fx7x");
-    			add_location(button, file$h, 459, 1, 11260);
+    			add_location(button, file$h, 409, 1, 9885);
     			attr_dev(p, "id", "loading_text");
     			attr_dev(p, "class", "svelte-1w6fx7x");
-    			add_location(p, file$h, 462, 1, 11346);
+    			add_location(p, file$h, 412, 1, 9971);
     			attr_dev(div, "role", "presentation");
     			attr_dev(div, "id", "loading_screen");
     			set_style(div, "height", "calc(var(--vh, 1vh) * 100)");
     			attr_dev(div, "class", "svelte-1w6fx7x");
-    			add_render_callback(() => /*div_elementresize_handler*/ ctx[20].call(div));
-    			add_location(div, file$h, 451, 0, 11081);
+    			add_render_callback(() => /*div_elementresize_handler*/ ctx[18].call(div));
+    			add_location(div, file$h, 401, 0, 9706);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -31547,7 +31542,7 @@ var app = (function () {
     			append_dev(div, button);
     			append_dev(div, t3);
     			append_dev(div, p);
-    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[20].bind(div));
+    			div_resize_listener = add_iframe_resize_listener(div, /*div_elementresize_handler*/ ctx[18].bind(div));
     			insert_dev(target, t5, anchor);
     			mount_component(header, target, anchor);
     			insert_dev(target, t6, anchor);
@@ -31572,8 +31567,6 @@ var app = (function () {
     			if (if_block) if_block.m(target, anchor);
     			insert_dev(target, t16, anchor);
     			mount_component(section, target, anchor);
-    			insert_dev(target, t17, anchor);
-    			mount_component(divider, target, anchor);
     			current = true;
 
     			if (!mounted) {
@@ -31597,21 +31590,21 @@ var app = (function () {
     			dropdown.$set(dropdown_changes);
     			const header_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[1] & /*$$scope*/ 4096) {
     				header_changes.$$scope = { dirty, ctx };
     			}
 
     			header.$set(header_changes);
     			const filler0_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[1] & /*$$scope*/ 4096) {
     				filler0_changes.$$scope = { dirty, ctx };
     			}
 
     			filler0.$set(filler0_changes);
     			const scroller0_changes = {};
 
-    			if (dirty[0] & /*selectedCountry, beeswarm_data, step*/ 168 | dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[0] & /*selectedCountry, beeswarm_data, step*/ 152 | dirty[1] & /*$$scope*/ 4096) {
     				scroller0_changes.$$scope = { dirty, ctx };
     			}
 
@@ -31624,14 +31617,14 @@ var app = (function () {
     			scroller0.$set(scroller0_changes);
     			const filler1_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[1] & /*$$scope*/ 4096) {
     				filler1_changes.$$scope = { dirty, ctx };
     			}
 
     			filler1.$set(filler1_changes);
     			const scroller1_changes = {};
 
-    			if (dirty[0] & /*selectedCountry, areachart_data*/ 1032 | dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[0] & /*selectedCountry, areachart_data*/ 1032 | dirty[1] & /*$$scope*/ 4096) {
     				scroller1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -31644,14 +31637,14 @@ var app = (function () {
     			scroller1.$set(scroller1_changes);
     			const filler2_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[1] & /*$$scope*/ 4096) {
     				filler2_changes.$$scope = { dirty, ctx };
     			}
 
     			filler2.$set(filler2_changes);
     			const scroller2_changes = {};
 
-    			if (dirty[0] & /*selectedCountry, donut_data*/ 264 | dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[0] & /*selectedCountry, donut_data*/ 264 | dirty[1] & /*$$scope*/ 4096) {
     				scroller2_changes.$$scope = { dirty, ctx };
     			}
 
@@ -31664,14 +31657,14 @@ var app = (function () {
     			scroller2.$set(scroller2_changes);
     			const filler3_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[1] & /*$$scope*/ 4096) {
     				filler3_changes.$$scope = { dirty, ctx };
     			}
 
     			filler3.$set(filler3_changes);
     			const scroller3_changes = {};
 
-    			if (dirty[0] & /*selectedCountry, barchart_data*/ 520 | dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[0] & /*selectedCountry, barchart_data*/ 520 | dirty[1] & /*$$scope*/ 4096) {
     				scroller3_changes.$$scope = { dirty, ctx };
     			}
 
@@ -31684,7 +31677,7 @@ var app = (function () {
     			scroller3.$set(scroller3_changes);
     			const filler4_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[1] & /*$$scope*/ 4096) {
     				filler4_changes.$$scope = { dirty, ctx };
     			}
 
@@ -31715,7 +31708,7 @@ var app = (function () {
 
     			const section_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 536870912) {
+    			if (dirty[1] & /*$$scope*/ 4096) {
     				section_changes.$$scope = { dirty, ctx };
     			}
 
@@ -31737,7 +31730,6 @@ var app = (function () {
     			transition_in(filler4.$$.fragment, local);
     			transition_in(if_block);
     			transition_in(section.$$.fragment, local);
-    			transition_in(divider.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -31755,7 +31747,6 @@ var app = (function () {
     			transition_out(filler4.$$.fragment, local);
     			transition_out(if_block);
     			transition_out(section.$$.fragment, local);
-    			transition_out(divider.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -31789,8 +31780,6 @@ var app = (function () {
     			if (if_block) if_block.d(detaching);
     			if (detaching) detach_dev(t16);
     			destroy_component(section, detaching);
-    			if (detaching) detach_dev(t17);
-    			destroy_component(divider, detaching);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -31808,20 +31797,21 @@ var app = (function () {
     }
 
     const threshold$1 = 0.65;
-    const topojson = "./data/geo_lad2021.json";
-    const mapstyle = "https://bothness.github.io/ons-basemaps/data/style-omt.json";
     const myjson_path = "./data/all_countries.json";
 
+    function doHover(e) {
+    	hovered = e.detail.id;
+    }
+
     function instance$h($$self, $$props, $$invalidate) {
-    	let region;
-    	let chartHighlighted;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
     	let width, height;
     	let mapLoaded = false;
     	let selectedCountry = "Russia";
+    	let step = null;
+    	let map = null; // Bound to mapbox 'map' instance once initialised
 
-    	// CORE CONFIG (COLOUR THEMES)
     	// Set theme globally (options are 'light', 'dark' or 'lightblue')
     	let theme = "light";
 
@@ -31835,46 +31825,15 @@ var app = (function () {
     	let idPrev = {}; // Object to keep track of previous IDs, to compare for changes
 
     	onMount(() => {
+    		window.scrollTo(0, 0);
     		idPrev = { ...id };
     	});
 
-    	// DEMO-SPECIFIC CONFIG
-    	// Constants
-    	const datasets = ["region", "district"];
-
-    	const mapbounds = { uk: [[-9, 49], [2, 61]] };
-
-    	// Data
-    	let data = { district: {}, region: {} };
-
-    	let metadata = { district: {}, region: {} };
-    	let geojson;
-
-    	// Element bindings
-    	let map = null; // Bound to mapbox 'map' instance once initialised
-
-    	// State
-    	let hovered; // Hovered district (chart or map)
-
-    	let selected; // Selected district (chart or map)
-    	let mapHighlighted = []; // Highlighted district (map only)
-    	let xKey = "area"; // xKey for scatter chart
-    	let yKey = null; // yKey for scatter chart
-    	let zKey = null; // zKey (color) for scatter chart
-    	let rKey = null; // rKey (radius) for scatter chart
-    	let mapKey = "density"; // Key for data to be displayed on map
-    	let explore = false; // Allows chart/map interactivity to be toggled on/off
-
-    	// FUNCTIONS (INCL. SCROLLER ACTIONS)
     	// Functions for chart and map on:select and on:hover events
     	function doSelect(e) {
     		console.log(e);
-    		$$invalidate(17, selected = e.detail.id);
+    		selected = e.detail.id;
     		if (e.detail.feature) fitById(selected); // Fit map if select event comes from map
-    	}
-
-    	function doHover(e) {
-    		hovered = e.detail.id;
     	}
 
     	// Functions for map component
@@ -31892,22 +31851,23 @@ var app = (function () {
     		}
     	}
 
-    	let step = null;
-
     	// Actions for Scroller components
     	const actions = {
     		map: {
     			// Actions for <Scroller/> with id="map"
     			map01: () => {
-    				
-    			}, // fitBounds(mapbounds.uk);
-    			// mapKey = "density";
-    			// mapHighlighted = [];
-    			// explore = false;
+    				map.flyTo({
+    					center: [50, 22],
+    					zoom: 2.5,
+    					essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+    					
+    				});
+    			},
     			map02: () => {
     				if (selectedCountry == "Russia") {
     					map.flyTo({
-    						center: [70, 40],
+    						center: [87, 63],
+    						zoom: 3,
     						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
     						
     					});
@@ -31915,25 +31875,23 @@ var app = (function () {
 
     				if (selectedCountry == "China") {
     					map.flyTo({
-    						center: [100, 20],
+    						center: [104, 34],
+    						zoom: 4,
     						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
     						
     					});
     				}
-    			}, // fitBounds(mapbounds.uk);
-    			// mapKey = "age_med";
-    			// mapHighlighted = [];
-    			
-    		}, // explore = false;
+    			}
+    		},
     		chart: {
     			chart01: () => {
-    				$$invalidate(5, step = "one");
+    				$$invalidate(4, step = "one");
     			},
     			chart02: () => {
-    				$$invalidate(5, step = "two");
+    				$$invalidate(4, step = "two");
     			},
     			chart03: () => {
-    				$$invalidate(5, step = "three");
+    				$$invalidate(4, step = "three");
     			}
     		},
     		area: {
@@ -32237,7 +32195,7 @@ var app = (function () {
 
     	function globe_map_binding(value) {
     		map = value;
-    		$$invalidate(4, map);
+    		$$invalidate(5, map);
     	}
 
     	function scroller_id_binding(value) {
@@ -32278,33 +32236,17 @@ var app = (function () {
     		height,
     		mapLoaded,
     		selectedCountry,
+    		step,
+    		map,
     		theme,
     		threshold: threshold$1,
     		animation,
     		id,
     		idPrev,
-    		datasets,
-    		topojson,
-    		mapstyle,
-    		mapbounds,
-    		data,
-    		metadata,
-    		geojson,
-    		map,
-    		hovered,
-    		selected,
-    		mapHighlighted,
-    		xKey,
-    		yKey,
-    		zKey,
-    		rKey,
-    		mapKey,
-    		explore,
     		doSelect,
     		doHover,
     		fitBounds,
     		fitById,
-    		step,
     		actions,
     		runActions,
     		mygeojson,
@@ -32327,9 +32269,7 @@ var app = (function () {
     		path,
     		handleCountry,
     		handleMapLoaded,
-    		handleScreenClick,
-    		region,
-    		chartHighlighted
+    		handleScreenClick
     	});
 
     	$$self.$inject_state = $$props => {
@@ -32337,24 +32277,12 @@ var app = (function () {
     		if ('height' in $$props) $$invalidate(2, height = $$props.height);
     		if ('mapLoaded' in $$props) mapLoaded = $$props.mapLoaded;
     		if ('selectedCountry' in $$props) $$invalidate(3, selectedCountry = $$props.selectedCountry);
+    		if ('step' in $$props) $$invalidate(4, step = $$props.step);
+    		if ('map' in $$props) $$invalidate(5, map = $$props.map);
     		if ('theme' in $$props) theme = $$props.theme;
     		if ('animation' in $$props) $$invalidate(11, animation = $$props.animation);
     		if ('id' in $$props) $$invalidate(0, id = $$props.id);
     		if ('idPrev' in $$props) idPrev = $$props.idPrev;
-    		if ('data' in $$props) data = $$props.data;
-    		if ('metadata' in $$props) $$invalidate(43, metadata = $$props.metadata);
-    		if ('geojson' in $$props) geojson = $$props.geojson;
-    		if ('map' in $$props) $$invalidate(4, map = $$props.map);
-    		if ('hovered' in $$props) hovered = $$props.hovered;
-    		if ('selected' in $$props) $$invalidate(17, selected = $$props.selected);
-    		if ('mapHighlighted' in $$props) mapHighlighted = $$props.mapHighlighted;
-    		if ('xKey' in $$props) xKey = $$props.xKey;
-    		if ('yKey' in $$props) yKey = $$props.yKey;
-    		if ('zKey' in $$props) zKey = $$props.zKey;
-    		if ('rKey' in $$props) rKey = $$props.rKey;
-    		if ('mapKey' in $$props) mapKey = $$props.mapKey;
-    		if ('explore' in $$props) explore = $$props.explore;
-    		if ('step' in $$props) $$invalidate(5, step = $$props.step);
     		if ('mygeojson' in $$props) $$invalidate(6, mygeojson = $$props.mygeojson);
     		if ('parser' in $$props) parser = $$props.parser;
     		if ('just_year_parser' in $$props) $$invalidate(12, just_year_parser = $$props.just_year_parser);
@@ -32372,8 +32300,6 @@ var app = (function () {
     		if ('areachart_data' in $$props) $$invalidate(10, areachart_data = $$props.areachart_data);
     		if ('linechart_data' in $$props) $$invalidate(13, linechart_data = $$props.linechart_data);
     		if ('path' in $$props) path = $$props.path;
-    		if ('region' in $$props) $$invalidate(18, region = $$props.region);
-    		if ('chartHighlighted' in $$props) chartHighlighted = $$props.chartHighlighted;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -32381,18 +32307,6 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*selected*/ 131072) {
-    			 $$invalidate(18, region = selected && metadata.district.lookup
-    			? metadata.district.lookup[selected].parent
-    			: null); // Gets region code for 'selected'
-    		}
-
-    		if ($$self.$$.dirty[0] & /*region*/ 262144) {
-    			 chartHighlighted = metadata.district.array && region
-    			? metadata.district.array.filter(d => d.parent == region).map(d => d.code)
-    			: []; // Array of district codes in 'region'
-    		}
-
     		if ($$self.$$.dirty[0] & /*id*/ 1) {
     			 id && runActions(Object.keys(actions)); // Run above code when 'id' object changes
     		}
@@ -32403,8 +32317,8 @@ var app = (function () {
     		width,
     		height,
     		selectedCountry,
-    		map,
     		step,
+    		map,
     		mygeojson,
     		beeswarm_data,
     		donut_data,
@@ -32416,8 +32330,6 @@ var app = (function () {
     		handleCountry,
     		handleMapLoaded,
     		handleScreenClick,
-    		selected,
-    		region,
     		dropdown_selectedCountry_binding,
     		div_elementresize_handler,
     		scroller0_id_binding,

@@ -8,13 +8,15 @@
     export let map;
 
     onMount(() => {
+        window.scrollTo(0, 0);
+
         mapboxgl.accessToken =
             "pk.eyJ1Ijoic2FzaGFnYXJpYmFsZHkiLCJhIjoiY2xyajRlczBlMDhqMTJpcXF3dHJhdTVsNyJ9.P_6mX_qbcbxLDS1o_SxpFg";
 
         map = new mapboxgl.Map({
             container: map,
             style: "mapbox://styles/sashagaribaldy/cm0az6qe200pf01phd16v6qm0",
-            center: [50.224518, 22.213995],
+            center: [50, 22],
             zoom: 2.5,
             maxZoom: 5,
         });

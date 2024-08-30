@@ -21,77 +21,30 @@
 	import Donut from "./vis/Donut.svelte";
 	import Bars from "./vis/Bars.svelte";
 	import Globe from "./vis/Globe.svelte";
-
-	// DEMO-SPECIFIC IMPORTS
 	import bbox from "@turf/bbox";
 	import { setColors, getGeo } from "./utils.js";
 
 	let width, height;
 	let mapLoaded = false;
-
 	let selectedCountry = "Russia";
+	let step = null;
+	let map = null; // Bound to mapbox 'map' instance once initialised
 
-	// CORE CONFIG (COLOUR THEMES)
 	// Set theme globally (options are 'light', 'dark' or 'lightblue')
 	let theme = "light";
 	setContext("theme", theme);
 	setColors(themes, theme);
 
 	// CONFIG FOR SCROLLER COMPONENTS
-	// Config
 	const threshold = 0.65;
 	// State
 	let animation = getMotion(); // Set animation preference depending on browser preference
 	let id = {}; // Object to hold visible section IDs of Scroller components
 	let idPrev = {}; // Object to keep track of previous IDs, to compare for changes
 	onMount(() => {
+		window.scrollTo(0, 0);
 		idPrev = { ...id };
 	});
-
-	// DEMO-SPECIFIC CONFIG
-	// Constants
-	const datasets = ["region", "district"];
-	const topojson = "./data/geo_lad2021.json";
-
-	const mapstyle =
-		"https://bothness.github.io/ons-basemaps/data/style-omt.json";
-	const mapbounds = {
-		uk: [
-			[-9, 49],
-			[2, 61],
-		],
-	};
-
-	// Data
-	let data = { district: {}, region: {} };
-	let metadata = { district: {}, region: {} };
-	let geojson;
-
-	// Element bindings
-	let map = null; // Bound to mapbox 'map' instance once initialised
-
-	// State
-	let hovered; // Hovered district (chart or map)
-	let selected; // Selected district (chart or map)
-	$: region =
-		selected && metadata.district.lookup
-			? metadata.district.lookup[selected].parent
-			: null; // Gets region code for 'selected'
-	$: chartHighlighted =
-		metadata.district.array && region
-			? metadata.district.array
-					.filter((d) => d.parent == region)
-					.map((d) => d.code)
-			: []; // Array of district codes in 'region'
-	let mapHighlighted = []; // Highlighted district (map only)
-	let xKey = "area"; // xKey for scatter chart
-	let yKey = null; // yKey for scatter chart
-	let zKey = null; // zKey (color) for scatter chart
-	let rKey = null; // rKey (radius) for scatter chart
-	let mapKey = "density"; // Key for data to be displayed on map
-	let explore = false; // Allows chart/map interactivity to be toggled on/off
-
-	// FUNCTIONS (INCL. SCROLLER ACTIONS)
 
 	// Functions for chart and map on:select and on:hover events
 	function doSelect(e) {
@@ -119,35 +72,32 @@
 		}
 	}
 
-	let step = null;
-
 	// Actions for Scroller components
 	const actions = {
 		map: {
 			// Actions for <Scroller/> with id="map"
 			map01: () => {
-				// fitBounds(mapbounds.uk);
-				// mapKey = "density";
-				// mapHighlighted = [];
-				// explore = false;
+				map.flyTo({
+					center: [50, 22],
+					zoom: 2.5,
+					essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+				});
 			},
 			map02: () => {
 				if (selectedCountry == "Russia") {
 					map.flyTo({
-						center: [70, 40],
+						center: [87, 63],
+						zoom: 3,
 						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
 					});
 				}
 				if (selectedCountry == "China") {
 					map.flyTo({
-						center: [100, 20],
+						center: [104, 34],
+						zoom: 4,
 						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
 					});
 				}
-				// fitBounds(mapbounds.uk);
-				// mapKey = "age_med";
-				// mapHighlighted = [];
-				// explore = false;
 			},
 		},
 		chart: {
@@ -908,114 +858,6 @@
 	</div>
 </Scroller>
 
-<!-- <Section>
-	<h2>This is a section title</h2>
-	<p>
-		This is a short paragraph of text to demonstrate the standard "medium" column width, font size and line spacing of the template.
-	</p>
-	<p>
-		This is a second short paragraph of text to demonstrate the size of the paragraph spacing in the template.
-	</p>
-	<blockquote class="text-indent">
-		"This is an example of a large embedded quotation."&mdash;A. Person
-	</blockquote>
-</Section> -->
-
-<!-- <Divider/> -->
-
-<!-- {#if data.region.indicators}
-	<Media col="medium" caption="Source: ONS mid-year population estimates.">
-		<div class="chart-sml">
-			<BarChart
-				data={[...data.region.indicators].sort((a, b) => a.pop - b.pop)}
-				xKey="pop"
-				yKey="name"
-				snapTicks={false}
-				xFormatTick={(d) => d / 1e6}
-				xSuffix="m"
-				height={350}
-				padding={{ top: 0, bottom: 15, left: 140, right: 0 }}
-				area={false}
-				title="Population by region/nation, 2020"
-			/>
-		</div>
-	</Media>
-{/if} -->
-
-<!-- <Section>
-	<h2>Gridded charts or media</h2>
-	<p>
-		Below is a grid that can contain charts or any other kind of visual media. The grid can fit in a medium, wide or full-width column, and the media width itself can be narrow (min 200px), medium (min 300px), wide (min 500px) or full-width. The grid is responsive, and will re-flow on smaller screens.
-	</p>
-</Section> -->
-
-<!-- {#if data.region.timeseries && data.region.indicators}
-<Media
-	col="wide"
-	grid="narrow" gap={20}
-	caption="Source: ONS mid-year population estimates."
->
-	{#each [...data.region.indicators].sort((a, b) => b.pop - a.pop) as region}
-	<div class="chart-sml">
-		<LineChart
-			data={data.region.timeseries}
-			xKey="year" yKey="value" zKey="code"
-			color="lightgrey"
-			lineWidth={1} xTicks={2} snapTicks={false}
-			yFormatTick={d => (d / 1e6)} ySuffix="m"
-			height={200} padding={{top: 0, bottom: 20, left: 30, right: 15}}
-			selected={region.code}
-			area={false} title={region.name}/>
-	</div>
-	{/each}
-</Media>
-{/if} -->
-
-<!-- <Section>
-	<h2>Gridded charts or media</h2>
-	<p>
-		Below is a grid that can contain charts or any other kind of visual media. The grid can fit in a medium, wide or full-width column, and the media width itself can be narrow (min 200px), medium (min 300px), wide (min 500px) or full-width. The grid is responsive, and will re-flow on smaller screens.
-	</p>
-</Section> -->
-
-<!-- <Divider />
-
-<Section>
-	<h2>This is a full-width chart demo</h2>
-	<p>
-		Below is an example of a media grid where the column with is set to "full". This allows for full width images and charts.
-	</p>
-	<p>
-
-	</p>
-</Section>
-
-<Media
-	col="full"
-	height={600}
-	caption='This is an optional caption for the above chart or media. It can contain HTML code and <a href="#">hyperlinks</a>, and wrap onto multiple lines.'
->
-	<div class="chart-full">
-		{#if data.district.timeseries}
-		<LineChart
-			data={data.district.timeseries}
-			padding={{left: 50, right: 150, top: 0, bottom: 0}}
-			height="500px"
-			xKey="year" yKey="value" zKey="code"
-			color="lightgrey" lineWidth={1}
-			yFormatTick={d => (d/1e6).toFixed(1)} ySuffix="m"
-			select {selected} on:select={doSelect}
-			hover {hovered} on:hover={doHover}
-			highlighted={chartHighlighted}
-			colorSelect="#206095" colorHighlight="#999"
-			area={false} title="Mid-year population by district, 2001 to 2020"
-			labels labelKey="name"/>
-		{/if}
-	</div>
-</Media>
-
-<Divider />-->
-
 <Filler theme="light" short={true} wide={true} center={true}>
 	<p class="text-big">Geography</p>
 </Filler>
@@ -1065,117 +907,7 @@
 	</p>
 </Section>
 
-<!-- {#if geojson && data.district.indicators}
-<Scroller {threshold} bind:id={id['map']}>
-	<div slot="background">
-		<figure>
-			<div class="col-full height-full">
-				<Map style={mapstyle} bind:map interactive={false} location={{bounds: mapbounds.uk}}>
-					<MapSource
-					  id="lad"
-					  type="geojson"
-					  data={geojson}
-					  promoteId="AREACD"
-					  maxzoom={13}>
-					  <MapLayer
-					  	id="lad-fill"
-							idKey="code"
-							colorKey={mapKey + "_color"}
-					  	data={data.district.indicators}
-					  	type="fill"
-							select {selected} on:select={doSelect} clickIgnore={!explore}
-							hover {hovered} on:hover={doHover}
-							highlight highlighted={mapHighlighted}
-					  	paint={{
-					  		'fill-color': ['case',
-					  			['!=', ['feature-state', 'color'], null], ['feature-state', 'color'],
-					  			'rgba(255, 255, 255, 0)'
-					  		],
-					  		'fill-opacity': 0.7
-					  	}}>
-								<MapTooltip content={
-									hovered ? `${metadata.district.lookup[hovered].name}<br/><strong>${data.district.indicators.find(d => d.code == hovered)[mapKey].toLocaleString()} ${units[mapKey]}</strong>` : ''
-								}/>
-							</MapLayer>
-						<MapLayer
-					  	id="lad-line"
-					  	type="line"
-					  	paint={{
-					  		'line-color': ['case',
-					  			['==', ['feature-state', 'hovered'], true], 'orange',
-					  			['==', ['feature-state', 'selected'], true], 'black',
-					  			['==', ['feature-state', 'highlighted'], true], 'black',
-					  			'rgba(255,255,255,0)'
-					  		],
-					  		'line-width': 2
-					  	}}
-				    />
-				  </MapSource>
-				</Map>
-			</div>
-		</figure>
-	</div>
-
-	<div slot="foreground">
-		<section data-id="map01">
-			<div class="col-medium">
-				<p>
-					This map shows <strong>population density</strong> by district. Districts are coloured from <Em color={colors.seq[0]}>least dense</Em> to <Em color={colors.seq[4]}>most dense</Em>. You can hover to see the district name and density.
-				</p>
-			</div>
-		</section>
-		<section data-id="map02">
-			<div class="col-medium">
-				<p>
-					The map now shows <strong>median age</strong>, from <Em color={colors.seq[0]}>youngest</Em> to <Em color={colors.seq[4]}>oldest</Em>.
-				</p>
-			</div>
-		</section>
-		<section data-id="map03">
-			<div class="col-medium">
-				{#each [[...data.district.indicators].sort((a, b) => b.age_med - a.age_med)[0]] as district}
-				<p>
-					The map is now zoomed on <Em color={district.age_med_color}>{district.name}</Em>, the district with the oldest median age, {district.age_med} years.
-				</p>
-				{/each}
-			</div>
-		</section>
-		<section data-id="map04">
-			<div class="col-medium">
-				<h3>Select a district</h3>
-				<p>Use the selection box below or click on the map to select and zoom to a district.</p>
-				{#if geojson}
-					<p>
-						<select bind:value={selected} on:change={() => fitById(selected)}>
-							<option value={null}>Select one</option>
-							{#each geojson.features as place}
-								<option value={place.properties.AREACD}>
-									{place.properties.AREANM}
-								</option>
-							{/each}
-						</select>
-					</p>
-				{/if}
-			</div>
-		</section>
-	</div>
-</Scroller>
-{/if} -->
-
-<Divider />
-
-<!-- <Section>
-	<h2>How to use this template</h2>
-	<p>
-		You can find the source code and documentation on how to use this
-		template in <a
-			href="https://github.com/ONSvisual/svelte-scrolly/"
-			target="_blank">this Github repo</a
-		>.
-	</p>
-</Section>
-
-<ONSFooter /> -->
+<!-- <ONSFooter /> -->
 
 <style>
 	#loading_screen {
