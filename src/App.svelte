@@ -150,7 +150,7 @@
 
 	//LOAD GEOJSON
 	let mygeojson;
-	const myjson_path = "./data/all_countries.json";
+	const myjson_path = "./data/country_polygons.json";
 	getGeo(myjson_path).then((geo) => {
 		mygeojson = geo;
 	});
@@ -175,9 +175,14 @@
 	let areachart_data;
 	let linechart_data = [];
 
+	let map_array = [];
+	let china_map_array = [];
+	let russia_map_array = [];
+
 	let path = [
 		"./data/agts_rus_china.csv",
 		"./data/paax_practical_third_labelled_signatories.csv",
+		"./data/loc_correction.csv",
 	];
 
 	getCSV(path).then((data) => {
@@ -362,6 +367,40 @@
 		china_barchart_data = cn_fin_comb_chart;
 
 		barchart_data = russia_barchart_data;
+
+		//prepare data for map
+		let russia_agt_group = d3.groups(russia, (d) => d.AgtId);
+		let china_agt_group = d3.groups(china, (d) => d.AgtId);
+
+		china_agt_group.forEach(function (d) {
+			d[1].forEach(function (x) {
+				let check_actor = x.AgtId;
+				let country = data[2].filter(function (x) {
+					return x.AgtId == check_actor;
+				});
+				country.forEach(function (x) {
+					if (china_map_array.includes(x.country_entity) == false) {
+						china_map_array.push(x.country_entity);
+					}
+				});
+			});
+		});
+
+		russia_agt_group.forEach(function (d) {
+			d[1].forEach(function (x) {
+				let check_actor = x.AgtId;
+				let country = data[2].filter(function (x) {
+					return x.AgtId == check_actor;
+				});
+				country.forEach(function (x) {
+					if (russia_map_array.includes(x.country_entity) == false) {
+						russia_map_array.push(x.country_entity);
+					}
+				});
+			});
+		});
+
+		map_array = russia_map_array;
 	});
 
 	function handleCountry(country) {
@@ -369,10 +408,12 @@
 			beeswarm_data = russia_beeswarm_data;
 			donut_data = russia_donut;
 			barchart_data = russia_barchart_data;
+			map_array = russia_map_array;
 		} else {
 			beeswarm_data = china_beeswarm_data;
 			donut_data = china_donut;
 			barchart_data = china_barchart_data;
+			map_array = china_map_array;
 		}
 	}
 
@@ -869,6 +910,7 @@
 				<div class="col-full height-full">
 					<Globe
 						{mygeojson}
+						{map_array}
 						bind:map
 						on:mapLoaded={handleMapLoaded}
 					/>

@@ -66,8 +66,6 @@
         })
         .flat();
 
-    $: console.log(formatted_barchart_data);
-
     function formatMobile(tick) {
         return "'" + tick.toString().slice(-2);
     }
