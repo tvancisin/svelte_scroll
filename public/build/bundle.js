@@ -25313,17 +25313,17 @@ var app = (function () {
     			a1.textContent = "China";
     			attr_dev(i, "class", "fa fa-globe");
     			add_location(i, file$b, 14, 8, 362);
-    			attr_dev(button, "class", "dropbtn svelte-18f249o");
+    			attr_dev(button, "class", "dropbtn svelte-ijv30t");
     			add_location(button, file$b, 13, 4, 328);
     			attr_dev(a0, "href", "#");
-    			attr_dev(a0, "class", "svelte-18f249o");
+    			attr_dev(a0, "class", "svelte-ijv30t");
     			add_location(a0, file$b, 17, 12, 454);
     			attr_dev(a1, "href", "#");
-    			attr_dev(a1, "class", "svelte-18f249o");
+    			attr_dev(a1, "class", "svelte-ijv30t");
     			add_location(a1, file$b, 18, 12, 533);
-    			attr_dev(div0, "class", "dropdown-content svelte-18f249o");
+    			attr_dev(div0, "class", "dropdown-content svelte-ijv30t");
     			add_location(div0, file$b, 16, 4, 410);
-    			attr_dev(div1, "class", "dropdown svelte-18f249o");
+    			attr_dev(div1, "class", "dropdown svelte-ijv30t");
     			add_location(div1, file$b, 12, 0, 300);
     		},
     		l: function claim(nodes) {
@@ -25475,13 +25475,13 @@ var app = (function () {
     			attr_dev(line, "x1", "0");
     			attr_dev(line, "x2", "0");
     			attr_dev(line, "class", "svelte-1b7u33c");
-    			add_location(line, file$c, 219, 24, 7095);
+    			add_location(line, file$c, 219, 24, 7111);
     			attr_dev(text_1, "y", "-2");
     			attr_dev(text_1, "class", "svelte-1b7u33c");
-    			add_location(text_1, file$c, 225, 24, 7321);
+    			add_location(text_1, file$c, 225, 24, 7337);
     			attr_dev(g, "class", g_class_value = "tick tick-" + /*tick*/ ctx[33] + " svelte-1b7u33c");
     			attr_dev(g, "transform", g_transform_value = "translate(" + /*xScale*/ ctx[5](/*just_year_parser*/ ctx[0](/*tick*/ ctx[33])) + "," + /*height*/ ctx[2] + ")");
-    			add_location(g, file$c, 213, 20, 6847);
+    			add_location(g, file$c, 213, 20, 6863);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, g, anchor);
@@ -25551,7 +25551,7 @@ var app = (function () {
     			attr_dev(circle, "r", /*radius*/ ctx[4]);
     			attr_dev(circle, "fill", "black");
     			attr_dev(circle, "class", circle_class_value = "" + (null_to_empty(/*assignClass*/ ctx[14](/*node*/ ctx[30])) + " svelte-1b7u33c"));
-    			add_location(circle, file$c, 231, 20, 7563);
+    			add_location(circle, file$c, 231, 20, 7579);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, circle, anchor);
@@ -25616,7 +25616,7 @@ var app = (function () {
     			attr_dev(div, "class", "tooltip svelte-1b7u33c");
     			set_style(div, "left", /*tooltipX*/ ctx[8] + "px");
     			set_style(div, "top", /*tooltipY*/ ctx[9] + "px");
-    			add_location(div, file$c, 249, 8, 8234);
+    			add_location(div, file$c, 249, 8, 8250);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -25696,16 +25696,16 @@ var app = (function () {
     			t = space();
     			if (if_block) if_block.c();
     			attr_dev(g0, "class", "axis x-axis svelte-1b7u33c");
-    			add_location(g0, file$c, 211, 12, 6762);
+    			add_location(g0, file$c, 211, 12, 6778);
     			attr_dev(g1, "class", "inner_chart");
     			attr_dev(g1, "transform", g1_transform_value = "translate(" + /*margin*/ ctx[11].left + ", " + 0 + ")");
-    			add_location(g1, file$c, 210, 8, 6683);
+    			add_location(g1, file$c, 210, 8, 6699);
     			attr_dev(svg, "width", /*width*/ ctx[1]);
     			attr_dev(svg, "height", /*height*/ ctx[2]);
-    			add_location(svg, file$c, 209, 4, 6651);
+    			add_location(svg, file$c, 209, 4, 6667);
     			attr_dev(div, "class", "wrapper svelte-1b7u33c");
     			add_render_callback(() => /*div_elementresize_handler*/ ctx[25].call(div));
-    			add_location(div, file$c, 208, 0, 6572);
+    			add_location(div, file$c, 208, 0, 6588);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -26055,11 +26055,11 @@ var app = (function () {
 
     					if (selectedCountry === "Russia") {
     						document.querySelectorAll(".soviet").forEach(circle => {
-    							circle.setAttribute("fill", "red");
+    							circle.setAttribute("fill", "#7b8ad6");
     						});
     					} else if (selectedCountry === "China") {
     						document.querySelectorAll(".china_high").forEach(circle => {
-    							circle.setAttribute("fill", "red");
+    							circle.setAttribute("fill", "#7b8ad6");
     						});
     					}
     				} else if (step === "three") {
@@ -26067,11 +26067,11 @@ var app = (function () {
 
     					if (selectedCountry === "Russia") {
     						document.querySelectorAll(".syria").forEach(circle => {
-    							circle.setAttribute("fill", "red");
+    							circle.setAttribute("fill", "#7b8ad6");
     						});
     					} else if (selectedCountry === "China") {
     						document.querySelectorAll(".un_p5").forEach(circle => {
-    							circle.setAttribute("fill", "red");
+    							circle.setAttribute("fill", "#7b8ad6");
     						});
     					}
     				} else {
@@ -26368,8 +26368,8 @@ var app = (function () {
     			attr_dev(path_1, "fill", "none");
 
     			attr_dev(path_1, "stroke", path_1_stroke_value = /*key*/ ctx[21] === /*selectedCountry*/ ctx[1]
-    			? "red"
-    			: "rgb(0, 158, 158)");
+    			? "#7b8ad6"
+    			: "#02cccc");
 
     			attr_dev(path_1, "stroke-width", "2");
     			add_location(path_1, file$d, 95, 3, 2428);
@@ -26383,8 +26383,8 @@ var app = (function () {
     			}
 
     			if (dirty & /*multiline_groups, selectedCountry*/ 130 && path_1_stroke_value !== (path_1_stroke_value = /*key*/ ctx[21] === /*selectedCountry*/ ctx[1]
-    			? "red"
-    			: "rgb(0, 158, 158)")) {
+    			? "#7b8ad6"
+    			: "#02cccc")) {
     				attr_dev(path_1, "stroke", path_1_stroke_value);
     			}
     		},
@@ -27600,13 +27600,13 @@ var app = (function () {
     			attr_dev(rect, "y", rect_y_value = /*bar*/ ctx[16].y);
     			attr_dev(rect, "width", rect_width_value = /*bar*/ ctx[16].width);
     			attr_dev(rect, "height", rect_height_value = /*bar*/ ctx[16].height);
-    			attr_dev(rect, "fill", rect_fill_value = /*bar*/ ctx[16].key === "All" ? "black" : "red");
+    			attr_dev(rect, "fill", rect_fill_value = /*bar*/ ctx[16].key === "All" ? "black" : "#7b8ad6");
     			add_location(rect, file$f, 103, 16, 3071);
     			attr_dev(text_1, "x", text_1_x_value = /*bar*/ ctx[16].x + /*bar*/ ctx[16].width / 2);
     			attr_dev(text_1, "y", text_1_y_value = /*bar*/ ctx[16].y - 3);
     			attr_dev(text_1, "text-anchor", "middle");
     			attr_dev(text_1, "font-size", "14px");
-    			add_location(text_1, file$f, 110, 16, 3320);
+    			add_location(text_1, file$f, 110, 16, 3324);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, rect, anchor);
@@ -27630,7 +27630,7 @@ var app = (function () {
     				attr_dev(rect, "height", rect_height_value);
     			}
 
-    			if (dirty & /*formatted_barchart_data*/ 16 && rect_fill_value !== (rect_fill_value = /*bar*/ ctx[16].key === "All" ? "black" : "red")) {
+    			if (dirty & /*formatted_barchart_data*/ 16 && rect_fill_value !== (rect_fill_value = /*bar*/ ctx[16].key === "All" ? "black" : "#7b8ad6")) {
     				attr_dev(rect, "fill", rect_fill_value);
     			}
 
@@ -28140,21 +28140,21 @@ var app = (function () {
     			set_style(div, "width", "100%");
     			set_style(div, "height", "100vh");
     			attr_dev(div, "class", "svelte-1k49t6h");
-    			add_location(div, file$g, 158, 0, 5350);
+    			add_location(div, file$g, 173, 0, 5871);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			/*div_binding*/ ctx[3](div);
+    			/*div_binding*/ ctx[4](div);
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
-    			/*div_binding*/ ctx[3](null);
+    			/*div_binding*/ ctx[4](null);
     		}
     	};
 
@@ -28176,6 +28176,7 @@ var app = (function () {
     	let { mygeojson } = $$props;
     	let { map_array } = $$props;
     	let { map } = $$props;
+    	let { selectedCountry = "Russia" } = $$props;
     	let current_zoom;
 
     	function adjustMapForWindowSize() {
@@ -28236,7 +28237,7 @@ var app = (function () {
     		}
     	});
 
-    	const writable_props = ['mygeojson', 'map_array', 'map'];
+    	const writable_props = ['mygeojson', 'map_array', 'map', 'selectedCountry'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Globe> was created with unknown prop '${key}'`);
@@ -28253,6 +28254,7 @@ var app = (function () {
     		if ('mygeojson' in $$props) $$invalidate(1, mygeojson = $$props.mygeojson);
     		if ('map_array' in $$props) $$invalidate(2, map_array = $$props.map_array);
     		if ('map' in $$props) $$invalidate(0, map = $$props.map);
+    		if ('selectedCountry' in $$props) $$invalidate(3, selectedCountry = $$props.selectedCountry);
     	};
 
     	$$self.$capture_state = () => ({
@@ -28265,6 +28267,7 @@ var app = (function () {
     		mygeojson,
     		map_array,
     		map,
+    		selectedCountry,
     		current_zoom,
     		adjustMapForWindowSize
     	});
@@ -28273,6 +28276,7 @@ var app = (function () {
     		if ('mygeojson' in $$props) $$invalidate(1, mygeojson = $$props.mygeojson);
     		if ('map_array' in $$props) $$invalidate(2, map_array = $$props.map_array);
     		if ('map' in $$props) $$invalidate(0, map = $$props.map);
+    		if ('selectedCountry' in $$props) $$invalidate(3, selectedCountry = $$props.selectedCountry);
     		if ('current_zoom' in $$props) current_zoom = $$props.current_zoom;
     	};
 
@@ -28281,7 +28285,7 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*mygeojson, map_array, map*/ 7) {
+    		if ($$self.$$.dirty & /*mygeojson, map_array, map, selectedCountry*/ 15) {
     			 if (mygeojson && map_array && map) {
     				// Ensure this block runs only after the map has fully loaded
     				map.on("load", () => {
@@ -28300,7 +28304,9 @@ var app = (function () {
     							id: "countries-layer",
     							type: "fill",
     							source: "countries",
-    							paint: { "fill-color": "gray" },
+    							paint: {
+    								"fill-color": ["match", ["get", "ADMIN"], selectedCountry, "#7b8ad6", "gray"]
+    							},
     							filter: ["in", ["get", "ADMIN"], ["literal", map_array]]
     						});
     					} else {
@@ -28315,21 +28321,30 @@ var app = (function () {
     			}
     		}
 
-    		if ($$self.$$.dirty & /*map, map_array*/ 5) {
+    		if ($$self.$$.dirty & /*map, map_array, selectedCountry*/ 13) {
     			 if (map && map_array && map.getSource("countries")) {
     				// Ensure the map and source are loaded before updating the filter
     				map.setFilter("countries-layer", ["in", ["get", "ADMIN"], ["literal", map_array]]);
+
+    				map.setPaintProperty('countries-layer', 'fill-color', ['match', ['get', 'ADMIN'], selectedCountry, '#7b8ad6', 'gray']); // Highlight color
+    				// Default color
     			}
     		}
     	};
 
-    	return [map, mygeojson, map_array, div_binding];
+    	return [map, mygeojson, map_array, selectedCountry, div_binding];
     }
 
     class Globe extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$g, create_fragment$g, safe_not_equal, { mygeojson: 1, map_array: 2, map: 0 });
+
+    		init(this, options, instance$g, create_fragment$g, safe_not_equal, {
+    			mygeojson: 1,
+    			map_array: 2,
+    			map: 0,
+    			selectedCountry: 3
+    		});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -28360,6 +28375,14 @@ var app = (function () {
     	}
 
     	set map(value) {
+    		throw new Error("<Globe>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get selectedCountry() {
+    		throw new Error("<Globe>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set selectedCountry(value) {
     		throw new Error("<Globe>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -28647,12 +28670,12 @@ var app = (function () {
     			t3 = space();
     			div = element("div");
     			create_component(arrow.$$.fragment);
-    			add_location(h1, file$h, 472, 1, 11397);
+    			add_location(h1, file$h, 472, 1, 11415);
     			attr_dev(p, "class", "text-big");
     			set_style(p, "margin-top", "5px");
-    			add_location(p, file$h, 473, 1, 11416);
+    			add_location(p, file$h, 473, 1, 11434);
     			set_style(div, "margin-top", "90px");
-    			add_location(div, file$h, 476, 1, 11509);
+    			add_location(div, file$h, 476, 1, 11527);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -28711,7 +28734,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Timeline of Agreements";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 482, 1, 11682);
+    			add_location(p, file$h, 482, 1, 11700);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -28754,7 +28777,7 @@ var app = (function () {
     			div = element("div");
     			create_component(beeswarm.$$.fragment);
     			attr_dev(div, "class", "chart svelte-7g6hmy");
-    			add_location(div, file$h, 490, 5, 11907);
+    			add_location(div, file$h, 490, 5, 11925);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -28809,10 +28832,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 488, 3, 11843);
-    			add_location(figure, file$h, 487, 2, 11831);
+    			add_location(div0, file$h, 488, 3, 11861);
+    			add_location(figure, file$h, 487, 2, 11849);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 486, 1, 11805);
+    			add_location(div1, file$h, 486, 1, 11823);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -28890,15 +28913,15 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Individual peace agreements signed by China (hover\n\t\t\t\t\t\t\tover for more detail)";
-    			add_location(p, file$h, 522, 5, 12733);
+    			add_location(p, file$h, 522, 5, 12751);
     			attr_dev(span0, "class", "dot svelte-7g6hmy");
-    			add_location(span0, file$h, 530, 6, 13050);
+    			add_location(span0, file$h, 530, 6, 13068);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 531, 6, 13082);
+    			add_location(span1, file$h, 531, 6, 13100);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-7g6hmy");
-    			add_location(div, file$h, 529, 5, 13026);
+    			add_location(div, file$h, 529, 5, 13044);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -28945,15 +28968,15 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Individual peace agreements signed by Russia (hover\n\t\t\t\t\t\t\tover for more detail)";
-    			add_location(p, file$h, 507, 5, 12220);
+    			add_location(p, file$h, 507, 5, 12238);
     			attr_dev(span0, "class", "dot svelte-7g6hmy");
-    			add_location(span0, file$h, 515, 6, 12515);
+    			add_location(span0, file$h, 515, 6, 12533);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 516, 6, 12547);
+    			add_location(span1, file$h, 516, 6, 12565);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-7g6hmy");
-    			add_location(div, file$h, 514, 5, 12491);
+    			add_location(div, file$h, 514, 5, 12509);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29000,16 +29023,16 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Peace agreements resulting from large international\n\t\t\t\t\t\t\tconferences or UNSC resolutions.";
-    			add_location(p, file$h, 558, 5, 13946);
+    			add_location(p, file$h, 558, 5, 13968);
     			attr_dev(span0, "class", "dot svelte-7g6hmy");
-    			set_style(span0, "background-color", "red");
-    			add_location(span0, file$h, 569, 6, 14430);
+    			set_style(span0, "background-color", "#7b8ad6");
+    			add_location(span0, file$h, 569, 6, 14452);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 570, 6, 14493);
+    			add_location(span1, file$h, 570, 6, 14519);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-7g6hmy");
-    			add_location(div, file$h, 568, 5, 14406);
+    			add_location(div, file$h, 568, 5, 14428);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29056,16 +29079,16 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Peace agreements addressing conflicts in the former\n\t\t\t\t\t\t\tSoviet Union territories.";
-    			add_location(p, file$h, 543, 5, 13355);
+    			add_location(p, file$h, 543, 5, 13373);
     			attr_dev(span0, "class", "dot svelte-7g6hmy");
-    			set_style(span0, "background-color", "red");
-    			add_location(span0, file$h, 551, 6, 13693);
+    			set_style(span0, "background-color", "#7b8ad6");
+    			add_location(span0, file$h, 551, 6, 13711);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 552, 6, 13756);
+    			add_location(span1, file$h, 552, 6, 13778);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-7g6hmy");
-    			add_location(div, file$h, 550, 5, 13669);
+    			add_location(div, file$h, 550, 5, 13687);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29112,16 +29135,16 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Peace agreements signed by China and the UN or all\n\t\t\t\t\t\t\tother permanent members of the UNSC.";
-    			add_location(p, file$h, 597, 5, 15431);
+    			add_location(p, file$h, 597, 5, 15461);
     			attr_dev(span0, "class", "dot svelte-7g6hmy");
-    			set_style(span0, "background-color", "red");
-    			add_location(span0, file$h, 602, 6, 15589);
+    			set_style(span0, "background-color", "#7b8ad6");
+    			add_location(span0, file$h, 602, 6, 15619);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 603, 6, 15652);
+    			add_location(span1, file$h, 603, 6, 15686);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-7g6hmy");
-    			add_location(div, file$h, 601, 5, 15565);
+    			add_location(div, file$h, 601, 5, 15595);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29168,16 +29191,16 @@ var app = (function () {
     			t2 = space();
     			span1 = element("span");
     			span1.textContent = "Peace agreements addressing conflicts in Syria,\n\t\t\t\t\t\t\tLibya, and the Central African Republic.";
-    			add_location(p, file$h, 581, 5, 14777);
+    			add_location(p, file$h, 581, 5, 14803);
     			attr_dev(span0, "class", "dot svelte-7g6hmy");
-    			set_style(span0, "background-color", "red");
-    			add_location(span0, file$h, 590, 6, 15167);
+    			set_style(span0, "background-color", "#7b8ad6");
+    			add_location(span0, file$h, 590, 6, 15193);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 591, 6, 15230);
+    			add_location(span1, file$h, 591, 6, 15260);
     			attr_dev(div, "id", "legend");
     			attr_dev(div, "class", "svelte-7g6hmy");
-    			add_location(div, file$h, 589, 5, 15143);
+    			add_location(div, file$h, 589, 5, 15169);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29256,19 +29279,19 @@ var app = (function () {
     			div2 = element("div");
     			if (if_block2) if_block2.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 505, 3, 12151);
+    			add_location(div0, file$h, 505, 3, 12169);
     			attr_dev(section0, "data-id", "chart01");
-    			add_location(section0, file$h, 504, 2, 12120);
+    			add_location(section0, file$h, 504, 2, 12138);
     			attr_dev(div1, "class", "col-medium");
-    			add_location(div1, file$h, 541, 3, 13286);
+    			add_location(div1, file$h, 541, 3, 13304);
     			attr_dev(section1, "data-id", "chart02");
-    			add_location(section1, file$h, 540, 2, 13255);
+    			add_location(section1, file$h, 540, 2, 13273);
     			attr_dev(div2, "class", "col-medium");
-    			add_location(div2, file$h, 579, 3, 14708);
+    			add_location(div2, file$h, 579, 3, 14734);
     			attr_dev(section2, "data-id", "chart03");
-    			add_location(section2, file$h, 578, 2, 14677);
+    			add_location(section2, file$h, 578, 2, 14703);
     			attr_dev(div3, "slot", "foreground");
-    			add_location(div3, file$h, 503, 1, 12094);
+    			add_location(div3, file$h, 503, 1, 12112);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -29352,7 +29375,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Russia and other UN Security Council Permanent Members";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 615, 1, 15921);
+    			add_location(p, file$h, 615, 1, 15955);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29395,7 +29418,7 @@ var app = (function () {
     			div = element("div");
     			create_component(area.$$.fragment);
     			attr_dev(div, "class", "chart svelte-7g6hmy");
-    			add_location(div, file$h, 625, 5, 16201);
+    			add_location(div, file$h, 625, 5, 16235);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29449,10 +29472,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 623, 3, 16118);
-    			add_location(figure, file$h, 622, 2, 16106);
+    			add_location(div0, file$h, 623, 3, 16152);
+    			add_location(figure, file$h, 622, 2, 16140);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 621, 1, 16080);
+    			add_location(div1, file$h, 621, 1, 16114);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -29552,34 +29575,34 @@ var app = (function () {
     			t8 = space();
     			span5 = element("span");
     			span5.textContent = "Russian agreements.";
-    			add_location(p, file$h, 668, 5, 17350);
+    			add_location(p, file$h, 668, 5, 17388);
     			attr_dev(span0, "class", "rect svelte-7g6hmy");
     			set_style(span0, "background-color", "rgba(0, 100, 100, 0.3)");
-    			add_location(span0, file$h, 676, 6, 17662);
+    			add_location(span0, file$h, 676, 6, 17700);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 680, 6, 17766);
+    			add_location(span1, file$h, 680, 6, 17804);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-7g6hmy");
-    			add_location(div0, file$h, 675, 5, 17638);
+    			add_location(div0, file$h, 675, 5, 17676);
     			attr_dev(span2, "class", "line svelte-7g6hmy");
-    			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 683, 6, 17857);
+    			set_style(span2, "background-color", "#7b8ad6");
+    			add_location(span2, file$h, 683, 6, 17895);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-7g6hmy");
-    			add_location(span3, file$h, 685, 6, 17928);
+    			add_location(span3, file$h, 685, 6, 17970);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-7g6hmy");
-    			add_location(div1, file$h, 682, 5, 17833);
+    			add_location(div1, file$h, 682, 5, 17871);
     			attr_dev(span4, "class", "line svelte-7g6hmy");
     			set_style(span4, "background-color", "rgb(0, 158, 158)");
-    			add_location(span4, file$h, 688, 6, 18019);
+    			add_location(span4, file$h, 688, 6, 18061);
     			attr_dev(span5, "id", "legend_text");
     			attr_dev(span5, "class", "svelte-7g6hmy");
-    			add_location(span5, file$h, 692, 6, 18117);
+    			add_location(span5, file$h, 692, 6, 18159);
     			attr_dev(div2, "id", "legend");
     			attr_dev(div2, "class", "svelte-7g6hmy");
-    			add_location(div2, file$h, 687, 5, 17995);
+    			add_location(div2, file$h, 687, 5, 18037);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29662,34 +29685,34 @@ var app = (function () {
     			t8 = space();
     			span5 = element("span");
     			span5.textContent = "Chinese agreements.";
-    			add_location(p, file$h, 642, 5, 16520);
+    			add_location(p, file$h, 642, 5, 16554);
     			attr_dev(span0, "class", "rect svelte-7g6hmy");
     			set_style(span0, "background-color", "rgba(0, 100, 100, 0.3)");
-    			add_location(span0, file$h, 649, 6, 16785);
+    			add_location(span0, file$h, 649, 6, 16819);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 653, 6, 16889);
+    			add_location(span1, file$h, 653, 6, 16923);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-7g6hmy");
-    			add_location(div0, file$h, 648, 5, 16761);
+    			add_location(div0, file$h, 648, 5, 16795);
     			attr_dev(span2, "class", "line svelte-7g6hmy");
-    			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 656, 6, 16980);
+    			set_style(span2, "background-color", "#7b8ad6");
+    			add_location(span2, file$h, 656, 6, 17014);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-7g6hmy");
-    			add_location(span3, file$h, 658, 6, 17051);
+    			add_location(span3, file$h, 658, 6, 17089);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-7g6hmy");
-    			add_location(div1, file$h, 655, 5, 16956);
+    			add_location(div1, file$h, 655, 5, 16990);
     			attr_dev(span4, "class", "line svelte-7g6hmy");
     			set_style(span4, "background-color", "rgb(0, 158, 158)");
-    			add_location(span4, file$h, 661, 6, 17142);
+    			add_location(span4, file$h, 661, 6, 17180);
     			attr_dev(span5, "id", "legend_text");
     			attr_dev(span5, "class", "svelte-7g6hmy");
-    			add_location(span5, file$h, 665, 6, 17240);
+    			add_location(span5, file$h, 665, 6, 17278);
     			attr_dev(div2, "id", "legend");
     			attr_dev(div2, "class", "svelte-7g6hmy");
-    			add_location(div2, file$h, 660, 5, 17118);
+    			add_location(div2, file$h, 660, 5, 17156);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29752,11 +29775,11 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 640, 3, 16451);
+    			add_location(div0, file$h, 640, 3, 16485);
     			attr_dev(section, "data-id", "area01");
-    			add_location(section, file$h, 639, 2, 16421);
+    			add_location(section, file$h, 639, 2, 16455);
     			attr_dev(div1, "slot", "foreground");
-    			add_location(div1, file$h, 638, 1, 16395);
+    			add_location(div1, file$h, 638, 1, 16429);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -29804,7 +29827,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Agreement Stages";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 701, 1, 18296);
+    			add_location(p, file$h, 701, 1, 18338);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -29845,7 +29868,7 @@ var app = (function () {
     			div = element("div");
     			create_component(donut.$$.fragment);
     			attr_dev(div, "class", "chart svelte-7g6hmy");
-    			add_location(div, file$h, 709, 5, 18512);
+    			add_location(div, file$h, 709, 5, 18554);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29899,10 +29922,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 707, 3, 18451);
-    			add_location(figure, file$h, 706, 2, 18439);
+    			add_location(div0, file$h, 707, 3, 18493);
+    			add_location(figure, file$h, 706, 2, 18481);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 705, 1, 18413);
+    			add_location(div1, file$h, 705, 1, 18455);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -29977,8 +30000,8 @@ var app = (function () {
     			t2 = text(".");
     			attr_dev(a, "href", "https://www.peaceagreements.org/files/Definitions_v7.pdf");
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$h, 738, 6, 19451);
-    			add_location(p, file$h, 731, 5, 19115);
+    			add_location(a, file$h, 738, 6, 19493);
+    			add_location(p, file$h, 731, 5, 19157);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30018,8 +30041,8 @@ var app = (function () {
     			t2 = text(".");
     			attr_dev(a, "href", "https://www.peaceagreements.org/files/Definitions_v7.pdf");
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$h, 725, 6, 18943);
-    			add_location(p, file$h, 721, 5, 18759);
+    			add_location(a, file$h, 725, 6, 18985);
+    			add_location(p, file$h, 721, 5, 18801);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30064,11 +30087,11 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 719, 3, 18690);
+    			add_location(div0, file$h, 719, 3, 18732);
     			attr_dev(section, "data-id", "donut01");
-    			add_location(section, file$h, 718, 2, 18659);
+    			add_location(section, file$h, 718, 2, 18701);
     			attr_dev(div1, "slot", "foreground");
-    			add_location(div1, file$h, 717, 1, 18633);
+    			add_location(div1, file$h, 717, 1, 18675);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -30116,7 +30139,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Comparison of Agreement Stages";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 750, 1, 19692);
+    			add_location(p, file$h, 750, 1, 19734);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30157,7 +30180,7 @@ var app = (function () {
     			div = element("div");
     			create_component(bars.$$.fragment);
     			attr_dev(div, "class", "chart svelte-7g6hmy");
-    			add_location(div, file$h, 758, 5, 19923);
+    			add_location(div, file$h, 758, 5, 19965);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -30211,10 +30234,10 @@ var app = (function () {
     			div0 = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div0, "class", "col-wide height-full");
-    			add_location(div0, file$h, 756, 3, 19859);
-    			add_location(figure, file$h, 755, 2, 19847);
+    			add_location(div0, file$h, 756, 3, 19901);
+    			add_location(figure, file$h, 755, 2, 19889);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 754, 1, 19821);
+    			add_location(div1, file$h, 754, 1, 19863);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -30303,25 +30326,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Chinese signature (% of all signed by China).";
-    			add_location(p, file$h, 790, 5, 20773);
+    			add_location(p, file$h, 790, 5, 20819);
     			attr_dev(span0, "class", "rect svelte-7g6hmy");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 796, 6, 20964);
+    			add_location(span0, file$h, 796, 6, 21010);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 798, 6, 21037);
+    			add_location(span1, file$h, 798, 6, 21083);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-7g6hmy");
-    			add_location(div0, file$h, 795, 5, 20940);
+    			add_location(div0, file$h, 795, 5, 20986);
     			attr_dev(span2, "class", "rect svelte-7g6hmy");
-    			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 803, 6, 21154);
+    			set_style(span2, "background-color", "#7b8ad6");
+    			add_location(span2, file$h, 803, 6, 21200);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-7g6hmy");
-    			add_location(span3, file$h, 805, 6, 21225);
+    			add_location(span3, file$h, 805, 6, 21275);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-7g6hmy");
-    			add_location(div1, file$h, 802, 5, 21130);
+    			add_location(div1, file$h, 802, 5, 21176);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30386,25 +30409,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Russian signature (% of all signed by Russia).";
-    			add_location(p, file$h, 770, 5, 20170);
+    			add_location(p, file$h, 770, 5, 20212);
     			attr_dev(span0, "class", "rect svelte-7g6hmy");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 776, 6, 20360);
+    			add_location(span0, file$h, 776, 6, 20402);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 778, 6, 20433);
+    			add_location(span1, file$h, 778, 6, 20475);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-7g6hmy");
-    			add_location(div0, file$h, 775, 5, 20336);
+    			add_location(div0, file$h, 775, 5, 20378);
     			attr_dev(span2, "class", "rect svelte-7g6hmy");
-    			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 783, 6, 20550);
+    			set_style(span2, "background-color", "#7b8ad6");
+    			add_location(span2, file$h, 783, 6, 20592);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-7g6hmy");
-    			add_location(span3, file$h, 785, 6, 20621);
+    			add_location(span3, file$h, 785, 6, 20667);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-7g6hmy");
-    			add_location(div1, file$h, 782, 5, 20526);
+    			add_location(div1, file$h, 782, 5, 20568);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30469,25 +30492,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Chinese signature (% of all signed by China).";
-    			add_location(p, file$h, 835, 5, 22068);
+    			add_location(p, file$h, 835, 5, 22122);
     			attr_dev(span0, "class", "rect svelte-7g6hmy");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 844, 6, 22418);
+    			add_location(span0, file$h, 844, 6, 22472);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 846, 6, 22491);
+    			add_location(span1, file$h, 846, 6, 22545);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-7g6hmy");
-    			add_location(div0, file$h, 843, 5, 22394);
+    			add_location(div0, file$h, 843, 5, 22448);
     			attr_dev(span2, "class", "rect svelte-7g6hmy");
-    			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 851, 6, 22608);
+    			set_style(span2, "background-color", "#7b8ad6");
+    			add_location(span2, file$h, 851, 6, 22662);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-7g6hmy");
-    			add_location(span3, file$h, 853, 6, 22679);
+    			add_location(span3, file$h, 853, 6, 22737);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-7g6hmy");
-    			add_location(div1, file$h, 850, 5, 22584);
+    			add_location(div1, file$h, 850, 5, 22638);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30552,25 +30575,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Russian signature (% of all signed by Russia).";
-    			add_location(p, file$h, 815, 5, 21461);
+    			add_location(p, file$h, 815, 5, 21511);
     			attr_dev(span0, "class", "rect svelte-7g6hmy");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 821, 6, 21655);
+    			add_location(span0, file$h, 821, 6, 21705);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 823, 6, 21728);
+    			add_location(span1, file$h, 823, 6, 21778);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-7g6hmy");
-    			add_location(div0, file$h, 820, 5, 21631);
+    			add_location(div0, file$h, 820, 5, 21681);
     			attr_dev(span2, "class", "rect svelte-7g6hmy");
-    			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 828, 6, 21845);
+    			set_style(span2, "background-color", "#7b8ad6");
+    			add_location(span2, file$h, 828, 6, 21895);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-7g6hmy");
-    			add_location(span3, file$h, 830, 6, 21916);
+    			add_location(span3, file$h, 830, 6, 21970);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-7g6hmy");
-    			add_location(div1, file$h, 827, 5, 21821);
+    			add_location(div1, file$h, 827, 5, 21871);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30635,25 +30658,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Chinese signature (% of all signed by China).";
-    			add_location(p, file$h, 885, 5, 23628);
+    			add_location(p, file$h, 885, 5, 23690);
     			attr_dev(span0, "class", "rect svelte-7g6hmy");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 891, 6, 23815);
+    			add_location(span0, file$h, 891, 6, 23877);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 893, 6, 23888);
+    			add_location(span1, file$h, 893, 6, 23950);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-7g6hmy");
-    			add_location(div0, file$h, 890, 5, 23791);
+    			add_location(div0, file$h, 890, 5, 23853);
     			attr_dev(span2, "class", "rect svelte-7g6hmy");
-    			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 898, 6, 24005);
+    			set_style(span2, "background-color", "#7b8ad6");
+    			add_location(span2, file$h, 898, 6, 24067);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-7g6hmy");
-    			add_location(span3, file$h, 900, 6, 24076);
+    			add_location(span3, file$h, 900, 6, 24142);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-7g6hmy");
-    			add_location(div1, file$h, 897, 5, 23981);
+    			add_location(div1, file$h, 897, 5, 24043);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30718,25 +30741,25 @@ var app = (function () {
     			t5 = space();
     			span3 = element("span");
     			span3.textContent = "Russian signature (% of all signed by Russia).";
-    			add_location(p, file$h, 863, 5, 22915);
+    			add_location(p, file$h, 863, 5, 22973);
     			attr_dev(span0, "class", "rect svelte-7g6hmy");
     			set_style(span0, "background-color", "black");
-    			add_location(span0, file$h, 871, 6, 23215);
+    			add_location(span0, file$h, 871, 6, 23273);
     			attr_dev(span1, "id", "legend_text");
     			attr_dev(span1, "class", "svelte-7g6hmy");
-    			add_location(span1, file$h, 873, 6, 23288);
+    			add_location(span1, file$h, 873, 6, 23346);
     			attr_dev(div0, "id", "legend");
     			attr_dev(div0, "class", "svelte-7g6hmy");
-    			add_location(div0, file$h, 870, 5, 23191);
+    			add_location(div0, file$h, 870, 5, 23249);
     			attr_dev(span2, "class", "rect svelte-7g6hmy");
-    			set_style(span2, "background-color", "red");
-    			add_location(span2, file$h, 878, 6, 23405);
+    			set_style(span2, "background-color", "#7b8ad6");
+    			add_location(span2, file$h, 878, 6, 23463);
     			attr_dev(span3, "id", "legend_text");
     			attr_dev(span3, "class", "svelte-7g6hmy");
-    			add_location(span3, file$h, 880, 6, 23476);
+    			add_location(span3, file$h, 880, 6, 23538);
     			attr_dev(div1, "id", "legend");
     			attr_dev(div1, "class", "svelte-7g6hmy");
-    			add_location(div1, file$h, 877, 5, 23381);
+    			add_location(div1, file$h, 877, 5, 23439);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30822,19 +30845,19 @@ var app = (function () {
     			div2 = element("div");
     			if (if_block2) if_block2.c();
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 768, 3, 20101);
+    			add_location(div0, file$h, 768, 3, 20143);
     			attr_dev(section0, "data-id", "bar01");
-    			add_location(section0, file$h, 767, 2, 20072);
+    			add_location(section0, file$h, 767, 2, 20114);
     			attr_dev(div1, "class", "col-medium");
-    			add_location(div1, file$h, 813, 3, 21392);
+    			add_location(div1, file$h, 813, 3, 21442);
     			attr_dev(section1, "data-id", "bar02");
-    			add_location(section1, file$h, 812, 2, 21363);
+    			add_location(section1, file$h, 812, 2, 21413);
     			attr_dev(div2, "class", "col-medium");
-    			add_location(div2, file$h, 861, 3, 22846);
+    			add_location(div2, file$h, 861, 3, 22904);
     			attr_dev(section2, "data-id", "bar03");
-    			add_location(section2, file$h, 860, 2, 22817);
+    			add_location(section2, file$h, 860, 2, 22875);
     			attr_dev(div3, "slot", "foreground");
-    			add_location(div3, file$h, 766, 1, 20046);
+    			add_location(div3, file$h, 766, 1, 20088);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -30918,7 +30941,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Geography";
     			attr_dev(p, "class", "text-big");
-    			add_location(p, file$h, 911, 1, 24296);
+    			add_location(p, file$h, 911, 1, 24362);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30977,7 +31000,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const scroller_changes = {};
 
-    			if (dirty[0] & /*mygeojson, map_array, map*/ 2144 | dirty[1] & /*$$scope*/ 65536) {
+    			if (dirty[0] & /*mygeojson, selectedCountry, map_array, map*/ 2152 | dirty[1] & /*$$scope*/ 65536) {
     				scroller_changes.$$scope = { dirty, ctx };
     			}
 
@@ -31029,6 +31052,7 @@ var app = (function () {
 
     	let globe_props = {
     		mygeojson: /*mygeojson*/ ctx[6],
+    		selectedCountry: /*selectedCountry*/ ctx[3],
     		map_array: /*map_array*/ ctx[11]
     	};
 
@@ -31047,10 +31071,10 @@ var app = (function () {
     			div0 = element("div");
     			create_component(globe.$$.fragment);
     			attr_dev(div0, "class", "col-full height-full");
-    			add_location(div0, file$h, 918, 4, 24443);
-    			add_location(figure, file$h, 917, 3, 24430);
+    			add_location(div0, file$h, 918, 4, 24509);
+    			add_location(figure, file$h, 917, 3, 24496);
     			attr_dev(div1, "slot", "background");
-    			add_location(div1, file$h, 916, 2, 24403);
+    			add_location(div1, file$h, 916, 2, 24469);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -31062,6 +31086,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const globe_changes = {};
     			if (dirty[0] & /*mygeojson*/ 64) globe_changes.mygeojson = /*mygeojson*/ ctx[6];
+    			if (dirty[0] & /*selectedCountry*/ 8) globe_changes.selectedCountry = /*selectedCountry*/ ctx[3];
     			if (dirty[0] & /*map_array*/ 2048) globe_changes.map_array = /*map_array*/ ctx[11];
 
     			if (!updating_map && dirty[0] & /*map*/ 32) {
@@ -31098,7 +31123,7 @@ var app = (function () {
     	return block;
     }
 
-    // (930:2) 
+    // (931:2) 
     function create_foreground_slot(ctx) {
     	let div2;
     	let section0;
@@ -31121,18 +31146,18 @@ var app = (function () {
     			div1 = element("div");
     			p1 = element("p");
     			p1.textContent = "Russia has most often acted as a third-party signatory\n\t\t\t\t\t\tin the 1990s. Majority of these agreements relate to the\n\t\t\t\t\t\tdissolution of the Soviet Union.";
-    			add_location(p0, file$h, 932, 5, 24709);
+    			add_location(p0, file$h, 933, 5, 24799);
     			attr_dev(div0, "class", "col-medium");
-    			add_location(div0, file$h, 931, 4, 24679);
+    			add_location(div0, file$h, 932, 4, 24769);
     			attr_dev(section0, "data-id", "map01");
-    			add_location(section0, file$h, 930, 3, 24649);
-    			add_location(p1, file$h, 941, 5, 24974);
+    			add_location(section0, file$h, 931, 3, 24739);
+    			add_location(p1, file$h, 942, 5, 25064);
     			attr_dev(div1, "class", "col-medium");
-    			add_location(div1, file$h, 940, 4, 24944);
+    			add_location(div1, file$h, 941, 4, 25034);
     			attr_dev(section1, "data-id", "map02");
-    			add_location(section1, file$h, 939, 3, 24914);
+    			add_location(section1, file$h, 940, 3, 25004);
     			attr_dev(div2, "slot", "foreground");
-    			add_location(div2, file$h, 929, 2, 24622);
+    			add_location(div2, file$h, 930, 2, 24712);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -31154,14 +31179,14 @@ var app = (function () {
     		block,
     		id: create_foreground_slot.name,
     		type: "slot",
-    		source: "(930:2) ",
+    		source: "(931:2) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (953:0) <Section>
+    // (954:0) <Section>
     function create_default_slot(ctx) {
     	let h2;
     	let t1;
@@ -31204,36 +31229,36 @@ var app = (function () {
     			t6 = space();
     			div3 = element("div");
     			img3 = element("img");
-    			add_location(h2, file$h, 953, 1, 25216);
+    			add_location(h2, file$h, 954, 1, 25306);
     			attr_dev(p, "class", "mb");
-    			add_location(p, file$h, 954, 1, 25235);
+    			add_location(p, file$h, 955, 1, 25325);
     			if (!src_url_equal(img0.src, img0_src_value = "./img/c1.PNG")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "class", "svelte-7g6hmy");
-    			add_location(img0, file$h, 960, 3, 25393);
+    			add_location(img0, file$h, 961, 3, 25483);
     			attr_dev(div0, "id", "vik1");
     			attr_dev(div0, "class", "svelte-7g6hmy");
-    			add_location(div0, file$h, 959, 2, 25374);
+    			add_location(div0, file$h, 960, 2, 25464);
     			if (!src_url_equal(img1.src, img1_src_value = "./img/c2.PNG")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "class", "svelte-7g6hmy");
-    			add_location(img1, file$h, 963, 3, 25450);
+    			add_location(img1, file$h, 964, 3, 25540);
     			attr_dev(div1, "id", "vik2");
     			attr_dev(div1, "class", "svelte-7g6hmy");
-    			add_location(div1, file$h, 962, 2, 25431);
+    			add_location(div1, file$h, 963, 2, 25521);
     			if (!src_url_equal(img2.src, img2_src_value = "./img/c3.PNG")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "class", "svelte-7g6hmy");
-    			add_location(img2, file$h, 966, 3, 25507);
+    			add_location(img2, file$h, 967, 3, 25597);
     			attr_dev(div2, "id", "vik3");
     			attr_dev(div2, "class", "svelte-7g6hmy");
-    			add_location(div2, file$h, 965, 2, 25488);
+    			add_location(div2, file$h, 966, 2, 25578);
     			if (!src_url_equal(img3.src, img3_src_value = "./img/c4.PNG")) attr_dev(img3, "src", img3_src_value);
     			attr_dev(img3, "class", "svelte-7g6hmy");
-    			add_location(img3, file$h, 969, 3, 25564);
+    			add_location(img3, file$h, 970, 3, 25654);
     			attr_dev(div3, "id", "vik4");
     			attr_dev(div3, "class", "svelte-7g6hmy");
-    			add_location(div3, file$h, 968, 2, 25545);
+    			add_location(div3, file$h, 969, 2, 25635);
     			attr_dev(div4, "id", "research");
     			attr_dev(div4, "class", "svelte-7g6hmy");
-    			add_location(div4, file$h, 958, 1, 25352);
+    			add_location(div4, file$h, 959, 1, 25442);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -31267,7 +31292,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(953:0) <Section>",
+    		source: "(954:0) <Section>",
     		ctx
     	});
 
@@ -31536,16 +31561,16 @@ var app = (function () {
     			create_component(section.$$.fragment);
     			attr_dev(button, "id", "loading_button");
     			attr_dev(button, "class", "svelte-7g6hmy");
-    			add_location(button, file$h, 459, 1, 11178);
+    			add_location(button, file$h, 459, 1, 11196);
     			attr_dev(p, "id", "loading_text");
     			attr_dev(p, "class", "svelte-7g6hmy");
-    			add_location(p, file$h, 462, 1, 11264);
+    			add_location(p, file$h, 462, 1, 11282);
     			attr_dev(div, "role", "presentation");
     			attr_dev(div, "id", "loading_screen");
     			set_style(div, "height", "calc(var(--vh, 1vh) * 100)");
     			attr_dev(div, "class", "svelte-7g6hmy");
     			add_render_callback(() => /*div_elementresize_handler*/ ctx[19].call(div));
-    			add_location(div, file$h, 451, 0, 10999);
+    			add_location(div, file$h, 451, 0, 11017);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -31894,7 +31919,7 @@ var app = (function () {
     				if (selectedCountry == "Russia") {
     					map.flyTo({
     						center: [87, 63],
-    						// zoom: 3,
+    						// zoom: zoom_level,
     						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
     						
     					});
@@ -31903,7 +31928,7 @@ var app = (function () {
     				if (selectedCountry == "China") {
     					map.flyTo({
     						center: [104, 34],
-    						// zoom: 4,
+    						// zoom: zoom_level,
     						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
     						
     					});

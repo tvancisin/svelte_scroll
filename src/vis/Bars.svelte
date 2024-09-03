@@ -106,7 +106,7 @@
                     y={bar.y}
                     width={bar.width}
                     height={bar.height}
-                    fill={bar.key === "All" ? "black" : "red"}
+                    fill={bar.key === "All" ? "black" : "#7b8ad6"}
                 />
                 <text
                     x={bar.x + bar.width / 2}

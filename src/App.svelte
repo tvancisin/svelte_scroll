@@ -96,14 +96,14 @@
 				if (selectedCountry == "Russia") {
 					map.flyTo({
 						center: [87, 63],
-						// zoom: 3,
+						// zoom: zoom_level,
 						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
 					});
 				}
 				if (selectedCountry == "China") {
 					map.flyTo({
 						center: [104, 34],
-						// zoom: 4,
+						// zoom: zoom_level,
 						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
 					});
 				}
@@ -549,7 +549,7 @@
 						third - party signatory of peace agreements.
 					</p>
 					<div id="legend">
-						<span class="dot" style="background-color: red;"></span>
+						<span class="dot" style="background-color: #7b8ad6;"></span>
 						<span id="legend_text"
 							>Peace agreements addressing conflicts in the former
 							Soviet Union territories.</span
@@ -567,7 +567,7 @@
 						conferences or UNSC resolutions.
 					</p>
 					<div id="legend">
-						<span class="dot" style="background-color: red;"></span>
+						<span class="dot" style="background-color: #7b8ad6;"></span>
 						<span id="legend_text"
 							>Peace agreements resulting from large international
 							conferences or UNSC resolutions.</span
@@ -588,7 +588,7 @@
 						militarily engaged in supporting conflict parties.
 					</p>
 					<div id="legend">
-						<span class="dot" style="background-color: red;"></span>
+						<span class="dot" style="background-color: #7b8ad6;"></span>
 						<span id="legend_text"
 							>Peace agreements addressing conflicts in Syria,
 							Libya, and the Central African Republic.</span
@@ -600,7 +600,7 @@
 						permanent members of the UN Security Council.
 					</p>
 					<div id="legend">
-						<span class="dot" style="background-color: red;"></span>
+						<span class="dot" style="background-color: #7b8ad6;"></span>
 						<span id="legend_text"
 							>Peace agreements signed by China and the UN or all
 							other permanent members of the UNSC.</span
@@ -654,7 +654,7 @@
 						<span id="legend_text">Overall agreements.</span>
 					</div>
 					<div id="legend">
-						<span class="line" style="background-color: red;"
+						<span class="line" style="background-color: #7b8ad6;"
 						></span>
 						<span id="legend_text">Russian agreements.</span>
 					</div>
@@ -681,7 +681,7 @@
 						<span id="legend_text">Overall agreements.</span>
 					</div>
 					<div id="legend">
-						<span class="line" style="background-color: red;"
+						<span class="line" style="background-color: #7b8ad6;"
 						></span>
 						<span id="legend_text">Chinese agreements.</span>
 					</div>
@@ -781,7 +781,7 @@
 						>
 					</div>
 					<div id="legend">
-						<span class="rect" style="background-color: red;"
+						<span class="rect" style="background-color: #7b8ad6;"
 						></span>
 						<span id="legend_text"
 							>Russian signature (% of all signed by Russia).</span
@@ -801,7 +801,7 @@
 						>
 					</div>
 					<div id="legend">
-						<span class="rect" style="background-color: red;"
+						<span class="rect" style="background-color: #7b8ad6;"
 						></span>
 						<span id="legend_text"
 							>Chinese signature (% of all signed by China).</span
@@ -826,7 +826,7 @@
 						>
 					</div>
 					<div id="legend">
-						<span class="rect" style="background-color: red;"
+						<span class="rect" style="background-color: #7b8ad6;"
 						></span>
 						<span id="legend_text"
 							>Russian signature (% of all signed by Russia).</span
@@ -849,7 +849,7 @@
 						>
 					</div>
 					<div id="legend">
-						<span class="rect" style="background-color: red;"
+						<span class="rect" style="background-color: #7b8ad6;"
 						></span>
 						<span id="legend_text"
 							>Chinese signature (% of all signed by China).</span
@@ -876,7 +876,7 @@
 						>
 					</div>
 					<div id="legend">
-						<span class="rect" style="background-color: red;"
+						<span class="rect" style="background-color: #7b8ad6;"
 						></span>
 						<span id="legend_text"
 							>Russian signature (% of all signed by Russia).</span
@@ -896,7 +896,7 @@
 						>
 					</div>
 					<div id="legend">
-						<span class="rect" style="background-color: red;"
+						<span class="rect" style="background-color: #7b8ad6;"
 						></span>
 						<span id="legend_text"
 							>Chinese signature (% of all signed by China).</span
@@ -919,6 +919,7 @@
 				<div class="col-full height-full">
 					<Globe
 						{mygeojson}
+						{selectedCountry}
 						{map_array}
 						bind:map
 						on:mapLoaded={handleMapLoaded}

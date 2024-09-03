@@ -7,24 +7,25 @@
     export let mygeojson;
     export let map_array;
     export let map;
-    let current_zoom
+    export let selectedCountry = "Russia";
+    let current_zoom;
 
     function adjustMapForWindowSize() {
         let centerCoordinates = map.getCenter();
         if (window.innerWidth <= 768) {
-            current_zoom = 1.4
+            current_zoom = 1.4;
             map.flyTo({
                 center: [centerCoordinates.lng, centerCoordinates.lat],
                 zoom: 1.4,
             });
         } else if (window.innerWidth <= 1000) {
-            current_zoom = 2.2 
+            current_zoom = 2.2;
             map.flyTo({
                 center: [centerCoordinates.lng, centerCoordinates.lat],
                 zoom: 2.2,
             });
         } else {
-            current_zoom = 2.5
+            current_zoom = 2.5;
             map.flyTo({
                 center: [centerCoordinates.lng, centerCoordinates.lat],
                 zoom: 2.5,
@@ -50,7 +51,13 @@
                     type: "fill",
                     source: "countries",
                     paint: {
-                        "fill-color": "gray",
+                        "fill-color": [
+                            "match",
+                            ["get", "ADMIN"],
+                            selectedCountry,
+                            "#7b8ad6",
+                            "gray",
+                        ],
                     },
                     filter: ["in", ["get", "ADMIN"], ["literal", map_array]],
                 });
@@ -92,6 +99,14 @@
             "in",
             ["get", "ADMIN"],
             ["literal", map_array],
+        ]);
+
+        map.setPaintProperty('countries-layer', 'fill-color', [
+            'match',
+            ['get', 'ADMIN'],
+            selectedCountry, 
+            '#7b8ad6', // Highlight color
+            'gray' // Default color
         ]);
     }
 

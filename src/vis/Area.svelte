@@ -96,7 +96,7 @@
 			<path
 				d={line(points)}
 				fill="none"
-				stroke={key === selectedCountry ? "red" : "rgb(0, 158, 158)"}
+				stroke={key === selectedCountry ? "#7b8ad6" : "#02cccc"}
 				stroke-width="2"
 			/>
 		{/each}

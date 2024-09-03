@@ -17,22 +17,22 @@
             fillBlack();
             if (selectedCountry === "Russia") {
                 document.querySelectorAll(".soviet").forEach((circle) => {
-                    circle.setAttribute("fill", "red");
+                    circle.setAttribute("fill", "#7b8ad6");
                 });
             } else if (selectedCountry === "China") {
                 document.querySelectorAll(".china_high").forEach((circle) => {
-                    circle.setAttribute("fill", "red");
+                    circle.setAttribute("fill", "#7b8ad6");
                 });
             }
         } else if (step === "three") {
             fillBlack();
             if (selectedCountry === "Russia") {
                 document.querySelectorAll(".syria").forEach((circle) => {
-                    circle.setAttribute("fill", "red");
+                    circle.setAttribute("fill", "#7b8ad6");
                 });
             } else if (selectedCountry === "China") {
                 document.querySelectorAll(".un_p5").forEach((circle) => {
-                    circle.setAttribute("fill", "red");
+                    circle.setAttribute("fill", "#7b8ad6");
                 });
             }
         } else {

@@ -25,7 +25,7 @@
     /* Container needed to position the dropdown content */
     .dropdown {
         position: absolute;
-        top: 1px;
+        top: 5px;
         right: 60px;
         display: inline-block;
         z-index: 10;
@@ -66,7 +66,7 @@
 
     @media only screen and (max-width: 500px) {
         .dropbtn {
-            padding: 4px 10px;
+            padding: 5px 12px;
             font-size: 0.53em;
         }
     }
