@@ -61,6 +61,16 @@
                     },
                     filter: ["in", ["get", "ADMIN"], ["literal", map_array]],
                 });
+                map.addLayer({
+                    id: "outline",
+                    type: "line",
+                    source: "countries",
+                    layout: {},
+                    paint: {
+                        "line-color": "#696969",
+                        "line-width": 0.1,
+                    },
+                });
             } else {
                 // If the source exists, update the data and filter
                 map.getSource("countries").setData(mygeojson);
@@ -101,12 +111,12 @@
             ["literal", map_array],
         ]);
 
-        map.setPaintProperty('countries-layer', 'fill-color', [
-            'match',
-            ['get', 'ADMIN'],
-            selectedCountry, 
-            '#7b8ad6', // Highlight color
-            'gray' // Default color
+        map.setPaintProperty("countries-layer", "fill-color", [
+            "match",
+            ["get", "ADMIN"],
+            selectedCountry,
+            "#7b8ad6", // Highlight color
+            "gray", // Default color
         ]);
     }
 

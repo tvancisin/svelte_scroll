@@ -549,7 +549,8 @@
 						third - party signatory of peace agreements.
 					</p>
 					<div id="legend">
-						<span class="dot" style="background-color: #7b8ad6;"></span>
+						<span class="dot" style="background-color: #7b8ad6;"
+						></span>
 						<span id="legend_text"
 							>Peace agreements addressing conflicts in the former
 							Soviet Union territories.</span
@@ -567,7 +568,8 @@
 						conferences or UNSC resolutions.
 					</p>
 					<div id="legend">
-						<span class="dot" style="background-color: #7b8ad6;"></span>
+						<span class="dot" style="background-color: #7b8ad6;"
+						></span>
 						<span id="legend_text"
 							>Peace agreements resulting from large international
 							conferences or UNSC resolutions.</span
@@ -588,7 +590,8 @@
 						militarily engaged in supporting conflict parties.
 					</p>
 					<div id="legend">
-						<span class="dot" style="background-color: #7b8ad6;"></span>
+						<span class="dot" style="background-color: #7b8ad6;"
+						></span>
 						<span id="legend_text"
 							>Peace agreements addressing conflicts in Syria,
 							Libya, and the Central African Republic.</span
@@ -600,7 +603,8 @@
 						permanent members of the UN Security Council.
 					</p>
 					<div id="legend">
-						<span class="dot" style="background-color: #7b8ad6;"></span>
+						<span class="dot" style="background-color: #7b8ad6;"
+						></span>
 						<span id="legend_text"
 							>Peace agreements signed by China and the UN or all
 							other permanent members of the UNSC.</span
@@ -931,20 +935,44 @@
 		<div slot="foreground">
 			<section data-id="map01">
 				<div class="col-medium">
-					<p>
-						Russia has most often acted as a third-party signatory
-						in the 1990s. Majority of these agreements relate to the
-						dissolution of the Soviet Union.
-					</p>
+					{#if selectedCountry === "Russia"}
+						<p>
+							The geographic spread of Russian engagement as a
+							third-party signatory of peace agreements reflects
+							its permanent seat on the United Nations Security
+							Council and its role as a regional power. Like other
+							members of the Permanent Five, Russia participates
+							in large international conferences and in UN
+							Security Council resolutions that function as peace
+							agreements. This gives it a global reach.
+						</p>
+					{:else if selectedCountry === "China"}
+						<p>
+							The geographic spread of Chinese engagement as a
+							third-party signatory of peace agreements reflects
+							its permanent seat on the United Nations Security
+							Council.
+						</p>
+					{/if}
 				</div>
 			</section>
 			<section data-id="map02">
 				<div class="col-medium">
-					<p>
-						Russia has most often acted as a third-party signatory
-						in the 1990s. Majority of these agreements relate to the
-						dissolution of the Soviet Union.
-					</p>
+					{#if selectedCountry === "Russia"}
+						<p>
+							But most of its focus – and where its activity has
+							been over the last decade – relates to conflicts in
+							its neighbourhood and a number of select locales,
+							where Russia is acting both as a military partner
+							and a peacemaker.
+						</p>
+					{:else if selectedCountry === "China"}
+						<p>
+							China has been involved in peace agreements in Asia,
+							Europe, the Middle East and Africa, all geographic
+							areas where the UNSC has been highly active.
+						</p>
+					{/if}
 				</div>
 			</section>
 		</div>
@@ -959,18 +987,43 @@
 	</p>
 	<div id="research">
 		<div id="vik1">
-			<img src="./img/c1.PNG" />
+			<a
+				href="https://peacerep.org/publication/third-parties-peace-agreements-data-trends/"
+				target="_blank"
+			>
+				<img src="./img/c1.PNG" />
+			</a>
 		</div>
 		<div id="vik2">
-			<img src="./img/c2.PNG" />
+			<a
+				href="https://peacerep.org/publication/chinas-stance-on-the-war-in-ukraine/"
+				target="_blank"
+			>
+				<img src="./img/c2.PNG" />
+			</a>
 		</div>
 		<div id="vik3">
-			<img src="./img/c3.PNG" />
+			<a
+				href="https://peacerep.org/publication/non-western-approaches-to-peacemaking-and-peacebuilding-state-of-the-art-and-an-agenda-for-research/"
+				target="_blank"
+			>
+				<img src="./img/m1.png" />
+			</a>
 		</div>
 		<div id="vik4">
-			<img src="./img/c4.PNG" />
+			<a
+				href="https://peacerep.org/publication/global-china-and-the-quest-for-peace-in-bosnia-and-herzegovina/"
+				target="_blank"
+			>
+				<img src="./img/c4.PNG" />
+			</a>
 		</div>
 	</div>
+	<p class="mb" style="font-size: 14px;">
+		Text: Mateja Peter and Sanja Badanjak <br>Data: Third Party to Peace
+		Agreements Dataset. Sanja Badanjak and Niamh Henry (2024) <br>Visualisation:
+		Tomas Vancisin
+	</p>
 </Section>
 
 <!-- <ONSFooter /> -->

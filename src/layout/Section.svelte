@@ -10,3 +10,9 @@
 		<slot></slot>
 	</div>
 </section>
+
+<style>
+	section {
+		text-align: center;
+	}
+</style>

@@ -104,6 +104,7 @@
                 <rect
                     x={bar.x}
                     y={bar.y}
+                    rx=2
                     width={bar.width}
                     height={bar.height}
                     fill={bar.key === "All" ? "black" : "#7b8ad6"}
