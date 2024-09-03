@@ -618,7 +618,7 @@
 
 <Filler theme="light" short={true} wide={true} center={true}>
 	<p class="text-big">
-		Russia and other UN Security Council Permanent Members
+		{selectedCountry} and other UN Security Council Permanent Members
 	</p>
 </Filler>
 
