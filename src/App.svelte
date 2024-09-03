@@ -79,7 +79,7 @@
 			map01: () => {
 				map.flyTo({
 					center: [50, 22],
-					zoom: 2.5,
+					// zoom: 2.5,
 					essential: true, // this animation is considered essential with respect to prefers-reduced-motion
 				});
 			},
@@ -87,14 +87,14 @@
 				if (selectedCountry == "Russia") {
 					map.flyTo({
 						center: [87, 63],
-						zoom: 3,
+						// zoom: 3,
 						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
 					});
 				}
 				if (selectedCountry == "China") {
 					map.flyTo({
 						center: [104, 34],
-						zoom: 4,
+						// zoom: 4,
 						essential: true, // this animation is considered essential with respect to prefers-reduced-motion
 					});
 				}
@@ -947,6 +947,20 @@
 		Read our research on Russia and its approaches to conflict, peace
 		processes and mediation.
 	</p>
+	<div id="research">
+		<div id="vik1">
+			<img src="./img/c1.PNG" />
+		</div>
+		<div id="vik2">
+			<img src="./img/c2.PNG" />
+		</div>
+		<div id="vik3">
+			<img src="./img/c3.PNG" />
+		</div>
+		<div id="vik4">
+			<img src="./img/c4.PNG" />
+		</div>
+	</div>
 </Section>
 
 <!-- <ONSFooter /> -->
@@ -1075,4 +1089,54 @@
 		text-align: center;
 		color: #aaa;
 	} */
+/* General styling for the container */
+#research {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjusts spacing between elements horizontally */
+    align-items: center; /* Centers items vertically within the container */
+    min-height: 500px; /* Set minimum height */
+}
+
+/* General styling for each item */
+#research div {
+    flex: 1 1 20%; /* Adjust width of each element */
+    max-width: 20%; /* Ensure it doesn't exceed this width */
+    box-sizing: border-box; /* Ensures padding/border don't affect width */
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Centers content within each div vertically */
+    justify-content: center; /* Centers content within each div horizontally */
+}
+
+/* Make images responsive, add box shadow, and enable hover effect */
+#research img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures image covers the container while maintaining aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on all sides */
+    border-radius: 8px; /* Optional: Add some rounding to the corners */
+    transition: transform 0.3s ease; /* Smooth transition for the scaling effect */
+}
+
+/* Hover effect to make images bigger */
+#research img:hover {
+    transform: scale(1.1); /* Scale image to 110% of its original size */
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+    #research div {
+        flex: 1 1 45%; /* Adjust width of each element */
+        max-width: 45%;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+    #research div {
+        flex: 1 1 100%; /* Elements stack on top of each other */
+        max-width: 100%;
+    }
+}
 </style>

@@ -22,7 +22,20 @@
   }
 </script>
 
+<header style="color: {themes[theme]['text']}; background-color: {bgcolor ? bgcolor : themes[theme]['background']}; {style}" class:short>
+	<div class="v-padded col-wide middle" style="position: relative; display: flex; align-items:center" class:short class:height-full={!short}>
+    <!-- <img src="./img/china.png"> -->
+		<div class:center>
+			<slot></slot>
+    </div>
+	</div>
+</header>
+
 <style>
+  img {
+    width: 70%;
+  }
+
   .short {
     min-height: 85vh;
   }
@@ -31,11 +44,3 @@
     padding: 40px 0;
   }
 </style>
-
-<header style="color: {themes[theme]['text']}; background-color: {bgcolor ? bgcolor : themes[theme]['background']}; {style}" class:short>
-	<div class="v-padded col-wide middle" style="position: relative" class:short class:height-full={!short}>
-		<div class:center>
-			<slot></slot>
-    </div>
-	</div>
-</header>

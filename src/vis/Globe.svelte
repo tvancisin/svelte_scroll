@@ -7,9 +7,33 @@
     export let mygeojson;
     export let map_array;
     export let map;
+    let current_zoom
 
     $: console.log(map_array);
     $: console.log(mygeojson);
+
+    function adjustMapForWindowSize() {
+        let centerCoordinates = map.getCenter();
+        if (window.innerWidth <= 768) {
+            current_zoom = 1.4
+            map.flyTo({
+                center: [centerCoordinates.lng, centerCoordinates.lat],
+                zoom: 1.4,
+            });
+        } else if (window.innerWidth <= 1000) {
+            current_zoom = 2.2 
+            map.flyTo({
+                center: [centerCoordinates.lng, centerCoordinates.lat],
+                zoom: 2.2,
+            });
+        } else {
+            current_zoom = 2.5
+            map.flyTo({
+                center: [centerCoordinates.lng, centerCoordinates.lat],
+                zoom: 2.5,
+            });
+        }
+    }
 
     $: if (mygeojson && map_array && map) {
         // Ensure this block runs only after the map has fully loaded
@@ -57,9 +81,13 @@
             container: "map", // Replace with your map container's ID or DOM element
             style: "mapbox://styles/sashagaribaldy/cm0az6qe200pf01phd16v6qm0",
             center: [50, 22],
-            zoom: 2.5,
+            // zoom: 2.5,
             maxZoom: 5,
         });
+
+        adjustMapForWindowSize()
+        // window.addEventListener("load", adjustMapForWindowSize);
+        window.addEventListener("resize", adjustMapForWindowSize);
     });
 
     $: if (map && map_array && map.getSource("countries")) {
