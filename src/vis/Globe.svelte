@@ -9,9 +9,6 @@
     export let map;
     let current_zoom
 
-    $: console.log(map_array);
-    $: console.log(mygeojson);
-
     function adjustMapForWindowSize() {
         let centerCoordinates = map.getCenter();
         if (window.innerWidth <= 768) {
@@ -85,8 +82,7 @@
             maxZoom: 5,
         });
 
-        adjustMapForWindowSize()
-        // window.addEventListener("load", adjustMapForWindowSize);
+        window.addEventListener("load", adjustMapForWindowSize);
         window.addEventListener("resize", adjustMapForWindowSize);
     });
 
