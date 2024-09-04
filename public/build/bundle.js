@@ -28142,7 +28142,7 @@ var app = (function () {
     			set_style(div, "width", "100%");
     			set_style(div, "height", "100vh");
     			attr_dev(div, "class", "svelte-1k49t6h");
-    			add_location(div, file$g, 183, 0, 6218);
+    			add_location(div, file$g, 183, 0, 6216);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -28317,10 +28317,7 @@ var app = (function () {
     							type: "line",
     							source: "countries",
     							layout: {},
-    							paint: {
-    								"line-color": "#696969",
-    								"line-width": 0.1
-    							}
+    							paint: { "line-color": "white", "line-width": 0.1 }
     						});
     					} else {
     						// If the source exists, update the data and filter

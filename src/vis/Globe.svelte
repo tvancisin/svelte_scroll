@@ -67,7 +67,7 @@
                     source: "countries",
                     layout: {},
                     paint: {
-                        "line-color": "#696969",
+                        "line-color": "white",
                         "line-width": 0.1,
                     },
                 });
